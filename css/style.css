@@ -1,0 +1,757 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .logo {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #181818;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  height: 100px;
+}
+footer div p {
+  font-size: 1.2em;
+  margin: 9px;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 100;
+  animation: zoomIn;
+  animation-duration: 2s;
+}
+@media (max-width: 400px) {
+  footer div p {
+    font-size: 1em;
+  }
+}
+footer div ul {
+  padding: 0;
+}
+footer div ul:hover a {
+  filter: blur(2px);
+}
+footer div ul li {
+  display: inline-block;
+  margin: 0 5px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+footer div ul li a {
+  display: block;
+  /*Para que ocupen el espacio exacto que tienen que ocupar*/
+  color: #bfbfbf;
+  font-size: 30px;
+  transition: all 0.6s;
+}
+footer div ul li a:hover {
+  transform: translateY(-3px) scale(1.05);
+  filter: none;
+}
+
+.linkInstagram:hover {
+  color: #e4405f;
+}
+
+.linkFacebook:hover {
+  color: #3b5999;
+}
+
+.linkTwitter:hover {
+  color: #55acee;
+}
+
+header nav {
+  animation-name: aparecer;
+  animation-duration: 4s;
+  z-index: 1;
+  padding: 0 !important;
+}
+header nav ul {
+  align-items: flex-end;
+  padding-top: 5px;
+}
+@media (max-width: 400px) {
+  header nav ul {
+    align-items: flex-start !important;
+  }
+}
+header nav ul li {
+  font-family: "Cormorant Garamond" !important;
+}
+header nav ul li a {
+  color: white !important;
+  padding: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 5px !important;
+  font-size: 0.95em !important;
+  transition: all 0.5s !important;
+}
+header nav ul li a:hover {
+  color: #eb9d29ef !important;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  z-index: 2;
+}
+
+.menuBackground .menuMain .menuTitle, .slogan {
+  color: white;
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+  font-size: 1.7em;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  font-weight: lighter;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 17rem;
+  animation-duration: 4s;
+  animation-name: aparecer;
+  z-index: 1;
+}
+
+.errorContainer .errorDescription .errorButton, #shop div div a {
+  text-decoration: none;
+  font-family: "quicksand", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px;
+  width: -webkit-fill-available;
+  margin-top: 15px;
+  letter-spacing: 5px;
+  transition: all 0.6s;
+  animation: aparecer;
+  animation-duration: 9s;
+}
+.errorContainer .errorDescription .errorButton:hover, #shop div div a:hover {
+  background-color: #eb9d29ef;
+  color: black;
+}
+
+.menuBackground .menuMain .menuListTea .menuImageTea, .menuBackground .menuMain .menuListCoffee .menuImage, .menuBackground .menuMain .menuListCroissant .menuImage {
+  width: 15%;
+  border-radius: 10%;
+  box-shadow: -10px 10px 10px 5px black;
+}
+
+.menuBackground .menuMain .menuListCoffee, .menuBackground .menuMain .menuListCroissant {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  border-bottom: solid 0.2px grey;
+}
+
+.menuBackground .menuMain .menuListTea .menuListItemsTea ul h4, .menuBackground .menuMain .menuListCoffee .menuListItems ul h4, .menuBackground .menuMain .menuListCroissant .menuListItems ul h4 {
+  display: block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3em;
+  letter-spacing: 4.5px;
+  padding-bottom: 5px;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.menuBackground .menuMain .menuListTea .menuListItemsTea ul li, .menuBackground .menuMain .menuListCoffee .menuListItems ul li, .menuBackground .menuMain .menuListCroissant .menuListItems ul li {
+  padding: 5px;
+  padding-left: 0;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  padding-left: 0;
+  transition: all 0.5s;
+}
+
+.navBarInicio {
+  background-image: url("../Imagenes/Portada.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 38rem;
+  padding: 0;
+  box-shadow: 0px 10px 20px 6px grey;
+}
+@media (max-width: 400px) {
+  .navBarInicio {
+    background-image: url(../Imagenes/BackgroundIndexMobile.jfif);
+    background-position: fixed;
+    box-shadow: 1px 3px 20px 2px black;
+  }
+}
+
+header h1 {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .slogan {
+    color: #361919;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 14px;
+    padding-top: 60px;
+  }
+}
+
+#nosotros {
+  padding: 80px;
+  display: flex;
+}
+@media (max-width: 400px) {
+  #nosotros {
+    background-color: #f7e6d0;
+    color: black;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+  }
+  #nosotros img {
+    width: 100%;
+    padding: 5px;
+  }
+  #nosotros p {
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+}
+#nosotros img {
+  width: 35%;
+  height: 35%;
+  box-shadow: -18px 24px 12px 0 rgba(0, 0, 0, 0.2);
+  animation-name: aparecer;
+  animation-duration: 4s;
+}
+@media (max-width: 400px) {
+  #nosotros img {
+    display: none;
+  }
+}
+#nosotros div {
+  padding: 70px;
+  text-align: justify;
+  animation-name: aparecer;
+  animation-duration: 4s;
+}
+@media (max-width: 400px) {
+  #nosotros div {
+    text-align: justify;
+    padding: 35px 18px;
+    animation-name: aparecer;
+    animation-duration: 4s;
+  }
+}
+#nosotros div h2 {
+  margin-bottom: 15px;
+}
+@media (max-width: 400px) {
+  #nosotros div h2 {
+    color: #361919;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Cormorant Garamond", serif;
+    letter-spacing: 6px;
+    padding-top: 5px;
+  }
+}
+
+#shop {
+  background-image: url(../imagenes/shopIndexBackground.jpg);
+  background-size: cover;
+  padding: 90px;
+  box-shadow: 0px 30px 40px 0px grey inset;
+}
+@media (max-width: 400px) {
+  #shop {
+    padding: 25px 0px;
+    background-image: url(../imagenes/mobileShopIndexBackground.jpg);
+    box-shadow: none;
+  }
+}
+#shop h2 {
+  color: #361919;
+  text-align: center;
+  letter-spacing: 5px;
+  animation: zoomIn;
+  animation-duration: 2s;
+}
+@media (max-width: 400px) {
+  #shop h2 {
+    font-size: 2.05rem;
+    padding-top: 12px;
+    font-weight: 800;
+    animation-name: zoomIn;
+    animation-duration: 2s;
+  }
+}
+#shop p {
+  text-align: center;
+  margin: 20px;
+}
+@media (max-width: 400px) {
+  #shop p {
+    display: none;
+  }
+}
+#shop div {
+  display: flex;
+  flex-direction: none;
+  justify-content: center;
+  align-items: none;
+  flex-wrap: wrap;
+}
+@media (max-width: 400px) {
+  #shop div {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+  }
+}
+#shop div div {
+  margin: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+}
+@media (max-width: 400px) {
+  #shop div div {
+    margin: 0;
+  }
+}
+#shop div div img {
+  width: 18rem;
+  height: 26rem;
+  border-radius: 10px;
+  animation: zoomIn;
+  animation-duration: 2s;
+}
+@media (max-width: 400px) {
+  #shop div div img {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  #shop div div a {
+    animation-name: aparecer;
+    animation-duration: 7s;
+    margin: 15px 25px;
+  }
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.menuBackground {
+  background-image: url("../imagenes/MenuBackgroundImage.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+@media (max-width: 400px) {
+  .menuBackground {
+    background-image: url(../Imagenes/CoffeeshopBackgroundList1.jpg);
+  }
+}
+.menuBackground .menuMain {
+  color: nth white, black, #eb9d29ef, #FF8671, #c28842, #a7a4a4, 6;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuTitle {
+    font-size: 1.3rem;
+  }
+}
+.menuBackground .menuMain .menuDescription {
+  width: 100%;
+  margin-top: 295px;
+  background-color: #918b8b;
+  opacity: 0.4;
+}
+.menuBackground .menuMain .menuDescription p {
+  color: black;
+  text-align: center;
+  padding: 50px;
+  letter-spacing: 2px;
+  font-style: italic;
+  z-index: 4;
+  font-weight: bold;
+  animation-name: aparecer;
+  animation-duration: 7s;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuDescription p {
+    padding-top: 15px;
+  }
+}
+.menuBackground .menuMain .menuListCoffee, .menuBackground .menuMain .menuListCroissant {
+  color: #a7a4a4;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListCoffee .menuImage, .menuBackground .menuMain .menuListCroissant .menuImage {
+    display: none;
+  }
+}
+.menuBackground .menuMain .menuListCoffee .menuListItems, .menuBackground .menuMain .menuListCroissant .menuListItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  padding: 27px 27px 27px 75px;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListCoffee .menuListItems, .menuBackground .menuMain .menuListCroissant .menuListItems {
+    padding: 0;
+  }
+}
+.menuBackground .menuMain .menuListCoffee .menuListItems ul, .menuBackground .menuMain .menuListCroissant .menuListItems ul {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListCoffee .menuListItems ul h4, .menuBackground .menuMain .menuListCroissant .menuListItems ul h4 {
+    animation-name: aparecer;
+    animation-duration: 2s;
+  }
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListCoffee .menuListItems ul li, .menuBackground .menuMain .menuListCroissant .menuListItems ul li {
+    animation-name: aparecer;
+    animation-duration: 6s;
+  }
+}
+.menuBackground .menuMain .menuListCoffee .menuListItems ul li:hover, .menuBackground .menuMain .menuListCroissant .menuListItems ul li:hover {
+  color: #eb9d29ef;
+  transform: translateY(-6px) scale(1.03);
+}
+.menuBackground .menuMain .menuListTea {
+  color: #a7a4a4;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  border-bottom: solid 0.2px grey;
+}
+.menuBackground .menuMain .menuListTea .menuListItemsTea {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: none;
+  text-align: end;
+  padding: 27px 75px 27px 27px;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListTea .menuListItemsTea {
+    padding: 0;
+    text-align: left;
+  }
+}
+.menuBackground .menuMain .menuListTea .menuListItemsTea ul {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+}
+.menuBackground .menuMain .menuListTea .menuListItemsTea ul h4 {
+  text-align: end;
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListTea .menuListItemsTea ul h4 {
+    animation-name: aparecer;
+    animation-duration: 5s;
+  }
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListTea .menuListItemsTea ul li {
+    animation-name: aparecer;
+    animation-duration: 5s;
+  }
+}
+.menuBackground .menuMain .menuListTea .menuListItemsTea ul li:hover {
+  color: #eb9d29ef;
+  transform: translateY(-6px) scale(1.03);
+}
+@media (max-width: 400px) {
+  .menuBackground .menuMain .menuListTea .menuImageTea {
+    display: none;
+  }
+}
+
+.navBarCoffeeShop {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35rem;
+  padding: 0;
+  box-shadow: 0px 10px 20px 6px grey;
+  background-image: url(../Imagenes/PortadaCoffeeShop.webp);
+  background-position: center;
+}
+
+.mainCoffeeShop {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  padding: 25px;
+  text-transform: uppercase;
+  font-family: "Cormorant Garamond", serif;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop {
+    padding: 2px;
+  }
+}
+.mainCoffeeShop h2 {
+  text-align: center;
+  align-items: center;
+  letter-spacing: 4.8px;
+  font-size: 2rem;
+  margin-top: 18px;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop h2 {
+    font-size: 1.6rem;
+  }
+}
+.mainCoffeeShop p {
+  text-align: center;
+  align-items: center;
+  padding: 0 25%;
+  margin-bottom: 6%;
+  letter-spacing: 0.7px;
+  text-transform: initial;
+  font-size: 1.05rem;
+  font-style: italic;
+  font-family: "Work Sans", sans-serif;
+}
+.mainCoffeeShop p span {
+  color: #eb9d29ef;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop p {
+    padding: 5%;
+    text-align: justify;
+    font-size: 0.9rem;
+  }
+}
+.mainCoffeeShop .cardContainer {
+  display: flex;
+  flex-direction: none;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop .cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: none;
+    margin: 10px;
+    border: 1px solid #cfcece;
+    border-radius: 12px;
+  }
+}
+.mainCoffeeShop .cardContainer .cardImage {
+  width: 11%;
+  border-radius: 10px;
+  box-shadow: -15px -10px 22.5px 0px black;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop .cardContainer .cardImage {
+    width: 100%;
+    height: 200px;
+    box-shadow: none;
+    object-fit: cover;
+    border-radius: inherit;
+    padding: 3px;
+  }
+}
+.mainCoffeeShop .cardContainer .cardDescription {
+  width: 45%;
+  margin-left: 25px;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop .cardContainer .cardDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: none;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+  }
+}
+.mainCoffeeShop .cardContainer .cardDescription h4 {
+  border-bottom: 1px solid #dfdede;
+  letter-spacing: 6px;
+  color: #eb9d29ef;
+}
+.mainCoffeeShop .cardContainer .cardDescription p {
+  text-align: justify;
+  text-transform: initial;
+  letter-spacing: 0.4px;
+  color: black;
+  padding: 15px 0px;
+  font-style: normal;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1rem;
+}
+@media (max-width: 400px) {
+  .mainCoffeeShop .cardContainer .cardDescription p {
+    margin-bottom: 16px;
+  }
+}
+.mainCoffeeShop .cardContainer .cardDescription a {
+  background-color: black;
+  padding: 11px;
+  border-radius: 6px;
+  color: white;
+  letter-spacing: 1.5px;
+  transition: all 0.6s;
+  font-family: "Work Sans", sans-serif;
+}
+.mainCoffeeShop .cardContainer .cardDescription a:hover {
+  background-color: #eb9d29ef;
+  color: black;
+}
+
+.navBarMethodShop {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35rem;
+  padding: 0;
+  box-shadow: 0px 10px 20px 6px grey;
+  background-image: url(../imagenes/PortadaMetodShop.jpg);
+}
+
+.mainMethodShop {
+  margin: 3rem;
+}
+.mainMethodShop h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Cormorant Garamond";
+}
+.mainMethodShop h4 {
+  color: #FF8671;
+  font-family: "Cormorant Garamond";
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  padding: 1px;
+  font-weight: bolder;
+}
+.mainMethodShop p {
+  text-align: justify;
+  font-style: italic;
+  padding: 0 9rem;
+  margin-bottom: 5rem;
+}
+.mainMethodShop p span {
+  color: #eb9d29ef;
+}
+
+.methodsContainer {
+  display: flex;
+  flex-direction: none;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.methodsContainer li {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  width: 30%;
+}
+.methodsContainer li img {
+  width: 6rem;
+  height: 8rem;
+}
+.methodsContainer p {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-family: "quicksand", sans-serif;
+}
+.errorContainer img {
+  width: 45rem;
+  box-shadow: 10px 0px 30px grey;
+}
+.errorContainer .errorDescription {
+  display: flex;
+  flex-direction: column;
+  justify-content: none;
+  align-items: center;
+  margin: 0% 10%;
+}
+.errorContainer .errorDescription h1 {
+  color: #eb9d29ef;
+  font-size: 10rem;
+}
+.errorContainer .errorDescription h2, .errorContainer .errorDescription h3 {
+  color: #c28842;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.errorContainer .errorDescription p {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 2.05rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1.3px;
+}
+.errorContainer .errorDescription p span {
+  color: #eb9d29ef;
+  font-weight: bold;
+}
+.errorContainer .errorDescription .errorButton {
+  border: 1px solid white;
+  width: 15rem;
+  animation: none;
+}
+.errorContainer .errorDescription .errorButton:hover {
+  border: 1px solid black;
+}
+
+/*# sourceMappingURL=style.css.map */

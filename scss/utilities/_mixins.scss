@@ -1,0 +1,27 @@
+
+@mixin prefijos ($kits) {
+    -webkit-transform: $kits;
+    -o-transform: $kits;
+    -moz-transform: $kits;
+    transform: $kits;
+}
+
+@mixin boxStyle ($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin animationDefault ($aniName, $aniDur) {
+    animation-name: $aniName;
+    animation-duration: $aniDur;
+}
+
+@mixin backgroundStyle ($bgRep, $bgSz, $heigh, $padding) {
+    background-repeat: $bgRep;
+    background-size: $bgSz;
+    height: $heigh;
+    padding: $padding;
+    box-shadow: 0px 10px 20px 6px grey; 
+}

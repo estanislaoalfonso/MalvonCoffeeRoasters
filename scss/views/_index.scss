@@ -1,0 +1,170 @@
+.navBarInicio {
+    background-image: url('../Imagenes/Portada.webp');
+    @include backgroundStyle (no-repeat, cover, 38rem, 0);
+
+    @media (max-width: 400px) {
+        background-image: url(../Imagenes/BackgroundIndexMobile.jfif);
+        background-position: fixed;
+        box-shadow: 1px 3px 20px 2px black;
+
+    }
+}
+
+header {
+    h1 {
+        display:none;
+    }
+}
+
+.slogan {
+    @extend %titleSectionStyle;
+    
+    @media (max-width: 400px) {
+        color: $titleColors;
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 14px;
+        padding-top: 60px;
+    }
+}
+
+
+#nosotros {
+    padding: 80px;
+    display: flex;
+    @media (max-width: 400px) {
+        background-color: nth($bgColors, 2);
+        color: black;
+        padding: 0px;
+        @include boxStyle (column, none, center);
+
+        img {
+            width: 100%;
+            padding: 5px;
+        }
+
+        p {
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+    }
+        img {
+            width: 35%;
+            height: 35%;
+            box-shadow: -18px 24px 12px 0 rgb(0, 0, 0, .2);
+            @include animationDefault (aparecer, 4s);
+
+            @media (max-width: 400px) {
+                display: none;
+            }
+        }
+        div {
+            padding: 70px;
+            text-align: justify;
+            @include animationDefault (aparecer, 4s);
+
+            @media (max-width: 400px) {
+                text-align: justify;
+                padding: 35px 18px;
+                @include animationDefault (aparecer, 4s);
+            }
+            
+            h2 {
+                margin-bottom: 15px;
+
+                @media (max-width: 400px) {
+                    color: $titleColors;
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-family: 'Cormorant Garamond', serif;
+                    letter-spacing: 6px;
+                    padding-top: 5px;
+                }
+
+            }
+        }   
+}
+
+
+#shop {
+    background-image: url(../imagenes/shopIndexBackground.jpg);
+    background-size: cover;
+    padding: 90px;
+    box-shadow: 0px 30px 40px 0px grey inset;
+
+    @media (max-width: 400px) {
+        padding: 25px 0px;
+        background-image: url(../imagenes/mobileShopIndexBackground.jpg);
+        box-shadow: none;
+    }
+
+        h2 {
+            color: nth($titleColors , 1);
+            text-align: center;
+            letter-spacing: nth($letterSpacing , 2);
+            animation: zoomIn;
+            animation-duration: 2s;
+
+            @media (max-width: 400px) {
+                font-size: 2.05rem;
+                padding-top: 12px;
+                font-weight: 800;
+                @include animationDefault (zoomIn, 2s);
+            }
+        }
+
+        p {
+            text-align: center;
+            margin: 20px;
+            @media (max-width: 400px) {
+                display: none;
+            }
+        }
+
+        div {
+            @include boxStyle (none, center, none);
+            flex-wrap: wrap;
+            @media (max-width: 400px) {
+                @include boxStyle (column, none, none);
+            }
+
+            div {
+                margin: 20px 60px;
+                @include boxStyle (column, none, center);
+                
+                @media (max-width: 400px) {
+                    margin: 0;                    
+                }
+
+                img {
+                    width: 18rem;
+                    height: 26rem;
+                    border-radius: $borderRadius - 2;
+                    animation: zoomIn;
+                    animation-duration: 2s;
+
+                    @media (max-width: 400px) {
+                        display: none;
+                    }
+                }
+
+                a {
+                    @extend %button;
+                    @media (max-width: 400px) {
+                        @include animationDefault (aparecer, 7s);
+                        margin: 15px 25px;
+                    }
+                }
+            }
+        }
+}
+
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

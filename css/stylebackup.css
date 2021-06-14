@@ -1,0 +1,872 @@
+/*GENERALES*/
+/*Seteado general para todo el documento*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'quicksand', sans-serif; /*Fuente para texto que no tenga otra fuente determinada*/ 
+}
+
+a {
+    text-decoration: none; /*Ningún link tiene que tener subrayado ni decoración*/
+}
+
+h1 {
+    font-family: 'Work Sans', sans-serif; /*Por defecto, en caso de no tener otra fuente, ésta es la "standard"*/
+    font-size: 3em; /*Tamaño standard para titulos*/
+}
+
+h2 {
+    font-weight: bold; /*Negrita para los subtítulos*/ 
+    font-style: normal; /*Sin estilo para las fuentes*/
+    font-size: 1.5em; /*Tamaño "por defecto" para los h2*/
+}
+
+h4 {
+    color: white; /*Todos los h4 tendrán por defecto color blanco*/
+}
+
+/*Navegador general*/
+
+.navBarClass {
+    animation-duration: 4s;
+    animation-name: aparecer; 
+    z-index: 1; /* Para que cuando se despliegue el menú, esté por arriba de la foto y no se tape la info.*/
+}
+    
+
+.navBarClass ul { /* Para ajustar el menú*/
+    padding-top: 5px; /* Para bajar un poco el menú del top*/
+    align-items: flex-end; /* Para que el menú se despliegue sobre la derecha*/
+
+}
+
+.logo {
+    position: absolute; /* Para que se vaya arriba, se vea y poder amoldarlo al margen superior izq.*/
+    top:0; /* Para que quede pegado al top*/
+    left: 10px;
+    z-index:2; /* Para que se vea por encima de el Nav.*/
+}
+
+
+.navBarClass ul li a { /*La cascada aplica para todas las anclas de mi menú*/ 
+    color: white !important;/*Color del texto de las anclas del nav*/
+    padding: 12px !important; /*Para separar las anclas del nav*/
+    font-family: 'Cormorant Garamond', serif !important;
+    text-transform: uppercase !important; /*Poner todas las letras en mayúsculas*/
+    letter-spacing: 5px !important; /*Espaciado entre letras*/
+    font-size: 0.95em !important;
+    transition: all 0.5s !important; /*Para que cuando paso el hover, cambie con esa transicion*/
+}
+
+.navLinkHover:hover {
+    color: #fcaf08 !important;
+}
+
+.navLinkHover:active {
+    background-color: rgb(170, 167, 167);
+    color: black;
+}
+
+
+/*Nav Bar y Slogan del INDEX*/
+
+.navBarInicio { /*Para poder poner una imagen de fondo en esa sección*/
+    background-image: url('imagenes/Portada.jpg'); /*Fondo que se incluye en el nav y portada*/
+    background-repeat: no-repeat;/*Para que se vea 1 sola vez*/
+    background-size: cover;/*Que cubra todo el contenido de la sección*/
+    height: 38rem;/*Tamaño de visualización de la imagen*/
+    box-shadow: 0px 10px 20px 6px grey; 
+    /*1°Valor: Eje X; 2°Valor Eje Y; 3°Valor Grado del blur; 4°Valor espaciado del borde; 5°Valor Color*/
+    padding: 0;
+}
+
+.slogan {
+    color: white;/*Color de la fuente del slogan*/
+    display: block;/* Para que nada se interponga en la misma linea */
+    font-family:'Cormorant Garamond', serif; /*Fuente del slogan*/
+    text-align: center; /*Alinear texto en el centro de la pantalla*/
+    font-size: 1.7em; /*Tamaño de la fuente*/
+    text-transform: uppercase;/*Transformar todo el texto a mayúsculas*/
+    letter-spacing: 20px;/*Espaciado entre letras*/
+    font-weight: lighter;/*Para suavizar la letra del slogan*/
+    animation-duration: 4s;
+    animation-name: aparecer;
+    /*Para centrar el texto en la imagen y portada*/
+    position:absolute; /* Para que no interfiera con los demas items y no mueva todo*/
+    left: 0;/* para que se centre desde la izquierda*/
+    right: 0; /*Paca que se centre desde la derecha*/
+    top: 17rem; /* Para bajarlo y centrarlo al contenido*/ 
+}
+
+/* Para darle efecto de aparicion lenta al menu y slogan*/
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*Sección Nosotros*/
+
+#nosotros {
+    padding: 80px;
+    display: flex;   
+}
+
+.nosotrosDescription {
+    padding: 70px; /*Para separar el texto de la imagen*/
+    text-align: justify;/*Para juistificar el texto*/
+    animation-duration: 4s;
+    animation-name: aparecer;
+}
+
+.nosotrosTitle {
+    margin-bottom: 15px; /*Para dar espacio entre el título y el párrafo*/
+}
+
+
+.nosotrosImagen {
+    width: 35%; /*Para reducir el tamaño de la imagen*/
+    height: 35%;
+    box-shadow: -18px 24px 12px 0 rgb(0, 0, 0, .2); 
+    /*Eje X (negativo se va a la izq, Eje Y (negativo se va arriba), desenfoque, "tamaño de la sombra", color*/
+    animation-duration: 4s;
+    animation-name: aparecer;
+
+}
+
+/*Sección Shop*/
+
+#shop { /*Edición de todo el box de shop*/
+    /*margin: 30px;*/
+    background-image: url('imagenes/shopIndexBackground.jpg');
+    background-size: cover;
+    padding: 90px; /*Para lograr generar más aire exterior dentro de la misma sección y ver más imagen de fondo*/
+    box-shadow: 0px 30px 40px 0px grey inset; /* Inset es para que la sombra vaya para adentro*/
+}
+
+.shopTitle {
+    color: rgb(54, 25, 25);
+    text-align: center;/*Para centrar el título en la página*/
+    letter-spacing: 10px;/*Espaciado entre letras*/
+    animation: zoomIn;
+    animation-duration: 2s;
+}
+
+.shopParagraph { /*Descripción de la sección del shop*/
+    text-align: center;/*Para centrar el texto en la página*/
+    margin: 20px; /*Para separarlo un poco del título*/
+}
+
+.shopContainer {
+    display: flex; /*Para poner las 2 secciones 1 al lado de la otra*/
+    justify-content: center; /*Para dar aire a los costados y centro de las secciones*/
+    flex-wrap: wrap;
+}
+
+
+.shopImage { /*Aplica a las 2 imagenes del shop. Tuve que setearlas así porque sino quedaban desparejas*/
+    width: 18rem; /*Ancho de la imagen*/
+    height: 26rem; /*Alto de la imagen*/
+    border-radius: 10px;
+    animation: zoomIn;
+    animation-duration: 4s;
+}
+
+.shopMarketContainer { /*Aplica a la sección Café y a la sección Métodos*/
+    margin: 20px 60px;
+    display: flex;
+    flex-direction: column; /*Para poder poner la imagen arriba del botón*/
+    align-items: center;/* Para que tanto la imagen como el botón queden centrados*/
+}
+
+.shopLink { /*Aplica a los 2 links del shop*/
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    background-color: black;
+    border-radius: 5px; /*Para lograr el formato "buttom"*/
+    padding: 10px; /*Para dar espacio de adentro hacia afuera al texto del buttom*/
+    width: -webkit-fill-available; /*Para que tome el ancho total del espacio*/
+    margin-top: 15px;
+    letter-spacing: 2px;
+    transition: all 0.6s;
+    animation: aparecer;
+    animation-duration: 9s;
+}
+
+.shopLinkHover:hover {
+    background-color:#eb9d29ef;
+    color: black;
+}
+
+/* MENU HTML */
+
+.menuBackground { /*Imagen de fondo del html*/
+    background-image: url('imagenes/MenuBackgroundImage.jpg');
+    background-size: cover; /*Cubre toda la web*/
+    background-repeat: no-repeat;/*No se repite la imagen*/
+    background-attachment: scroll; /*Para que se muestre más de la imagen cuando se scrollee*/
+}
+
+.menuMain {
+    color: rgb(167, 164, 164);
+    display: flex;
+    flex-direction: column;
+}
+
+.menuTitle { /*Título del MENU HTML*/
+    color: white;/*Color de la fuente del slogan*/
+    display: block;/* Para que nada se interponga en la misma linea */
+    font-family:'Cormorant Garamond', serif; /*Fuente del slogan*/
+    text-align: center; /*Alinear texto en el centro de la pantalla*/
+    font-size: 1.5em; /*Tamaño de la fuente*/
+    text-transform: uppercase;/*Transformar todo el texto a mayúsculas*/
+    letter-spacing: 10px;/*Espaciado entre letras*/
+    padding-top: 10%;
+    padding-bottom: 3%;
+    font-weight: lighter;/*Para suavizar la letra del slogan*/
+}
+
+.menuDescription {
+    /* position: absolute; */
+    width: 100%;
+}
+
+.menuDescription {
+    width: 100%;
+    background-color:#918b8b;
+    opacity: 0.4;
+}
+
+.menuDescription p {
+    color: black;
+    text-align: center;
+    padding: 50px;
+    letter-spacing: 2px;
+    font-style: italic;
+    z-index: 4;
+    font-weight: bold;
+}
+    
+.menuListItems {
+    display: flex;
+    flex-direction: column;
+    padding: 27px 27px 27px 75px; 
+}
+
+.menuListItems ul {
+    list-style-type: none;/*Para sacar los puntos a los items de la lista*/
+    padding: 0;
+    cursor: pointer;
+}
+
+.menuListItems h4 { /*Títulos de las distintas secciones dentro del menú*/
+    display: block;
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.3em; /*Tamaño de la fuente de los títulos*/
+    letter-spacing: 4.5px; /*Espaciado de la letra*/
+    padding-bottom: 5px; /*Para que airee un poco los títulos*/
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.menuListItems ul li {
+    padding: 5px;
+    padding-left: 0;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    padding-left: 0;
+    transition: all 0.5s;
+}
+
+.menuListItems ul li:hover {
+    color: #eb9d29ef;
+    transform: translateY(-6px) scale(1.03); 
+}
+
+.menuListCoffee {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-bottom: solid 0.2px grey;
+}
+
+.menuListCroissant {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-bottom: solid 0.2px grey;
+}
+
+.menuListTea {
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    border-bottom: solid 0.2px grey;
+}
+
+.menuListItemsTea {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    padding: 27px 75px 27px 27px; 
+}
+
+.menuListItemsTea ul {
+    list-style-type: none;/*Para sacar los puntos a los items de la lista*/
+    padding: 0;
+    cursor: pointer;
+}
+
+.menuListItemsTea h4 { /*Títulos de las distintas secciones dentro del menú*/
+    display: block;
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.3em; /*Tamaño de la fuente de los títulos*/
+    letter-spacing: 4.5px; /*Espaciado de la letra*/
+    padding-bottom: 5px; /*Para que airee un poco los títulos*/
+    font-weight: lighter;
+    text-transform: uppercase;
+    text-align: end;
+}
+
+.menuListItemsTea ul li {
+    padding: 5px;
+    padding-right: 0;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    padding-left: 0;
+    transition: all 0.5s;
+}
+
+.menuListItemsTea ul li:hover {
+    color: #eb9d29ef;
+    transform: translateY(-6px) scale(1.03); 
+}
+
+.menuImageTea { /*Son las imagenes que seccionan el menú y lo dividen entre café, té y pastelería*/
+    width: 15%; /*Tamaño de la imagen*/
+    border-radius: 10%;
+    box-shadow: 10px 10px 10px 5px black;
+}
+
+
+.menuImage { /*Son las imagenes que seccionan el menú y lo dividen entre café, té y pastelería*/
+    width: 15%; /*Tamaño de la imagen*/
+    border-radius: 10%;
+    box-shadow: -10px 10px 10px 5px black;
+
+}
+
+
+.menuList h4 { /*Títulos de las distintas secciones dentro del menú*/
+    display: block;
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.3em; /*Tamaño de la fuente de los títulos*/
+    letter-spacing: 4.5px; /*Espaciado de la letra*/
+    padding: 20px; /*Para que airee un poco los títulos*/
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+
+/*COFFEE SHOP HTML*/
+
+.navBarCoffeeShop { /*Background Navegador del Coffee Shop HTML*/
+    background-image: url('imagenes/PortadaCoffeeShop.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 35em;
+    box-shadow: 0px 4px 20px 3px black;
+}
+
+.mainCoffeeShop { /* Formatos generales dentro del espacio de productos de café*/
+    /* background-image: url(imagenes/CoffeeShopBackgroundMain.jpg); */
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase;
+    Padding: 25px;
+    /* box-shadow: 0px 52px 70px 30px black inset; */
+    background-color: rgba(255, 255, 255, 0.795);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.navBarCoffeeShop h2 { /* Para editar el título "elegí tu café" */
+    /* text-align: center; */
+    font-size: 2.2em;
+    /* padding: 10px 0 60px 0; */
+    letter-spacing: 5px;
+    color: white;
+    position: absolute;
+}
+
+.mainCoffeeShop h2 {
+    text-align: center;
+    align-items: center;
+    letter-spacing: 4.8px;
+    font-size: 2.0rem;
+    margin-top: 18px;
+}
+
+.mainCoffeeShop p {
+    text-align: center;
+    align-items: center;
+    padding: 0 25%;
+    margin-bottom: 6%;
+    letter-spacing: 0.7px;
+    text-transform: initial;
+    font-size: 1.05rem;
+    font-style: italic;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.mainCoffeeShop p span {
+    color: rgb(194, 136, 66);
+    font-size: 1.12rem;
+    
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
+.cardImage {
+    width: 11%;
+    border-radius: 10px;
+    box-shadow: -15px -10px 22.5px 0px black;
+}
+
+.cardDescription {
+    width: 45%;
+    margin-left: 25px;
+}
+
+.cardDescription h4 {
+    border-bottom: 1px solid rgb(223, 222, 222);
+    letter-spacing: 6px;
+    color: rgb(194, 136, 66);
+
+}
+
+.cardDescription p {
+    text-align: justify;
+    text-transform: initial;
+    letter-spacing: 0.4px;
+    color: black;
+    padding: 15px 0px;
+    font-style: normal;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.cardDescription a {
+    background-color: black;
+    padding: 11px;
+    border-radius: 6px;
+    color: white;
+    letter-spacing: 1.5px;
+    transition: all 0.6s;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.cardDescription a:hover {
+    background-color:#eb9d29ef;
+    color: black;
+}
+
+/* METHOD SHOP HTML */
+
+.navBarMetodShop { /*Background del navegador del Metod Shop HTML*/
+    background-image: url('imagenes/PortadaMetodShop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30em;
+}
+
+.mainMethodShop { /*Background de la sección*/
+    background-color: white;
+    margin: 3rem;
+}
+
+.mainMethodShop h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family:'Cormorant Garamond', serif;
+
+}
+
+.mainMethodShop p {
+    text-align: justify;
+    font-style: italic;
+    padding: 0 9rem;
+    margin-bottom: 5rem;
+
+}
+
+.mainMethodShop p span {
+    color: rgb(194, 136, 66);
+}
+
+.mainMethodShop h4 { /* Títulos de los filtros para comprar*/
+    color: #FF8671; /*Color de la letra*/
+    font-family:'Cormorant Garamond', serif; /* Fuente */
+    font-size: 1.5em; /*Tamaño de la fuente de los títulos*/
+    letter-spacing: 1.5px; /*Espaciado de la letra*/
+    padding: 1px; /*Para que airee un poco los títulos*/
+    font-weight: bolder; /* Letra en negrita */
+}
+
+.mainMethodShop ul li p { /* Descripción de los metodos de filtrado */
+    text-align: center; /* Para centrar las descripciones */
+    padding-top: 4px; /* Para separar un poco el texto del título de los filtados */
+}
+
+.methodsContainer {
+    display: flex; 
+    justify-content: space-evenly; /* Para alinear en el centro del box.*/
+    align-items: center;
+    flex-wrap: wrap; /* Para que los elementos bajen conforme se achica la página*/
+}
+
+.methodsContainer li { /* Para editar cada método con su imagen y texto*/
+    display: flex;
+    flex-direction: column; /* Para que la imagen quede arriba y el texto debajo */
+    align-items: center; /* Para que queden parejos los elementos */
+    width: 30%; /*Lo pongo en px para que bajen y para que todos queden del mismo ancho y simetricos*/
+}
+
+.methodImages { /* Para que todas las imágenes queden del mismo tamaño */
+    width: 6rem;
+    height: 8rem;
+}
+
+/*Sección Footer*/
+
+#contacto { /*Aplica a todos los footers*/
+    background-color: rgb(24, 24, 24);
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;/*Para que el texto quede arriba de los iconos*/
+    align-items: center; /*Para centrar en el footer el contenido*/
+    height: 100px;
+}
+
+.footerSeguinos {
+    font-size: 1.2em;
+    margin: 9px;
+    color: white;
+    letter-spacing: 2px;
+    font-weight: 100;
+    animation: zoomIn;
+    animation-duration: 2s;
+}
+
+.footerContainer ul {
+    padding: 0;
+}
+
+.footerContainer ul li {
+    display: inline-block; /*Para que los iconos queden horizontales*/
+    margin: 0 5px; /*Cuando son inline block no tienen margen arriba y abajo*/
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.footerContainer ul li a {
+    display: block; /*Para que ocupen el espacio exacto que tienen que ocupar*/
+    color: rgb(191, 191, 191);
+    font-size: 30px;
+    transition: all 0.6s;
+}
+
+.footerContainer ul:hover a {
+    filter: blur(2px);
+}
+
+.footerContainer ul li a:hover {
+    transform: translateY(-3px) scale(1.05);
+    filter: none;   
+}
+
+.linkInstagram:hover {
+    color: #e4405f;
+}
+
+.linkFacebook:hover {
+    color: #3b5999;
+}
+
+.linkTwitter:hover {
+    color: #55acee;
+}
+
+@media only screen and (min-width: 961px) {
+    .navBarClass { /*Uso esta propiedad para que en desktop, no se vea el fondo del NAV.*/
+        background-color: transparent !important;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width:960px) {
+    
+    /* HTML Index */
+    .shopContainer {
+        flex-wrap: nowrap;
+    }
+
+    /* HTML Menu */
+    .navBarClass {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    /* HTML Index */
+
+    .logo {
+        display: none;
+    }
+
+    .navBarClass {
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding: 0;
+    }
+
+    .navBarInicio {
+        box-shadow: 1px 3px 20px 2px black;
+        background-image: url(Imagenes/BackgroundIndexMobile.jfif);
+        background-position: fixed;
+    }
+   
+    .slogan {
+        color: rgb(53, 29, 12);
+        font-size: 1.2rem;
+        font-weight: bold;
+        letter-spacing: 14px;
+        padding-top: 60px;
+    }
+
+    #nosotros {
+        background-color: rgb(247, 230, 208);
+        color: black;
+        padding:0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nosotrosDescription {
+        padding: 35px 18px;
+        text-align: justify;
+        animation-duration: 4s;
+        animation-name: aparecer;
+    }
+
+    #nosotros h2 {
+        color: rgb(53, 29, 12);
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Cormorant Garamond', serif;
+        letter-spacing: 6px;
+        padding-top:5px;
+        animation-duration: 4s;
+        animation-name: aparecer;
+        
+    }
+
+    #nosotros p {
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+
+    .nosotrosImagen {
+        display: none;
+    }
+   
+    .nosotrosImagen {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .nosotrosTitle {
+        font-size: 2em;
+    }
+
+
+    #shop {
+        padding: 25px 0px;
+        background-image: url(imagenes/mobileShopIndexBackground.jpg);
+        box-shadow: none;
+    }
+
+    .shopTitle {
+        font-size: 2.05rem;
+        padding-top: 12px;
+        font-weight: 800;
+        animation: zoomIn;
+        animation-duration: 2s;
+    }
+
+    .shopParagraph {
+        display: none;
+    }
+
+    .shopContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .shopMarketContainer {
+        margin: 0;
+    }
+
+    .shopLink {
+        margin: 15px 25px;
+        animation: aparecer;
+        animation-duration: 7s;
+    }
+
+    .shopImage {
+        display: none;
+    }
+
+
+    .footerContainer {
+        height: auto;
+    }
+
+    .footerSeguinos {
+        font-size: 1.0em;
+    }
+
+
+
+    /* HTML Menu */
+
+    .menuBackground {
+        background-image: url(imagenes/CoffeeshopBackgroundList1.jpg);
+    }
+
+    .menuTitle {
+        font-size: 1.3rem;
+    }
+
+    .menuDescriptionP {
+        padding-top: 15px;
+    }
+
+    .menuImage { 
+        display: none;
+    }
+
+    .menuImageTea {
+        display: none;
+    }
+
+    .menuListItems {
+        padding: 0;
+    }
+
+    .menuListItemsTea { 
+        padding: 0;
+        text-align:left;    
+    }
+
+    .menuListItems h4 {
+        animation: aparecer;
+        animation-duration: 2s;
+    }
+
+    .menuListItems ul li {
+        animation: aparecer;
+        animation-duration: 6s;
+    }
+
+    .menuListItemsTea h4 {
+        text-align: left;
+        animation: aparecer;
+        animation-duration: 5s;
+    }
+
+    .menuListItemsTea ul li {
+        animation: aparecer;
+        animation-duration: 6s;
+    }
+   
+
+
+
+    /* COFFEESHOP HTML */
+
+    .mainCoffeeShop {
+        padding: 2px;
+    }
+
+    .mainCoffeeShop h2 {
+        font-size: 1.6rem;
+    }
+
+    .mainCoffeeShop p {
+        padding: 5%;
+        text-align: justify;
+        font-size: 0.9rem;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        border: 1px solid rgb(207, 206, 206);
+        border-radius: 12px;
+        /* background-image: url(imagenes/coffeeCardBackground.jpg);
+        background-position: bottom; */
+    }
+
+    .cardImage {
+        width: 100%;
+        height: 200px;
+        box-shadow: none;
+        object-fit: cover;
+        border-radius: inherit;
+        padding: 3px;
+    }
+
+    .cardDescription {
+        width: 100%;
+        margin: 16px 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cardDescription p {
+        margin-bottom: 16px;
+    }
+
+
+
+
+
+    /* METHOD SHOP HTML */
+
+
+}

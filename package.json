@@ -1,0 +1,24 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^6.0.0",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estanislaoalfonso/MalvonCoffeeRoaster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/estanislaoalfonso/MalvonCoffeeRoaster/issues"
+  },
+  "homepage": "https://github.com/estanislaoalfonso/MalvonCoffeeRoaster#readme",
+  "description": "<h1 align=\"center\">Hi 👋, I'm Estanislao</h1> <h3 align=\"center\">A passionate frontend developer from Argentina</h3>"
+}

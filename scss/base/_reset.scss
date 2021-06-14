@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo {
+    @extend %logo;
+    @media (max-width: 992px) {
+        display: none;
+    }
+}

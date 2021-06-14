@@ -1,0 +1,65 @@
+@import '../utilities/mixins';
+
+footer {
+    background-color: nth($bgColorsFooter , 1);
+        div {
+            @include boxStyle (column, none, center);
+            height: 100px;
+
+                p {
+                    font-size: 1.2em;
+                    margin: 9px;
+                    color: nth($color , 1);
+                    letter-spacing: nth($letterSpacing , 1);
+                    font-weight: nth($fontWeight , 1);
+                    animation: zoomIn;
+                    animation-duration: 2s;
+
+                    @media (max-width: 400px) {
+                        font-size: 1.0em;
+                    }
+                }
+
+                ul {
+                    padding: 0;
+                    
+                    &:hover a{
+                        filter: blur(2px);
+                    }
+                        li {
+                            display: inline-block; 
+                            margin: 0 5px;
+                            width: 50px;
+                            height: 50px;
+                            text-align: center;
+                            
+                            a {
+                                display: block; /*Para que ocupen el espacio exacto que tienen que ocupar*/
+                                color: rgb(191, 191, 191);
+                                font-size: 30px;
+                                transition: all 0.6s;
+
+                                &:hover {
+                                    transform: translateY(-3px) scale(1.05);
+                                    filter: none;   
+                                }
+                                
+                                    
+                            }
+
+                        }
+                }
+        }
+}
+
+.linkInstagram:hover {
+    color: nth($instagramColor , 1)
+}
+
+.linkFacebook:hover {
+    color: nth($facebookColor , 1)
+}
+
+.linkTwitter:hover {
+    color: nth($twitterColor , 1)
+}

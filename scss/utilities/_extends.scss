@@ -1,0 +1,82 @@
+@import '../base/fonts';
+@import '../base/colors';
+
+%logo {
+    position: absolute;
+    top:0;
+    left: 10px;
+    z-index: 2;
+}
+
+%titleSectionStyle {
+    color: white;
+    display: block;
+    font-family:'Cormorant Garamond', serif;
+    text-align: center;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    font-weight: lighter;
+    position:absolute;
+    left: 0;
+    right: 0;
+    top: 17rem;
+    animation-duration: 4s;
+    animation-name: aparecer;
+    z-index: 1;
+}
+
+%button {
+    text-decoration: none;
+    font-family: nth($fontFamily , 1), sans-serif;
+    text-transform: uppercase;
+    color: nth($color , 1);
+    font-weight: nth($fontWeight, 9);
+    text-align: center;
+    background-color: nth($color, 2);
+    border-radius: 5px;
+    padding: 10px;
+    width: -webkit-fill-available;
+    margin-top: 15px;
+    letter-spacing: nth($letterSpacing, 2);
+    transition: all 0.6s;
+    animation: aparecer;
+    animation-duration: 9s;
+
+        &:hover {
+            background-color: nth($color, 3);
+            color: nth($color, 2);
+        }
+}
+
+%menuImageStyle {
+    width: 15%;
+    border-radius: 10%;
+    box-shadow: -10px 10px 10px 5px black;
+}
+
+%menuContainerStyle {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-bottom: solid 0.2px grey;
+}
+
+%menuListItemsH4Style {
+    display: block;
+    font-family:'Cormorant Garamond', serif;
+    font-size: 1.3em; 
+    letter-spacing: 4.5px; 
+    padding-bottom: 5px; 
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+%menuListItemsLiStyle {
+    padding: 5px;
+    padding-left: 0;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    padding-left: 0;
+    transition: all 0.5s;
+}
