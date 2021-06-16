@@ -195,7 +195,7 @@ header nav ul li a:hover {
 }
 @media (max-width: 400px) {
   .navBarInicio {
-    background-image: url(../Imagenes/BackgroundIndexMobile.jfif);
+    background-image: url(../Imagenes/BackgroundIndexMobile.webp);
     background-position: fixed;
     box-shadow: 1px 3px 20px 2px black;
   }
@@ -207,7 +207,7 @@ header h1 {
 
 @media (max-width: 400px) {
   .slogan {
-    color: #361919;
+    color: floralwhite;
     font-size: 1.2rem;
     font-weight: bold;
     letter-spacing: 14px;
@@ -275,6 +275,15 @@ header h1 {
     font-family: "Cormorant Garamond", serif;
     letter-spacing: 6px;
     padding-top: 5px;
+  }
+}
+#nosotros div p {
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+@media (max-width: 400px) {
+  #nosotros div p {
+    line-height: 27px;
   }
 }
 

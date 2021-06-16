@@ -3,7 +3,7 @@
     @include backgroundStyle (no-repeat, cover, 38rem, 0);
 
     @media (max-width: 400px) {
-        background-image: url(../Imagenes/BackgroundIndexMobile.jfif);
+        background-image: url(../Imagenes/BackgroundIndexMobile.webp);
         background-position: fixed;
         box-shadow: 1px 3px 20px 2px black;
 
@@ -20,7 +20,7 @@ header {
     @extend %titleSectionStyle;
     
     @media (max-width: 400px) {
-        color: $titleColors;
+        color: floralwhite;
         font-size: 1.2rem;
         font-weight: bold;
         letter-spacing: 14px;
@@ -71,7 +71,6 @@ header {
             
             h2 {
                 margin-bottom: 15px;
-
                 @media (max-width: 400px) {
                     color: $titleColors;
                     text-align: center;
@@ -81,6 +80,14 @@ header {
                     padding-top: 5px;
                 }
 
+            }
+            p {
+                letter-spacing: 2px;
+                line-height: 40px;
+
+                @media (max-width: 400px) {
+                    line-height: 27px;
+                }
             }
         }   
 }
