@@ -87,14 +87,14 @@ header {
 
 
 #shop {
-    background-image: url(../Imagenes/shopIndexBackground.jpg);
+    background-image: url(../Imagenes/shopIndexBackground.webp);
     background-size: cover;
     padding: 90px;
     box-shadow: 0px 30px 40px 0px grey inset;
 
     @media (max-width: 400px) {
         padding: 25px 0px;
-        background-image: url(../imagenes/mobileShopIndexBackground.jpg);
+        background-image: url(../Imagenes/mobileShopIndexBackground.webp);
         box-shadow: none;
     }
 
