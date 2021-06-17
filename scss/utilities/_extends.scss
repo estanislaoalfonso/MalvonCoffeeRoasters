@@ -23,7 +23,13 @@
     top: 17rem;
     animation-duration: 4s;
     animation-name: aparecer;
-    z-index: 1;
+
+        @media (max-width: 400px) {
+            color: floralwhite;
+            font-size: 1.3rem;
+            letter-spacing: 14px;
+            padding-top: 60px;
+        }
 }
 
 %button {

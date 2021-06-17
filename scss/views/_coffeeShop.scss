@@ -84,7 +84,11 @@
             h4 {
                 border-bottom: 1px solid rgb(223, 222, 222);
                 letter-spacing: $letterSpacingBase + 2;
-                color: nth($color , 3)
+                color: nth($color , 3);
+
+                @media (max-width: 400px) {
+                    margin: 20px;
+                }
             }
             
             p {
@@ -98,7 +102,7 @@
                 font-size: 1rem;
 
                 @media (max-width: 400px) {
-                    margin-bottom: 16px;
+                    padding: 12px;
                 }
             }
 
@@ -116,8 +120,12 @@
                     background-color: nth($color , 3);
                     color: black;
                 }
-            }
 
+                @media (max-width: 400px) {
+                    margin-bottom: 14px;
+                }
+            }
         }
+
     }
 }

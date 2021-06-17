@@ -1,33 +1,12 @@
 .navBarInicio {
-    background-image: url('../Imagenes/Portada.webp');
     @include backgroundStyle (no-repeat, cover, 38rem, 0);
-
-    @media (max-width: 400px) {
-        background-image: url(../Imagenes/BackgroundIndexMobile.webp);
-        background-position: fixed;
-        box-shadow: 1px 3px 20px 2px black;
-
-    }
+    background-image: url('../Imagenes/Portada.webp');
+    background-position: center;    
 }
 
-header {
-    h1 {
-        display:none;
-    }
+h1 {
+    display: none;
 }
-
-.slogan {
-    @extend %titleSectionStyle;
-    
-    @media (max-width: 400px) {
-        color: floralwhite;
-        font-size: 1.2rem;
-        font-weight: bold;
-        letter-spacing: 14px;
-        padding-top: 60px;
-    }
-}
-
 
 #nosotros {
     padding: 80px;
