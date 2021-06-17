@@ -9,7 +9,7 @@ h1 {
 }
 
 #nosotros {
-    padding: 80px;
+    padding: 80px 150px;
     display: flex;
     @media (max-width: 400px) {
         background-color: nth($bgColors, 2);
@@ -28,8 +28,7 @@ h1 {
         }
     }
         img {
-            width: 35%;
-            height: 35%;
+            width: 30%;
             box-shadow: -18px 24px 12px 0 rgb(0, 0, 0, .2);
             @include animationDefault (aparecer, 4s);
 
@@ -38,7 +37,7 @@ h1 {
             }
         }
         div {
-            padding: 70px;
+            padding: 70px 90px;
             text-align: justify;
             @include animationDefault (aparecer, 4s);
 

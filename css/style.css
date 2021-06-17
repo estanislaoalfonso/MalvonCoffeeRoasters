@@ -211,7 +211,7 @@ h1 {
 }
 
 #nosotros {
-  padding: 80px;
+  padding: 80px 150px;
   display: flex;
 }
 @media (max-width: 400px) {
@@ -234,8 +234,7 @@ h1 {
   }
 }
 #nosotros img {
-  width: 35%;
-  height: 35%;
+  width: 30%;
   box-shadow: -18px 24px 12px 0 rgba(0, 0, 0, 0.2);
   animation-name: aparecer;
   animation-duration: 4s;
@@ -246,7 +245,7 @@ h1 {
   }
 }
 #nosotros div {
-  padding: 70px;
+  padding: 70px 90px;
   text-align: justify;
   animation-name: aparecer;
   animation-duration: 4s;
@@ -715,6 +714,11 @@ h1 {
 .methodsContainer li img {
   width: 6rem;
   height: 8rem;
+}
+.methodsContainer li:hover {
+  transform: translateY(-6px) scale(1.03);
+  transition: 0.9s;
+  cursor: pointer;
 }
 .methodsContainer p {
   text-align: center;
