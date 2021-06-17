@@ -380,8 +380,10 @@ h1 {
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
-.menuBackground .navBarMenu {
-  height: 38rem;
+@media (max-width: 400px) {
+  .menuBackground .navBarMenu {
+    height: 38rem;
+  }
 }
 @media (max-width: 400px) {
   .menuBackground {

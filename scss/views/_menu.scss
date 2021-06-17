@@ -5,7 +5,9 @@
     background-attachment: scroll;
 
 .navBarMenu {
-    height: 38rem;
+    @media (max-width: 400px) {
+        height: 38rem;
+    }
 }
 
      @media (max-width: 400px) {
