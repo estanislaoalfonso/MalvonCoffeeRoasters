@@ -28,7 +28,7 @@ h1 {
         }
     }
         img {
-            width: 30%;
+            width: 25rem;
             box-shadow: -18px 24px 12px 0 rgb(0, 0, 0, .2);
             @include animationDefault (aparecer, 4s);
 
@@ -60,8 +60,9 @@ h1 {
 
             }
             p {
-                letter-spacing: 2px;
+                letter-spacing: 1px;
                 line-height: 40px;
+                text-align: justify;
 
                 @media (max-width: 400px) {
                     line-height: 27px;

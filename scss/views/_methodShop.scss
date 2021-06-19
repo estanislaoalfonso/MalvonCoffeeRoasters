@@ -27,8 +27,8 @@
     p {
         text-align: justify;
         font-style: italic;
-        padding: 0 9rem;
         margin-bottom: 5rem;
+        padding: 0 20rem;
 
         span {
             color: nth($color, 3);
@@ -40,25 +40,34 @@
 .methodsContainer {
     @include boxStyle (none, space-evenly, center);
     flex-wrap: wrap;
+    padding-left: 0;
 
     li {
         @include boxStyle (column, none, center);
-        width: 30%;
+        width: 30rem;
+        margin-bottom: 60px;
+
+        &:hover {
+            transform: translateY(-6px) scale(1.03);
+            transition: 0.9s;
+            cursor: pointer;
+        }
 
         img {
             width: 6rem;
             height: 8rem;
         }
 
-        &:hover {
-            transform: translateY(-6px) scale(1.03);
-            transition: 0.9s;
-            cursor: pointer;
-        } 
+        p {
+            text-align: center;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
     }
 
-    p {
-        text-align: center;
-        padding-top: 4px;
+    .itemButton {
+        @extend %itemsButton;
+        text-transform: uppercase;
     }
 }
