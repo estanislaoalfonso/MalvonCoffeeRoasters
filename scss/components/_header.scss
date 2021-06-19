@@ -11,9 +11,9 @@ header {
                     }                  
                     li {
                         font-family: 'Cormorant Garamond'!important;
+                        font-weight: 700 !important;
                         a {
                             color: nth($color, 1)!important;
-                            padding: 12px !important;
                             text-transform: uppercase !important;
                             letter-spacing: 5px !important;
                             font-size: 0.95em !important;
@@ -26,7 +26,7 @@ header {
                     }
                 }
    
-        @media (max-width: 400px) {
+        @media (max-width: 980px) {
             position: fixed;
         }
     

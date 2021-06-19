@@ -93,10 +93,10 @@ header nav ul {
 }
 header nav ul li {
   font-family: "Cormorant Garamond" !important;
+  font-weight: 700 !important;
 }
 header nav ul li a {
   color: white !important;
-  padding: 12px !important;
   text-transform: uppercase !important;
   letter-spacing: 5px !important;
   font-size: 0.95em !important;
@@ -105,7 +105,7 @@ header nav ul li a {
 header nav ul li a:hover {
   color: #eb9d29ef !important;
 }
-@media (max-width: 400px) {
+@media (max-width: 980px) {
   header nav {
     position: fixed;
   }
