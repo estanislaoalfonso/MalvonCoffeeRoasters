@@ -5,7 +5,7 @@
 
 - 🌱 I’m currently learning **Web Develope, Javascript and Backend**
 
-- 👯 I’m looking to collaborate on **whatever proyect I can**
+- 👯 I’m looking to collaborate on **whatever project I can**
 
 - 🤝 I’m looking for help with **anyone who has questions about HTML,CSS, SASS, etc.**
 
