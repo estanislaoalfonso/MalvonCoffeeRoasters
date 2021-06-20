@@ -216,7 +216,7 @@ header .mainTitle {
   height: 38rem;
   padding: 0;
   box-shadow: 0px 10px 20px 6px grey;
-  background-image: url("../Imagenes/Portada.webp");
+  background-image: url("../Imagenes/Portada-1.jpg");
   background-position: center;
 }
 
@@ -274,6 +274,10 @@ h1 {
 }
 #nosotros div h2 {
   margin-bottom: 15px;
+  font-family: "Oswald", "sans-serif";
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 @media (max-width: 400px) {
   #nosotros div h2 {
@@ -289,6 +293,7 @@ h1 {
   letter-spacing: 1px;
   line-height: 40px;
   text-align: justify;
+  font-family: "Open Sans", "sans-serif";
 }
 @media (max-width: 400px) {
   #nosotros div p {
@@ -300,10 +305,49 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: black;
+  background-image: url(../Imagenes/shopIndexBackground.webp);
 }
 #nuestracasa h2 {
+  font-family: "Oswald", "sans-serif";
+  font-size: 3rem;
   text-align: center;
+  margin: 2rem;
+  text-transform: uppercase;
+}
+#nuestracasa h2 span {
+  color: #c28842;
+}
+#nuestracasa .carouselSize {
+  padding: 1rem;
+  width: 70%;
+}
+
+#menuIndex {
+  background-image: url(../Imagenes/menuIndexBarista2.jpg);
+  background-position: cover;
+}
+#menuIndex .menuIndexDescription {
+  padding: 25rem;
+  text-align: center;
+}
+#menuIndex .menuIndexDescription h2 {
+  font-family: "Oswald", "sans-serif";
+  color: white;
+  font-size: 3rem;
+}
+#menuIndex .menuIndexDescription a {
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 7px;
+  background-color: #c28842;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1px;
+  font-family: "Open Sans", "sans-serif";
+  display: inline-block;
+}
+#menuIndex .menuIndexDescription a:hover {
+  color: white;
 }
 
 #shop {

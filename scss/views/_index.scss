@@ -1,6 +1,6 @@
 .navBarInicio {
     @include backgroundStyle (no-repeat, cover, 38rem, 0);
-    background-image: url('../Imagenes/Portada.webp');
+    background-image: url('../Imagenes/Portada-1.jpg');
     background-position: center;    
 }
 
@@ -49,6 +49,10 @@ h1 {
             
             h2 {
                 margin-bottom: 15px;
+                font-family: $fontTitlesStandard;
+                font-size: 3rem;
+                text-transform: uppercase;
+                font-weight: 400;
                 @media (max-width: 400px) {
                     color: $titleColors;
                     text-align: center;
@@ -63,6 +67,7 @@ h1 {
                 letter-spacing: 1px;
                 line-height: 40px;
                 text-align: justify;
+                font-family: $fontTextStandard;
 
                 @media (max-width: 400px) {
                     line-height: 27px;
@@ -75,11 +80,59 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
+    background-image: url(../Imagenes/shopIndexBackground.webp) ;
 
     h2 {
+        font-family: $fontTitlesStandard;
+        font-size: $fontSizeTitles;
         text-align: center;
+        margin: 2rem;
+        text-transform: uppercase;
+
+        span {
+            color: nth($color, 5);
+        }
     }
+
+    .carouselSize {
+        padding: 1rem;
+        width: 70%;
+    }
+
+}
+
+#menuIndex {
+    background-image: url(../Imagenes/menuIndexBarista2.jpg);
+    background-position: cover;
+
+    .menuIndexDescription {
+        padding: 25rem;
+        text-align: center;
+
+        h2 {
+            font-family: $fontTitlesStandard;
+            color: white;
+            font-size: $fontSizeTitles;
+        }
+
+        a {
+            padding: 8px 20px;
+            margin-top: 20px;
+            border-radius: 7px;
+            background-color: nth($color, 5);
+            text-decoration: none;
+            color: black;
+            letter-spacing: 1px;
+            font-family: $fontTextStandard;
+            display: inline-block;
+
+            &:hover {
+                color: white;
+            }
+
+        }
+    }
+
 }
 
 #shop {
@@ -154,7 +207,6 @@ h1 {
             }
         }
 }
-
 
 @keyframes aparecer {
     0% {
