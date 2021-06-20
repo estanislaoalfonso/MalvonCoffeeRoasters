@@ -296,6 +296,16 @@ h1 {
   }
 }
 
+#nuestracasa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+#nuestracasa h2 {
+  text-align: center;
+}
+
 #shop {
   background-image: url(../Imagenes/shopIndexBackground.webp);
   background-size: cover;
