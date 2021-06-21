@@ -11,7 +11,6 @@ header {
                     }                  
                     li {
                         font-family: 'Cormorant Garamond'!important;
-                        font-weight: 700 !important;
                         a {
                             color: nth($color, 1)!important;
                             text-transform: uppercase !important;
@@ -20,7 +19,7 @@ header {
                             transition: all 0.5s !important;
             
                             &:hover {
-                                color: nth($color , 3) !important;
+                                color:$colorDefault !important;
                             }
                         }
                     }

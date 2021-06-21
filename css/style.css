@@ -19,81 +19,134 @@ footer {
   background-image: url(../Imagenes/bg-footer.jpg);
   background-position: cover;
   background-attachment: fixed;
-  height: 30rem;
   display: flex;
   flex-direction: none;
   justify-content: space-evenly;
   align-items: top;
   color: white;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
 }
-footer .contactFooterContainer {
+footer .footerForm {
+  text-align: center;
+  padding: 5rem 30rem;
+}
+footer .footerForm h3 {
+  font-family: "Oswald", "sans-serif";
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+}
+footer .footerForm .inputFooterForm {
+  background-color: rgba(24, 24, 24, 0.849);
+  color: rgba(194, 193, 193, 0.61);
+  width: 350px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(24, 24, 24, 0.849);
+}
+footer .footerForm a {
+  background-color: #c7a17a;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans", "sans-serif";
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.6s;
+}
+footer .footerForm a:hover {
+  background-color: white;
+  color: black;
+}
+footer .contactGeneralFooter {
+  display: flex;
+  justify-content: space-around;
+}
+footer .contactGeneralFooter .contactFooterContainer {
   text-decoration: none;
 }
-footer .contactFooterContainer .footerTitles {
+footer .contactGeneralFooter .contactFooterContainer .footerTitles {
   font-family: "Oswald", "sans-serif";
   letter-spacing: 1px;
+  margin-top: 10px;
 }
-footer .contactFooterContainer li {
+footer .contactGeneralFooter .contactFooterContainer li {
   list-style: none;
   font-style: "Open Sans", "sans-serif";
-  padding: 15px 0px;
+  padding: 10px 0px;
 }
-footer .contactFooterContainer li span {
+footer .contactGeneralFooter .contactFooterContainer li span {
   font-weight: bold;
 }
-footer .footerRedesContainer {
+footer .contactGeneralFooter .contactFooterContainer li .cerrado {
+  color: #c7a17a;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+footer .contactGeneralFooter .footerRedesContainer {
   display: flex;
   flex-direction: column;
   justify-content: none;
   align-items: center;
 }
-footer .footerRedesContainer .footerRedesTitle {
+footer .contactGeneralFooter .footerRedesContainer .footerRedesTitle {
   font-family: "Oswald", "sans-serif";
   letter-spacing: 1px;
   animation: zoomIn;
   animation-duration: 2s;
 }
 @media (max-width: 400px) {
-  footer .footerRedesContainer .footerRedesTitle {
+  footer .contactGeneralFooter .footerRedesContainer .footerRedesTitle {
     font-size: 1em;
   }
 }
-footer .footerRedesContainer ul {
+footer .contactGeneralFooter .footerRedesContainer ul {
   padding: 0;
 }
-footer .footerRedesContainer ul:hover a {
+footer .contactGeneralFooter .footerRedesContainer ul:hover a {
   filter: blur(2px);
 }
-footer .footerRedesContainer ul li {
+footer .contactGeneralFooter .footerRedesContainer ul li {
   display: inline-block;
   margin: 0 5px;
   width: 50px;
   height: 50px;
   text-align: center;
 }
-footer .footerRedesContainer ul li a {
+footer .contactGeneralFooter .footerRedesContainer ul li a {
   display: block;
   /*Para que ocupen el espacio exacto que tienen que ocupar*/
   color: #bfbfbf;
   font-size: 30px;
   transition: all 0.6s;
 }
-footer .footerRedesContainer ul li a:hover {
+footer .contactGeneralFooter .footerRedesContainer ul li a:hover {
   transform: translateY(-3px) scale(1.05);
   filter: none;
 }
-
-.linkInstagram:hover {
+footer .contactGeneralFooter .footerRedesContainer .linkInstagram:hover {
   color: #e4405f;
 }
-
-.linkFacebook:hover {
+footer .contactGeneralFooter .footerRedesContainer .linkFacebook:hover {
   color: #3b5999;
 }
-
-.linkTwitter:hover {
+footer .contactGeneralFooter .footerRedesContainer .linkTwitter:hover {
   color: #55acee;
+}
+footer .firmaFooter {
+  text-align: center;
+  border-top: 1px solid grey;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+footer .firmaFooter span {
+  color: #c7a17a;
+  letter-spacing: 1px;
 }
 
 header nav {
@@ -113,7 +166,6 @@ header nav ul {
 }
 header nav ul li {
   font-family: "Cormorant Garamond" !important;
-  font-weight: 700 !important;
 }
 header nav ul li a {
   color: white !important;
@@ -123,7 +175,7 @@ header nav ul li a {
   transition: all 0.5s !important;
 }
 header nav ul li a:hover {
-  color: #eb9d29ef !important;
+  color: #c7a17a !important;
 }
 @media (max-width: 980px) {
   header nav {
@@ -162,25 +214,20 @@ header .mainTitle {
   }
 }
 
-.errorContainer .errorDescription .errorButton {
-  text-decoration: none;
-  font-family: "quicksand", sans-serif;
-  text-transform: uppercase;
+.errorContainer .errorDescription .errorButton, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
+  background-color: #c7a17a;
   color: white;
+  text-transform: uppercase;
+  font-family: "Open Sans", "sans-serif";
+  letter-spacing: 1.5px;
   font-weight: bold;
-  text-align: center;
-  background-color: black;
-  border-radius: 5px;
-  padding: 10px;
-  width: -webkit-fill-available;
-  margin-top: 15px;
-  letter-spacing: 5px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
   transition: all 0.6s;
-  animation: aparecer;
-  animation-duration: 9s;
 }
-.errorContainer .errorDescription .errorButton:hover {
-  background-color: #eb9d29ef;
+.errorContainer .errorDescription .errorButton:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
+  background-color: white;
   color: black;
 }
 
@@ -339,7 +386,7 @@ h1 {
 }
 #nuestracasa .carouselSize {
   padding: 1rem;
-  width: 70%;
+  width: 60%;
 }
 
 #menuIndex {
@@ -356,25 +403,8 @@ h1 {
   color: white;
   font-size: 2.5rem;
   text-transform: uppercase;
+  margin-bottom: 40px;
 }
-#menuIndex .menuIndexDescription a {
-  padding: 8px 20px;
-  margin-top: 20px;
-  border-radius: 7px;
-  background-color: #c28842;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: "Open Sans", "sans-serif";
-  display: inline-block;
-  transition: all 0.6s;
-}
-#menuIndex .menuIndexDescription a:hover {
-  color: black;
-  background-color: burlywood;
-}
-
 #shop {
   background-color: black;
   padding: 50px;
@@ -395,7 +425,7 @@ h1 {
   animation-duration: 2s;
 }
 #shop h2 span {
-  color: #c28842;
+  color: #c7a17a;
 }
 @media (max-width: 400px) {
   #shop h2 {
@@ -407,7 +437,7 @@ h1 {
   }
 }
 #shop p {
-  color: #c28842;
+  color: #c7a17a;
   font-family: "Archivo Narrow", "sans-serif";
   letter-spacing: 1.5px;
 }
@@ -448,30 +478,6 @@ h1 {
 #shop .shopContainer .shopMarketContainer .shopMarketDescription p {
   color: white;
   background-color: black;
-}
-#shop .shopContainer .shopMarketContainer .shopMarketDescription a {
-  padding: 8px 20px;
-  margin-top: 20px;
-  border-radius: 7px;
-  background-color: #c28842;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: "Open Sans", "sans-serif";
-  display: inline-block;
-  transition: all 0.8s;
-}
-#shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover {
-  color: black;
-  background-color: burlywood;
-}
-@media (max-width: 400px) {
-  #shop .shopContainer .shopMarketContainer .shopMarketDescription a {
-    animation-name: aparecer;
-    animation-duration: 7s;
-    margin: 15px 25px;
-  }
 }
 #shop .shopContainer .shopMarketContainer img {
   width: 30rem;

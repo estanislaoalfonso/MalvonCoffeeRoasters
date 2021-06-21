@@ -4,27 +4,79 @@ footer {
     background-image: url(../Imagenes/bg-footer.jpg);
     background-position: cover;
     background-attachment: fixed;
-    height: 30rem;
     @include boxStyle (none, space-evenly, top);
     color: white;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
 
-        .contactFooterContainer {
+    .footerForm {
+        text-align: center;
+        padding: 5rem 30rem;
+        
+        h3 {
+            font-family: $fontTitlesStandard;
+            font-size: $fontSizeTitles;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+        }
+
+        .inputFooterForm {
+            background-color: rgba(24, 24, 24, 0.849);
+            color: rgba(194, 193, 193, 0.61);
+            width: 350px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(24, 24, 24, 0.849);
+        }
+
+        a {
+            background-color: #c7a17a;
+            color: white;
+            text-transform: uppercase;
+            font-family: $fontTextStandard;
+            letter-spacing: 0.8px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 4px;
             text-decoration: none;
-            
+            transition: all 0.6s;
+
+            &:hover {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+    .contactGeneralFooter {
+        display: flex;
+        justify-content: space-around;
+        .contactFooterContainer {
+
+            text-decoration: none;
+
             .footerTitles {
                 font-family: $fontTitlesStandard;
                 letter-spacing: 1px;
+                margin-top: 10px;
             }
 
             li {
                 list-style: none;
                 font-style: $fontTextStandard;
-                padding: 15px 0px;
+                padding: 10px 0px;
                 
 
                 span {
                     font-weight: bold;
+                }
+
+                .cerrado {
+                    color: $colorDefault;
+                    font-weight: 500;
+                    text-transform: uppercase;
                 }
             }
 
@@ -33,58 +85,73 @@ footer {
         .footerRedesContainer {
             @include boxStyle (column, none, center);
             
-                .footerRedesTitle {
-                    font-family: $fontTitlesStandard;
-                    letter-spacing: 1px;
-                    animation: zoomIn;
-                    animation-duration: 2s;
+            .footerRedesTitle {
+                font-family: $fontTitlesStandard;
+                letter-spacing: 1px;
+                animation: zoomIn;
+                animation-duration: 2s;
 
-                    @media (max-width: 400px) {
-                        font-size: 1.0em;
-                    }
+                @media (max-width: 400px) {
+                    font-size: 1.0em;
                 }
+            }
 
-                ul {
-                    padding: 0;
-                    
-                    &:hover a{
-                        filter: blur(2px);
-                    }
-                        li {
-                            display: inline-block; 
-                            margin: 0 5px;
-                            width: 50px;
-                            height: 50px;
-                            text-align: center;
-                            
-                            a {
-                                display: block; /*Para que ocupen el espacio exacto que tienen que ocupar*/
-                                color: rgb(191, 191, 191);
-                                font-size: 30px;
-                                transition: all 0.6s;
+            ul {
+                padding: 0;
+                
+                &:hover a{
+                    filter: blur(2px);
+                }
+                    li {
+                        display: inline-block; 
+                        margin: 0 5px;
+                        width: 50px;
+                        height: 50px;
+                        text-align: center;
+                        
+                        a {
+                            display: block; /*Para que ocupen el espacio exacto que tienen que ocupar*/
+                            color: rgb(191, 191, 191);
+                            font-size: 30px;
+                            transition: all 0.6s;
 
-                                &:hover {
-                                    transform: translateY(-3px) scale(1.05);
-                                    filter: none;   
-                                }
-                                
-                                    
+                            &:hover {
+                                transform: translateY(-3px) scale(1.05);
+                                filter: none;   
                             }
-
+                            
+                                
                         }
-                }
+
+                    }
+            }
+            .linkInstagram:hover {
+                color: nth($instagramColor , 1)
+            }
+            
+            .linkFacebook:hover {
+                color: nth($facebookColor , 1)
+            }
+            
+            .linkTwitter:hover {
+                color: nth($twitterColor , 1)
+            }
+                
         }
+    }
+
+    .firmaFooter {
+        text-align: center;
+        border-top: 1px solid grey;
+        padding-top: 15px;
+        margin-top: 10px;
+        span {
+            color: $colorDefault;
+            letter-spacing: 1px;
+        }
+    }
 }
 
-.linkInstagram:hover {
-    color: nth($instagramColor , 1)
-}
 
-.linkFacebook:hover {
-    color: nth($facebookColor , 1)
-}
 
-.linkTwitter:hover {
-    color: nth($twitterColor , 1)
-}
 
