@@ -16,50 +16,70 @@ a {
 }
 
 footer {
-  background-color: #181818;
+  background-image: url(../Imagenes/bg-footer.jpg);
+  background-position: cover;
+  background-attachment: fixed;
+  height: 30rem;
+  display: flex;
+  flex-direction: none;
+  justify-content: space-evenly;
+  align-items: top;
+  color: white;
+  padding: 50px;
 }
-footer div {
+footer .contactFooterContainer {
+  text-decoration: none;
+}
+footer .contactFooterContainer .footerTitles {
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 1px;
+}
+footer .contactFooterContainer li {
+  list-style: none;
+  font-style: "Open Sans", "sans-serif";
+  padding: 15px 0px;
+}
+footer .contactFooterContainer li span {
+  font-weight: bold;
+}
+footer .footerRedesContainer {
   display: flex;
   flex-direction: column;
   justify-content: none;
   align-items: center;
-  height: 100px;
 }
-footer div p {
-  font-size: 1.2em;
-  margin: 9px;
-  color: white;
-  letter-spacing: 2px;
-  font-weight: 100;
+footer .footerRedesContainer .footerRedesTitle {
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 1px;
   animation: zoomIn;
   animation-duration: 2s;
 }
 @media (max-width: 400px) {
-  footer div p {
+  footer .footerRedesContainer .footerRedesTitle {
     font-size: 1em;
   }
 }
-footer div ul {
+footer .footerRedesContainer ul {
   padding: 0;
 }
-footer div ul:hover a {
+footer .footerRedesContainer ul:hover a {
   filter: blur(2px);
 }
-footer div ul li {
+footer .footerRedesContainer ul li {
   display: inline-block;
   margin: 0 5px;
   width: 50px;
   height: 50px;
   text-align: center;
 }
-footer div ul li a {
+footer .footerRedesContainer ul li a {
   display: block;
   /*Para que ocupen el espacio exacto que tienen que ocupar*/
   color: #bfbfbf;
   font-size: 30px;
   transition: all 0.6s;
 }
-footer div ul li a:hover {
+footer .footerRedesContainer ul li a:hover {
   transform: translateY(-3px) scale(1.05);
   filter: none;
 }
@@ -142,7 +162,7 @@ header .mainTitle {
   }
 }
 
-.errorContainer .errorDescription .errorButton, #shop div div a {
+.errorContainer .errorDescription .errorButton {
   text-decoration: none;
   font-family: "quicksand", sans-serif;
   text-transform: uppercase;
@@ -159,7 +179,7 @@ header .mainTitle {
   animation: aparecer;
   animation-duration: 9s;
 }
-.errorContainer .errorDescription .errorButton:hover, #shop div div a:hover {
+.errorContainer .errorDescription .errorButton:hover {
   background-color: #eb9d29ef;
   color: black;
 }
@@ -324,7 +344,8 @@ h1 {
 
 #menuIndex {
   background-image: url(../Imagenes/menuIndexBarista2.jpg);
-  background-position: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 #menuIndex .menuIndexDescription {
   padding: 25rem;
@@ -355,10 +376,8 @@ h1 {
 }
 
 #shop {
-  background-image: url(../Imagenes/shopIndexBackground.webp);
-  background-size: cover;
-  padding: 90px;
-  box-shadow: 0px 30px 40px 0px grey inset;
+  background-color: black;
+  padding: 50px;
 }
 @media (max-width: 400px) {
   #shop {
@@ -368,11 +387,15 @@ h1 {
   }
 }
 #shop h2 {
-  color: #361919;
-  text-align: center;
+  color: white;
   letter-spacing: 5px;
+  font-family: "Oswald", "sans-serif";
+  font-size: 3.75rem;
   animation: zoomIn;
   animation-duration: 2s;
+}
+#shop h2 span {
+  color: #c28842;
 }
 @media (max-width: 400px) {
   #shop h2 {
@@ -384,58 +407,82 @@ h1 {
   }
 }
 #shop p {
-  text-align: center;
-  margin: 20px;
+  color: #c28842;
+  font-family: "Archivo Narrow", "sans-serif";
+  letter-spacing: 1.5px;
 }
-@media (max-width: 400px) {
-  #shop p {
-    display: none;
-  }
-}
-#shop div {
+#shop .shopContainer {
+  background-image: url(../Imagenes/ShopIndexBackground-1.jpg);
+  background-position: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: none;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: none;
   flex-wrap: wrap;
 }
 @media (max-width: 400px) {
-  #shop div {
+  #shop .shopContainer {
     display: flex;
     flex-direction: column;
     justify-content: none;
     align-items: none;
   }
 }
-#shop div div {
+#shop .shopContainer .shopMarketContainer {
   margin: 20px 60px;
   display: flex;
-  flex-direction: column;
-  justify-content: none;
+  flex-direction: none;
+  justify-content: space-evenly;
   align-items: center;
 }
 @media (max-width: 400px) {
-  #shop div div {
+  #shop .shopContainer .shopMarketContainer {
     margin: 0;
   }
 }
-#shop div div img {
-  width: 18rem;
-  height: 26rem;
-  border-radius: 10px;
-  animation: zoomIn;
-  animation-duration: 2s;
+#shop .shopContainer .shopMarketContainer .shopMarketDescription {
+  text-align: center;
+}
+#shop .shopContainer .shopMarketContainer .shopMarketDescription p {
+  color: white;
+  background-color: black;
+}
+#shop .shopContainer .shopMarketContainer .shopMarketDescription a {
+  padding: 8px 20px;
+  margin-top: 20px;
+  border-radius: 7px;
+  background-color: #c28842;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Open Sans", "sans-serif";
+  display: inline-block;
+  transition: all 0.8s;
+}
+#shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover {
+  color: black;
+  background-color: burlywood;
 }
 @media (max-width: 400px) {
-  #shop div div img {
-    display: none;
-  }
-}
-@media (max-width: 400px) {
-  #shop div div a {
+  #shop .shopContainer .shopMarketContainer .shopMarketDescription a {
     animation-name: aparecer;
     animation-duration: 7s;
     margin: 15px 25px;
+  }
+}
+#shop .shopContainer .shopMarketContainer img {
+  width: 30rem;
+  height: 40rem;
+  animation: zoomIn;
+  animation-duration: 2s;
+  margin-left: 90px;
+}
+@media (max-width: 400px) {
+  #shop .shopContainer .shopMarketContainer img {
+    display: none;
   }
 }
 
