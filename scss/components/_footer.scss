@@ -6,13 +6,13 @@ footer {
     background-attachment: fixed;
     @include boxStyle (none, space-evenly, top);
     color: white;
-    padding: 50px;
+    padding: 20px 50px;
     display: flex;
     flex-direction: column;
 
     .footerForm {
         text-align: center;
-        padding: 5rem 30rem;
+        margin: 60px 0;
         
         h3 {
             font-family: $fontTitlesStandard;

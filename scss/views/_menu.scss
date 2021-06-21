@@ -5,6 +5,10 @@
     background-attachment: scroll;
 
 .navBarMenu {
+    background-image: url('../Imagenes/MenuBackgroundImage.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
     @media (max-width: 400px) {
         height: 38rem;
     }

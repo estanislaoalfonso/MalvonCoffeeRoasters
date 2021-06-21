@@ -24,13 +24,13 @@ footer {
   justify-content: space-evenly;
   align-items: top;
   color: white;
-  padding: 50px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
 }
 footer .footerForm {
   text-align: center;
-  padding: 5rem 30rem;
+  margin: 60px 0;
 }
 footer .footerForm h3 {
   font-family: "Oswald", "sans-serif";
@@ -506,6 +506,12 @@ h1 {
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
+.menuBackground .navBarMenu {
+  background-image: url("../Imagenes/MenuBackgroundImage.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
 @media (max-width: 400px) {
   .menuBackground .navBarMenu {
     height: 38rem;
@@ -638,6 +644,82 @@ h1 {
   .menuBackground .menuListTea .menuImageTea {
     display: none;
   }
+}
+
+.menuTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-family: "Oswald", "sans-serif";
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+}
+.menuTitle span {
+  color: #c7a17a;
+}
+.menuTitle .menuTitleLine {
+  color: #c7a17a;
+  align-items: center;
+  margin-top: -35px;
+}
+
+.menuGeneral {
+  background-image: url(../Imagenes/menuBackgroundNew.jpg);
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.menuLists {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 20px 0px 20px;
+}
+.menuLists .coffeeMenuList {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.menuLists .coffeeMenuList h3 {
+  color: white;
+  font-family: "Oswald", "sans-serif";
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+  margin: 20px 0px;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer img {
+  border-radius: 100%;
+  width: 80px;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer .coffeeDetail {
+  margin-left: 10px;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer .coffeeDetail .coffeeDetailTitle {
+  font-family: "Oswald", "sans-serif";
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer .coffeeDetail .coffeeDetailLine {
+  color: white;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer .coffeeDetail .coffeeDetailLine span {
+  font-weight: bold;
+}
+.menuLists .coffeeMenuList .coffeeDetailContainer .coffeeDetail .coffeeDetailDetail {
+  font-family: "Archivo Narrow", "sans-serif";
+  color: #c7a17a;
+  letter-spacing: 1px;
 }
 
 .navBarCoffeeShop {
