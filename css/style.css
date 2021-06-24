@@ -733,11 +733,49 @@ h1 {
 .navBarCoffeeShop {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 35rem;
+  height: 50rem;
   padding: 0;
   box-shadow: 0px 10px 20px 6px grey;
   background-image: url(../Imagenes/PortadaCoffeeShop.webp);
-  background-position: center;
+  background-attachment: fixed;
+}
+
+.coffeeShopIntro {
+  display: flex;
+  justify-content: space-around;
+}
+.coffeeShopIntro .aboutMarket {
+  background-image: url(../Imagenes/about-bg.png);
+  background-repeat: no-repeat;
+  max-width: 50%;
+}
+.coffeeShopIntro .aboutMarket .aboutMarketTitleMini {
+  font-family: "Oswald", "sans-serif";
+  font-weight: bold;
+  color: #c7a17a;
+  font-size: 24px;
+  margin: 0;
+  margin-bottom: -10px;
+}
+.coffeeShopIntro .aboutMarket h2 {
+  font-family: "Oswald", "sans-serif";
+  font-weight: bold;
+  font-size: 60px;
+}
+.coffeeShopIntro .aboutMarket .aboutMarketDescription {
+  font-family: "Open Sans", "sans-serif";
+  font-size: 24px;
+  padding-right: 70px;
+  text-align: left;
+}
+.coffeeShopIntro .aboutMarketDescription {
+  max-width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.coffeeShopIntro .aboutMarketDescription .marketDescriptionItems {
+  margin: 50px;
 }
 
 .mainCoffeeShop {
