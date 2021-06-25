@@ -743,11 +743,17 @@ h1 {
 .coffeeShopIntro {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  height: 468px;
+  margin: 100px 40px;
 }
 .coffeeShopIntro .aboutMarket {
   background-image: url(../Imagenes/about-bg.png);
   background-repeat: no-repeat;
-  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  height: 456px;
 }
 .coffeeShopIntro .aboutMarket .aboutMarketTitleMini {
   font-family: "Oswald", "sans-serif";
@@ -761,21 +767,24 @@ h1 {
   font-family: "Oswald", "sans-serif";
   font-weight: bold;
   font-size: 60px;
+  margin-bottom: 20px;
 }
-.coffeeShopIntro .aboutMarket .aboutMarketDescription {
+.coffeeShopIntro .aboutMarket p {
   font-family: "Open Sans", "sans-serif";
   font-size: 24px;
-  padding-right: 70px;
-  text-align: left;
+  text-align: justify;
+  padding-right: 129px;
 }
 .coffeeShopIntro .aboutMarketDescription {
   max-width: 50%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .coffeeShopIntro .aboutMarketDescription .marketDescriptionItems {
-  margin: 50px;
+  margin: 10px;
+}
+.coffeeShopIntro .aboutMarketDescription img {
+  margin-bottom: 7px;
 }
 
 .mainCoffeeShop {

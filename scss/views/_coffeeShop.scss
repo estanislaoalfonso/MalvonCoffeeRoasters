@@ -5,13 +5,19 @@
 }
 
 .coffeeShopIntro {
-    display:flex;
+    display: flex;
     justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    height: 468px;
+    margin: 100px 40px;
 
     .aboutMarket {
         background-image: url(../Imagenes/about-bg.png);
         background-repeat: no-repeat;
-        max-width: 50%;
+        display: flex;
+        flex-direction: column;
+        height: 456px;
 
         .aboutMarketTitleMini {
             font-family: $fontTitlesStandard;
@@ -27,26 +33,29 @@
             font-family: $fontTitlesStandard;
             font-weight: bold;
             font-size: 60px;
+            margin-bottom: 20px;
         }
 
-        .aboutMarketDescription {
+        p {
             font-family: $fontTextStandard;
             font-size: 24px;
-            padding-right: 70px;
-            text-align: left;
+            text-align: justify;
+            padding-right: 129px;
         }
     }
 
     .aboutMarketDescription {
         max-width: 50%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
 
         .marketDescriptionItems {
-            margin: 50px;
+            margin: 10px;
         }
         
+        img {
+            margin-bottom: 7px
+        }
     }
 }
 
