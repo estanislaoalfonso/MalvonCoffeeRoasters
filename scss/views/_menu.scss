@@ -1,161 +1,95 @@
-.menuBackground {
-    background-image: url('../Imagenes/MenuBackgroundImage.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
+.video {
+    height: 50rem;
+    overflow: hidden;
+}
 
-.navBarMenu {
-    background-image: url('../Imagenes/MenuBackgroundImage.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-    @media (max-width: 400px) {
-        height: 38rem;
+.menuTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: $fontTitlesStandard;
+    font-size: $fontSizeTitles;
+    text-transform: uppercase;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+
+    span {
+        color: $colorDefault;
+    }
+
+    .menuTitleLine {
+        color: $colorDefault;
+        align-items: center;
+        margin-top: -35px;
+        
     }
 }
 
-     @media (max-width: 400px) {
-         background-image: url(../Imagenes/CoffeeshopBackgroundList1.jpg);
-     }
-
-        .menuMain {
-            color: nth ($color, 6);
-            display: flex;
-            flex-direction: column;
-        }
-            
-            .menuDescription {
-                width: 100%;
-                margin-top: 295px;
-                background-color:nth($bgColors, 1);
-                opacity: 0.4;
-                    p {
-                        color: black;
-                        text-align: center;
-                        padding: 50px;
-                        letter-spacing: 2px;
-                        font-style: italic;
-                        z-index: 4;
-                        font-weight: bold;
-                        @include animationDefault (aparecer, 7s);
-
-                        @media (max-width: 400px) {
-                            padding-top: 15px;
-                        }
-                    }
-
-                @media (max-width: 400px) {
-                    display: none;
-                }
-            }
-            
-            .menuListCoffee, .menuListCroissant {
-                @extend %menuContainerStyle;
-                color: nth($color, 6);
-
-                .menuImage {
-                    @extend %menuImageStyle;
-                    @media (max-width: 400px) {
-                        display: none;
-                    }
-                }
-
-                .menuListItems {
-                    @include boxStyle (column, none, none);
-                    padding: 27px 27px 27px 75px; 
-                    @media (max-width: 400px) {
-                        padding: 0;
-                    }
-                    
-                    ul {
-                        list-style-type: none;
-                        padding: 0;
-                        cursor: pointer;
-                
-                        h4 {
-                            @extend %menuListItemsH4Style;
-                            @media (max-width: 400px) {
-                                @include animationDefault (aparecer, 2s);
-                            }
-                        }
-                
-                        li {
-                            @extend %menuListItemsLiStyle;
-                            @media (max-width: 400px) {
-                                @include animationDefault (aparecer, 6s);
-                            }
-                
-                            &:hover {
-                                color: nth($color, 3);
-                                transform: translateY(-6px) scale(1.03); 
-                            }
-                        }
-                    }
-                }
-
-            }
-        
-            .menuListTea {
-                color: nth($color, 6);
-                display: flex;
-                justify-content: flex-end;
-                padding: 30px;
-                border-bottom: solid 0.2px grey;
-                
-                .menuListItemsTea {
-                    @include boxStyle (column, none, none);
-                    text-align: end;
-                    padding: 27px 75px 27px 27px;
-
-                    @media (max-width: 400px) {
-                        padding: 0;
-                        text-align: left;
-                    }
-                
-                    ul {
-                        list-style-type: none;
-                        padding: 0;
-                        cursor: pointer;
-                
-                        h4 {
-                            @extend %menuListItemsH4Style;
-                            text-align: end;
-                            @media (max-width: 400px) {
-                                @include animationDefault (aparecer, 5s);
-                            }
-                        }
-                
-                        li {
-                            @extend %menuListItemsLiStyle;
-                            @media (max-width: 400px) {
-                                @include animationDefault (aparecer, 5s);
-                            }
-                
-                            &:hover {
-                                color:nth($color, 3);
-                                transform: translateY(-6px) scale(1.03);
-                            }
-                        }
-                
-                    }
-                }
-
-                .menuImageTea {
-                    @extend %menuImageStyle;
-                    @media (max-width:400px) {
-                        display: none;
-                    }
-                }
-            }
+.menuGeneral {
+    background-image: url(../Imagenes/menuBackgroundNew.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.menuLists {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 20px 0px 20px;
 
+    .coffeeMenuList {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
 
+        h3 {
+            color: white;
+            font-family: $fontTitlesStandard;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
+        .coffeeDetailContainer {
+            display: flex;
+            align-items: flex-start;
+            box-sizing: border-box;
+            margin: 20px 0px;
 
+            img {
+                border-radius: 100%;
+                width: 80px; 
+            }
 
+            .coffeeDetail {
 
+                margin-left: 10px;
 
+                .coffeeDetailTitle {
+                    font-family: $fontTitlesStandard;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: white;
+                }
 
-
-
+                .coffeeDetailLine {
+                    color: white;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            
+                .coffeeDetailDetail {
+                    font-family: $fontDetailsStandard;
+                    color:$colorDefault;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}

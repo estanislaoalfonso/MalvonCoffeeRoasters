@@ -2,7 +2,7 @@
 
 footer {
     background-image: url(../Imagenes/bg-footer.jpg);
-    background-position: cover;
+    background-position: bottom;
     background-attachment: fixed;
     @include boxStyle (none, space-evenly, top);
     color: white;

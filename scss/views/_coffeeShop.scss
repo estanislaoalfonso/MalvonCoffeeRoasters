@@ -1,6 +1,6 @@
 .navBarCoffeeShop {
     @include backgroundStyle (no-repeat, cover, 50rem, 0);
-    background-image: url(../Imagenes/PortadaCoffeeShop.webp);
+    background-image: url(../Imagenes/MethodShopOGimage.jpg);
     background-attachment: fixed;
 }
 
@@ -59,7 +59,54 @@
     }
 }
 
+.separator {
+    height: 300px;
+    background-image:url(../Imagenes/coffeebeans.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    box-shadow:inset 0 0 35px 20px black;
+}
+
+.ourCoffee {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    
+
+    img {
+        width: 50%;
+        border-radius: 15px;
+        box-shadow: 0 0 35px 20px black;
+    }
+
+    .ourCoffeeDetail {
+        color: white;
+        font-family: $fontTitlesStandard;
+        font-size: 40px;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        letter-spacing: -1px;
+
+        p {
+            padding: 40px;
+        }
+
+        a {
+            @extend %button;
+            font-size: 20px;
+        }
+    }
+    }
+    
+    
+
 .mainCoffeeShop {
+
+    background-image: url(../Imagenes/bg-blog-image.jpg);
+    background-repeat: repeat; 
      @include boxStyle (column, none, center);
      padding: 25px;
      text-transform: uppercase;
@@ -69,40 +116,47 @@
      }
 
 
+    .mainCoffeeShopDescription {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 50%;
+        margin-bottom: 50px;
 
-    h2 {
-        text-align: center;
-        align-items: center;
-        letter-spacing: 4.8px;
-        font-size: $fontSizeBase*2;
-        margin-top: 18px;
-
-        @media (max-width: 400px) {
-            font-size: 1.6rem;
-        }
-     }
-
-    p {
-        text-align: center;
-        align-items: center;
-        padding: 0 25%;
-        margin-bottom: 6%;
-        letter-spacing: 0.7px;
-        text-transform: initial;
-        font-size: 1.05rem;
-        font-style: italic;
-        font-family: 'Work Sans', sans-serif;
-
-        span {
-            color: nth($color ,3);
-        }
-
-        @media (max-width: 400px) {
-            padding: 5%;
-            text-align: justify;
-            font-size: 0.9rem;
-        }
+        h2 {
+            align-items: flex-start;
+            letter-spacing: 4.8px;
+            font-family: $fontTitlesStandard;
+            font-size: $fontSizeBase*4;
+            margin-top: 18px;
+    
+            @media (max-width: 400px) {
+                font-size: 1.6rem;
+            }
+         }
+         
+         p {
+             text-align: start;
+             align-items: flex-start;
+             padding-right: 20%;
+             margin-bottom: 6%;
+             font-family: $fontDetailsStandard;
+             letter-spacing: 1.5px;
+             text-transform: initial;
+             font-size: 1.2rem;
+     
+             span {
+                 color: nth($color ,3);
+             }
+     
+             @media (max-width: 400px) {
+                 padding: 5%;
+                 text-align: justify;
+                 font-size: 0.9rem;
+             }
+         }
     }
+
     .cardContainer {
         @include boxStyle (none, center, center);
         margin-bottom: 70px;
@@ -164,18 +218,11 @@
             }
 
             a {
-                background-color: black;
-                padding: 11px;
-                border-radius: 6px;
-                color: white;
-                letter-spacing: 1.5px;
-                transition: all 0.6s;
-                font-family: 'Work Sans', sans-serif;
-
-
+                @extend %button;
+                
                 &:hover {
-                    background-color: nth($color , 3);
-                    color: black;
+                    background-color: black;
+                    color: white;
                 }
 
                 @media (max-width: 400px) {
