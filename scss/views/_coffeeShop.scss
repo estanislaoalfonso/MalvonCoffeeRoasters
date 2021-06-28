@@ -1,7 +1,8 @@
-.navBarCoffeeShop {
-    @include backgroundStyle (no-repeat, cover, 50rem, 0);
-    background-image: url(../Imagenes/MethodShopOGimage.jpg);
-    background-attachment: fixed;
+
+header {
+    .mainTitle {
+        display: none;
+    }
 }
 
 .coffeeShopIntro {
@@ -92,6 +93,7 @@
 
         p {
             padding: 40px;
+            font-size: $fontSizeTitles;
         }
 
         a {

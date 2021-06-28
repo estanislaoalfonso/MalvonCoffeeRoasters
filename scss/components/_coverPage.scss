@@ -1,0 +1,17 @@
+.coverPageIndex {
+    background-image: url('../Imagenes/Portada-1-1.jpg');
+    @include backgroundStyle (no-repeat, cover, center, 55rem);
+    @extend %coverPageStandard;
+}
+
+.coverPageCoffeeShop {
+    background-image: url('../Imagenes/PortadaCoffeeShop1.jpg');
+    @include backgroundStyle (no-repeat, cover, center, 55rem);
+    @extend %coverPageStandard;
+}
+
+.coverPageMethodShop {
+    background-image: url('../Imagenes/PortadaMetodShop.jpg');
+    @include backgroundStyle (no-repeat, cover, center, 55rem);
+    @extend %coverPageStandard;
+}

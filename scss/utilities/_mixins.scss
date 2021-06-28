@@ -18,10 +18,10 @@
     animation-duration: $aniDur;
 }
 
-@mixin backgroundStyle ($bgRep, $bgSz, $heigh, $padding) {
+@mixin backgroundStyle ($bgRep, $bgSz, $bgPst, $heigh) {
     background-repeat: $bgRep;
     background-size: $bgSz;
+    background-position: $bgPst;
     height: $heigh;
-    padding: $padding;
-    box-shadow: 0px 10px 20px 6px grey; 
+    // box-shadow: 0px 10px 20px 6px grey; 
 }

@@ -1,6 +1,31 @@
 @import '../base/fonts';
 @import '../base/colors';
 
+%coverPageStandard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    .transparentBox {
+        height: 40%;
+    }
+
+    h2 {
+        height: 25%;
+        text-align:center;
+        color: white;
+        font-family: $fontTitlesStandard;
+        text-transform: uppercase;
+        letter-spacing: 25px;
+    }
+    
+    .menuTitleLine {
+        color: $colorDefault;
+        margin-top: -200px;
+        font-size: 3rem;
+    }
+}
+
 %logo {
     position: absolute;
     top:0;

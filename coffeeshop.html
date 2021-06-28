@@ -57,20 +57,20 @@
     <title>Tienda de Café - Malvón Coffee Roasters</title>   
 </head>
 <body>
-    <header class="navBarCoffeeShop">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark navBarClass">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand logo" href="index.html">
           <img src="Imagenes/malvonLogo.PNG" alt="malvonLogo"
             style="width: 50%; border-radius: 15px; border: solid 2px white">
         </a>
-        <div class="container-fluid navBarClass d-flex justify-content-sm-end justify-content-md-end">
+        <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+          <div class="collapse navbar-collapse justify-content-md-end justify-content-lg-end justify-content-xl-end" id="navbarNavDropdown">
+            <ul class="navbar-nav navbar-dark bg-dark">
               <li class="nav-item">
                 <a class="nav-link active navLinkHover" aria-current="page" href="index.html">Inicio</a>
               </li>
@@ -81,7 +81,7 @@
                 <a class="nav-link navLinkHover" href="menu.html">Menu</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle navLinkHover" href="#shop" id="navbarDropdownMenuLink" role="button"
+                <a class="nav-link dropdown-toggle" href="#shop" id="navbarDropdownMenuLink" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
                   Shop
                 </a>
@@ -97,9 +97,14 @@
           </div>
         </div>
       </nav>
-      <h1 class="mainTitle">Elegí tu Café</h1>
+      <h1 class="mainTitle">CoffeeShop</h1>
     </header>
-    <div class="coffeeShopIntro">
+    <section class="coverPageCoffeeShop">
+      <div class="transparentBox"></div> 
+      <h2> Elegí tu café</h2>
+      <div class="menuTitleLine">______________</div>
+    </section>
+    <section class="coffeeShopIntro">
       <div class="aboutMarket">
         <p class="aboutMarketTitleMini">About market</p>
         <h2>Acerca de nuestro Coffee Shop</h2>
@@ -128,17 +133,17 @@
           <p>No queremos que te quedes sin café!. Con nuestra logistica de entrega, buscamos que si compraste el café por nuestra web, te llegue en el día. O a la mañana siguiente!</p>
         </div>
       </div>
-    </div>
+    </section>
     <div class="separator"></div>
-    <div class="ourCoffee">
+    <section class="ourCoffee">
      <img src="Imagenes/PortadaCoffeeShop-1.jpg" alt="Manos mostrando los granos de café">
      <div class="ourCoffeeDetail">
       <p>Tostamos nuestro propio café. <br>Probalo, no te vas a arrepentir.</p> 
       <a href="https://www.mercadopago.com.ar/" target="_blank"> Comprar </a>
      </div>
-    </div>
+    </section>
     <div class="separator"></div>
-    <div class="mainCoffeeShop">
+    <section class="mainCoffeeShop">
       <div class="mainCoffeeShopDescription">
         <h2>Nuestra variedad</h2>
         <p>En <span>Mavón Coffee Roasters</span> podés comprar también granos de distintas partes del mundo. Elegí el que más te guste y te represente.</p>
@@ -214,7 +219,7 @@
           <a href="https://www.mercadopago.com.ar/" target="_blank"> ¡Lo quiero! </a>
         </div>
       </div>
-    </div>
+    </section>
     <footer id="contacto">
       <div class="footerForm">
         <h3>Registrate para recibir <br> nuestro newsletter</h3>

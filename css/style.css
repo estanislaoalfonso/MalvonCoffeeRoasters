@@ -34,7 +34,7 @@ footer .footerForm {
 }
 footer .footerForm h3 {
   font-family: "Oswald", "sans-serif";
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 3rem;
@@ -152,26 +152,14 @@ footer .firmaFooter span {
 header nav {
   animation-name: aparecer;
   animation-duration: 4s;
-  z-index: 1;
-  padding: 0 !important;
-}
-header nav ul {
-  align-items: flex-end;
-  padding-top: 5px;
-}
-@media (max-width: 400px) {
-  header nav ul {
-    align-items: flex-start !important;
-  }
 }
 header nav ul li {
-  font-family: "Cormorant Garamond" !important;
+  font-family: "Open Sans", "sans-serif" !important;
 }
 header nav ul li a {
+  letter-spacing: 2px !important;
   color: white !important;
   text-transform: uppercase !important;
-  letter-spacing: 5px !important;
-  font-size: 0.95em !important;
   transition: all 0.5s !important;
 }
 header nav ul li a:hover {
@@ -182,36 +170,58 @@ header nav ul li a:hover {
     position: fixed;
   }
 }
+
+.coverPageIndex {
+  background-image: url("../Imagenes/Portada-1-1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 55rem;
+}
+
+.coverPageCoffeeShop {
+  background-image: url("../Imagenes/PortadaCoffeeShop1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 55rem;
+}
+
+.coverPageMethodShop {
+  background-image: url("../Imagenes/PortadaMetodShop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 55rem;
+}
+
+.coverPageIndex, .coverPageCoffeeShop, .coverPageMethodShop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.coverPageIndex .transparentBox, .coverPageCoffeeShop .transparentBox, .coverPageMethodShop .transparentBox {
+  height: 40%;
+}
+.coverPageIndex h2, .coverPageCoffeeShop h2, .coverPageMethodShop h2 {
+  height: 25%;
+  text-align: center;
+  color: white;
+  font-family: "Oswald", "sans-serif";
+  text-transform: uppercase;
+  letter-spacing: 25px;
+}
+.coverPageIndex .menuTitleLine, .coverPageCoffeeShop .menuTitleLine, .coverPageMethodShop .menuTitleLine {
+  color: #c7a17a;
+  margin-top: -200px;
+  font-size: 3rem;
+}
+
 .logo {
   position: absolute;
   top: 0;
   left: 10px;
   z-index: 2;
-}
-
-header .mainTitle {
-  color: white;
-  display: block;
-  font-family: "Cormorant Garamond", serif;
-  text-align: center;
-  font-size: 1.7em;
-  text-transform: uppercase;
-  letter-spacing: 20px;
-  font-weight: lighter;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 17rem;
-  animation-duration: 4s;
-  animation-name: aparecer;
-}
-@media (max-width: 400px) {
-  header .mainTitle {
-    color: floralwhite;
-    font-size: 1.3rem;
-    letter-spacing: 14px;
-    padding-top: 60px;
-  }
 }
 
 .errorContainer .errorDescription .errorButton, .methodShopList .methodsContainer .itemButton, .mainCoffeeShop .cardContainer .cardDescription a, .ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
@@ -231,22 +241,12 @@ header .mainTitle {
   color: black;
 }
 
-.navBarInicio {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 38rem;
-  padding: 0;
-  box-shadow: 0px 10px 20px 6px grey;
-  background-image: url("../Imagenes/Portada-1.jpg");
-  background-position: center;
-}
-
 h1 {
   display: none;
 }
 
 #nosotros {
-  padding: 80px 150px;
+  padding: 80px 250px;
   display: flex;
 }
 @media (max-width: 400px) {
@@ -326,11 +326,15 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../Imagenes/shopIndexBackground.webp);
+  background-image: url(../Imagenes/home-3-parallax-1.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 60px 0;
 }
 #nuestracasa h2 {
   font-family: "Oswald", "sans-serif";
-  font-size: 2.5rem;
+  font-size: 3rem;
+  color: white;
   text-align: center;
   margin: 2rem;
   text-transform: uppercase;
@@ -355,13 +359,14 @@ h1 {
 #menuIndex .menuIndexDescription h2 {
   font-family: "Oswald", "sans-serif";
   color: white;
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-transform: uppercase;
   margin-bottom: 40px;
 }
 #shop {
   background-color: black;
   padding: 50px;
+  padding-bottom: 10px;
 }
 @media (max-width: 400px) {
   #shop {
@@ -374,7 +379,7 @@ h1 {
   color: white;
   letter-spacing: 5px;
   font-family: "Oswald", "sans-serif";
-  font-size: 3.75rem;
+  font-size: 4.5rem;
   animation: zoomIn;
   animation-duration: 2s;
 }
@@ -396,8 +401,7 @@ h1 {
   letter-spacing: 1.5px;
 }
 #shop .shopContainer {
-  background-image: url(../Imagenes/ShopIndexBackground-1.jpg);
-  background-position: cover;
+  background-image: url(../Imagenes/ShopIndexBackground-1-1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -466,10 +470,9 @@ h1 {
   text-align: center;
   color: white;
   font-family: "Oswald", "sans-serif";
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-transform: uppercase;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
+  padding: 5rem 0;
 }
 .menuTitle span {
   color: #c7a17a;
@@ -487,6 +490,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10rem;
 }
 
 .menuLists {
@@ -538,14 +542,8 @@ h1 {
   letter-spacing: 1px;
 }
 
-.navBarCoffeeShop {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 50rem;
-  padding: 0;
-  box-shadow: 0px 10px 20px 6px grey;
-  background-image: url(../Imagenes/MethodShopOGimage.jpg);
-  background-attachment: fixed;
+header .mainTitle {
+  display: none;
 }
 
 .coffeeShopIntro {
@@ -626,6 +624,7 @@ h1 {
 }
 .ourCoffee .ourCoffeeDetail p {
   padding: 40px;
+  font-size: 3rem;
 }
 .ourCoffee .ourCoffeeDetail a {
   font-size: 20px;
@@ -771,9 +770,8 @@ h1 {
 .navBarMethodShop {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 35rem;
-  padding: 0;
-  box-shadow: 0px 10px 20px 6px grey;
+  background-position: 35rem;
+  height: 0;
   background-image: url(../Imagenes/PortadaMetodShop.jpg);
 }
 
@@ -880,6 +878,7 @@ h1 {
 }
 .methodShopList .methodsContainer .itemButton:hover {
   background-color: black;
+  color: white;
 }
 
 .errorContainer {

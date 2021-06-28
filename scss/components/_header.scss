@@ -1,23 +1,16 @@
 header {
     nav {
         @include animationDefault (aparecer, 4s);
-        z-index: 1;
-        padding: 0 !important;
-                ul {
-                    align-items: flex-end;
-                    padding-top:5px;
-                    @media (max-width: 400px) {
-                        align-items: flex-start !important;
-                    }                  
+                ul {      
                     li {
-                        font-family: 'Cormorant Garamond'!important;
+                        font-family: $fontTextStandard!important;
+                        
                         a {
-                            color: nth($color, 1)!important;
+                            letter-spacing: 2px !important;
+                            color: white !important;
                             text-transform: uppercase !important;
-                            letter-spacing: 5px !important;
-                            font-size: 0.95em !important;
                             transition: all 0.5s !important;
-            
+                                           
                             &:hover {
                                 color:$colorDefault !important;
                             }
@@ -31,9 +24,5 @@ header {
     
     }
 
-    .mainTitle {
-        @extend %titleSectionStyle;
-        
-    }
 }
 
