@@ -5,7 +5,7 @@
 }
 
 .coverPageCoffeeShop {
-    background-image: url('../Imagenes/PortadaCoffeeShop1.jpg');
+    background-image: url('../Imagenes/PortadaCoffeeShop1.webp');
     @include backgroundStyle (no-repeat, cover, center, 55rem);
     @extend %coverPageStandard;
 }

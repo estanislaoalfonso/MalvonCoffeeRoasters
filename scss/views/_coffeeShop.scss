@@ -5,6 +5,12 @@ header {
     }
 }
 
+.coverPageCoffeeShop {
+    .menuTitleLine {
+        margin-top: -230px;
+    }
+}
+
 .coffeeShopIntro {
     display: flex;
     justify-content: space-around;
@@ -101,7 +107,7 @@ header {
             font-size: 20px;
         }
     }
-    }
+}
     
     
 
@@ -233,5 +239,224 @@ header {
             }
         }
 
+    }
+}
+
+@media (max-width: 992px) {
+    .coffeeShopIntro {
+        .aboutMarket {
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .aboutMarketDescription {
+            .marketDescriptionItems {
+                p {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .mainCoffeeShop {
+        .mainCoffeeShopDescription {
+            padding-right: 30%;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    
+    .coverPageCoffeeShop {
+        height: 45rem;
+
+        .menuTitleLine {
+            margin-top: -188px;
+        }
+    }
+    
+    .coffeeShopIntro {
+        margin: 90px 10px;
+        padding: 0;
+        .aboutMarket {
+            .aboutMarketTitleMini{
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 43px;
+            }
+
+            p {
+                font-size: 15px;
+                padding: 5px;
+            }
+        }
+
+        .aboutMarketDescription {
+            .marketDescriptionItems {
+                
+                img {
+                    width: 37px;
+                }
+                
+                h3 {
+                    font-size: 1.3rem;
+                }
+
+                p {
+                    font-size: 13px;
+                }
+            }
+        }
+
+    }
+
+    .separator {
+        height: 170px;
+    }
+
+    .ourCoffee {
+        .ourCoffeeDetail {
+            p {
+                font-size: 2rem;
+            }
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .mainCoffeeShop {
+        .mainCoffeeShopDescription {
+            padding-right: 20%;
+        }
+
+        .cardContainer {
+            .cardImage {
+                width: 20%;
+            }
+            .cardDescription {
+                p {
+                    font-size: 0.95rem;
+                }
+            }
+        }
+    }
+
+
+}
+
+@media (max-width: 576px) {
+    .coverPageCoffeeShop {
+        height: 30rem;
+
+        .menuTitleLine {
+            margin-top: -130px;
+        }
+    }
+
+    .coffeeShopIntro {
+
+        margin: 15px 10px;
+
+        .aboutMarket {
+            justify-content: center;
+        }
+        .aboutMarketDescription {
+            display: none;
+        }
+    }
+
+    .separator {
+        height: 110px;
+    }
+
+    .ourCoffee {
+        .ourCoffeeDetail {
+            p {
+                padding: 0;
+                font-size: 1.5rem;
+            }
+
+            a {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .mainCoffeeShop {
+        .mainCoffeeShopDescription {
+            padding-right: 10%;
+            
+            h2 {
+
+                font-size: 47px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+        }
+
+        .cardContainer {
+            .cardImage {
+                width: 30%;
+            }
+
+            .cardDescription {
+                p {
+                    font-size: 0.8rem;
+                }
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .coverPageCoffeeShop {
+
+        height: 25rem;
+
+        h2 {
+            font-size: 1rem;
+            letter-spacing: 20px;
+        }
+
+        .menuTitleLine {
+            margin-top: -115px;
+            font-size: 2rem;
+        }
+    }
+
+    .separator {
+        height: 72px;
+    }
+
+    .ourCoffee {
+        display: flex;
+        flex-direction: column;
+
+        .ourCoffeeDetail {
+            a {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .mainCoffeeShop {
+        .mainCoffeeShopDescription {
+            padding: 0;
+            align-items: center;
+
+            h2 {
+                font-size: 36px;
+            }
+        }
     }
 }
