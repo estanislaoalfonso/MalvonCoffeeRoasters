@@ -1,6 +1,9 @@
 .video {
-    height: 50rem;
-    overflow: hidden;
+    padding: 1rem 0;
+    background-image:url(../Imagenes/coffeeBeans.jpg);
+    background-repeat: repeat;
+    background-attachment: fixed;
+
 }
 
 .menuTitle {
@@ -26,7 +29,7 @@
     }
 }
 
-.menuGeneral {
+#menuGeneral {
     background-image: url(../Imagenes/menuBackgroundNew.jpg);
     background-position: center;
     background-attachment: fixed;
@@ -89,6 +92,98 @@
                     color:$colorDefault;
                     letter-spacing: 1px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .video {
+        height: 30rem;
+    }
+
+    #menuGeneral {
+        padding: 3rem 0;
+        
+        .menuLists {
+            margin: 0;
+            flex-wrap: wrap;   
+            justify-content: space-evenly;
+
+            .coffeeMenuList {
+                margin: 0;
+                width: 30%;
+
+                .coffeeDetailContainer {
+                    img {
+                        width: 56px;
+                    }
+                    .coffeeDetail {
+                        .coffeeDetailLine {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    
+    #menuGeneral {
+        .menuLists {
+            width: 100%;
+            justify-content: center;
+            .coffeeMenuList {
+                margin: 0 10px;
+                .coffeeDetailContainer {
+                    .coffeeDetail {
+                        .coffeeDetailDetail {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .video {
+        height: auto;
+    }
+
+    #menuGeneral {
+        .menuTitle {
+            padding: 3rem 0;
+            .menuTitleParagraph {
+                font-size: 2.5rem;
+            }
+        }
+        .menuLists {
+            width: 100%;
+            justify-content: space-evenly;
+
+            .coffeeMenuList {
+                padding: 20px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    #menuGeneral {
+        padding: 1rem 0;
+        .menuTitle {
+            .menuTitleParagraph {
+                font-size: 1.7rem;
+            }
+            .menuTitleLine {
+                font-size: 1.5rem;
+                margin-top: -18px;
             }
         }
     }
