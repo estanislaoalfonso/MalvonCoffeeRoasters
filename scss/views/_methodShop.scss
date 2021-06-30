@@ -20,6 +20,10 @@
             text-transform: uppercase;
             font-family: $fontTitlesStandard;
             margin-bottom: 25px;
+
+            span {
+                color: $colorDefault;
+            }
         }
 
         p {
@@ -56,6 +60,10 @@
             font-family: $fontTitlesStandard;
             font-size: $fontSizeBase*4;
             margin-top: 18px;
+
+            span {
+                color: $colorDefault;
+            }
 
         }
 
@@ -123,6 +131,141 @@
             &:hover {
                 background-color: black;
                 color: white;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .coverPageMethodShop {
+        h2 {
+            letter-spacing: 20px;
+        }
+    }
+
+    .mainMethodShop {
+        .mainMethodShopDescription {
+            p {
+                padding: 0 8px;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .methodShopList {
+        .methodShopListDescription {
+            padding-right: 20%;
+        }
+
+        .methodsContainer {
+            
+            li {
+                width: 15rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .coverPageMethodShop {
+
+        height: 45rem;
+
+        h2 {
+            letter-spacing: 15px;
+        }
+
+        .menuTitleLine {
+            font-size: 2rem;
+            margin-top: -150px;
+        }
+    }
+
+    .mainMethodShop {
+        img {
+            width: 52%;
+        }
+
+        .mainMethodShopDescription {
+            h2 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .coverPageMethodShop {
+        height: 35rem;
+        h2 {
+            letter-spacing: 9px;
+        }
+        .menuTitleLine {
+            margin-top: -132px;
+            font-size: 1.8rem;
+        }
+    }
+
+    .mainMethodShop {
+        .mainMethodShopDescription {
+            h2 {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .methodShopList {
+        .methodShopListDescription {
+            padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .coverPageMethodShop {
+        height: 28rem;
+
+        h2 {
+            font-size: 1rem;
+            letter-spacing: 6px;
+        }
+
+        .menuTitleLine {
+            font-size: 1rem;
+            margin-top: -106px;
+        }
+    }
+
+    .mainMethodShop {
+
+        background-image: url(../Imagenes/chemexStyle.jpg);
+        background-size: cover;
+
+        img {
+            display: none;
+        }
+
+        .mainMethodShopDescription {
+            max-width: fit-content;
+        }
+    }
+
+    .methodShopList {
+        padding: 15px;
+        .methodShopListDescription {
+            h2 {
+                font-size: 3rem;
+            }
+
+            p {
+                padding-right: 0;
+                text-align: justify;
+                font-size: 1rem;
             }
         }
     }
