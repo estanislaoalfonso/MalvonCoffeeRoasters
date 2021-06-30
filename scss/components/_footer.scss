@@ -150,6 +150,73 @@ footer {
             letter-spacing: 1px;
         }
     }
+
+
+    @media (max-width: 992px) {
+        
+            .footerForm {
+                h3 {
+                    font-size: 2.5rem;
+                }
+            }
+    }
+
+    @media (max-width: 768px) {
+        .footerForm {
+            h3 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        padding: 3px 10px;
+
+        .contactGeneralFooter {    
+            .contactOpen {
+                display: none;
+            }
+
+        }
+
+        
+    }
+
+    @media (max-width: 375px) {
+        
+            .footerForm {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 30px;
+                h3 {
+                    font-size: 1.5rem;
+                }
+    
+                a {
+                    width: fit-content;
+                    margin-top: 10px;
+                }
+            }
+            .contactGeneralFooter {
+                flex-direction: column;
+                .contactFooterContainer {
+                    text-align: center;
+                    img {
+                        width: 27% !important;
+                        margin-bottom: 10px;
+                    }
+                }
+                .footerRedesContainer {
+                    margin-top: 20px;
+                    font-size: 1.2rem;
+                    ul {
+                        display: flex;
+                        flex-direction: row;
+                    }
+                }
+            }
+    }
 }
 
 

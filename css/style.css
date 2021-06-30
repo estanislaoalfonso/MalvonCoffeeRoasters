@@ -148,6 +148,57 @@ footer .firmaFooter span {
   color: #c7a17a;
   letter-spacing: 1px;
 }
+@media (max-width: 992px) {
+  footer .footerForm h3 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 768px) {
+  footer .footerForm h3 {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 576px) {
+  footer {
+    padding: 3px 10px;
+  }
+  footer .contactGeneralFooter .contactOpen {
+    display: none;
+  }
+}
+@media (max-width: 375px) {
+  footer .footerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+  }
+  footer .footerForm h3 {
+    font-size: 1.5rem;
+  }
+  footer .footerForm a {
+    width: fit-content;
+    margin-top: 10px;
+  }
+  footer .contactGeneralFooter {
+    flex-direction: column;
+  }
+  footer .contactGeneralFooter .contactFooterContainer {
+    text-align: center;
+  }
+  footer .contactGeneralFooter .contactFooterContainer img {
+    width: 27% !important;
+    margin-bottom: 10px;
+  }
+  footer .contactGeneralFooter .footerRedesContainer {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  footer .contactGeneralFooter .footerRedesContainer ul {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 header nav {
   animation-name: aparecer;
@@ -246,52 +297,23 @@ h1 {
 }
 
 #nosotros {
-  padding: 80px 250px;
+  padding: 80px 30px;
   display: flex;
-}
-@media (max-width: 400px) {
-  #nosotros {
-    background-color: #f7e6d0;
-    color: black;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: none;
-    align-items: center;
-  }
-  #nosotros img {
-    width: 100%;
-    padding: 5px;
-  }
-  #nosotros p {
-    font-size: 0.8rem;
-    font-style: italic;
-  }
+  justify-content: space-between;
+  align-items: center;
 }
 #nosotros img {
   width: 25rem;
+  height: fit-content;
   box-shadow: -18px 24px 12px 0 rgba(0, 0, 0, 0.2);
   animation-name: aparecer;
   animation-duration: 4s;
-}
-@media (max-width: 400px) {
-  #nosotros img {
-    display: none;
-  }
 }
 #nosotros div {
   padding: 70px 90px;
   text-align: justify;
   animation-name: aparecer;
   animation-duration: 4s;
-}
-@media (max-width: 400px) {
-  #nosotros div {
-    text-align: justify;
-    padding: 35px 18px;
-    animation-name: aparecer;
-    animation-duration: 4s;
-  }
 }
 #nosotros div h2 {
   margin-bottom: 15px;
@@ -300,29 +322,14 @@ h1 {
   text-transform: uppercase;
   font-weight: 400;
 }
-@media (max-width: 400px) {
-  #nosotros div h2 {
-    color: #361919;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Cormorant Garamond", serif;
-    letter-spacing: 6px;
-    padding-top: 5px;
-  }
-}
 #nosotros div p {
   letter-spacing: 1px;
   line-height: 40px;
   text-align: justify;
   font-family: "Open Sans", "sans-serif";
 }
-@media (max-width: 400px) {
-  #nosotros div p {
-    line-height: 27px;
-  }
-}
 
-#nuestracasa {
+#nuestraCasa {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -331,7 +338,7 @@ h1 {
   background-attachment: fixed;
   padding: 60px 0;
 }
-#nuestracasa h2 {
+#nuestraCasa h2 {
   font-family: "Oswald", "sans-serif";
   font-size: 3rem;
   color: white;
@@ -339,10 +346,10 @@ h1 {
   margin: 2rem;
   text-transform: uppercase;
 }
-#nuestracasa h2 span {
+#nuestraCasa h2 span {
   color: #c28842;
 }
-#nuestracasa .carouselSize {
+#nuestraCasa .carouselSize {
   padding: 1rem;
   width: 60%;
 }
@@ -351,10 +358,13 @@ h1 {
   background-image: url(../Imagenes/menuIndexBarista2.jpg);
   background-position: center;
   background-attachment: fixed;
-}
-#menuIndex .menuIndexDescription {
-  padding: 25rem;
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+}
+#menuIndex .transparentBox {
+  height: 45%;
 }
 #menuIndex .menuIndexDescription h2 {
   font-family: "Oswald", "sans-serif";
@@ -368,13 +378,6 @@ h1 {
   padding: 50px;
   padding-bottom: 10px;
 }
-@media (max-width: 400px) {
-  #shop {
-    padding: 25px 0px;
-    background-image: url(../Imagenes/mobileShopIndexBackground.webp);
-    box-shadow: none;
-  }
-}
 #shop h2 {
   color: white;
   letter-spacing: 5px;
@@ -385,15 +388,6 @@ h1 {
 }
 #shop h2 span {
   color: #c7a17a;
-}
-@media (max-width: 400px) {
-  #shop h2 {
-    font-size: 2.05rem;
-    padding-top: 12px;
-    font-weight: 800;
-    animation-name: zoomIn;
-    animation-duration: 2s;
-  }
 }
 #shop p {
   color: #c7a17a;
@@ -410,25 +404,12 @@ h1 {
   align-items: none;
   flex-wrap: wrap;
 }
-@media (max-width: 400px) {
-  #shop .shopContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: none;
-    align-items: none;
-  }
-}
 #shop .shopContainer .shopMarketContainer {
   margin: 20px 60px;
   display: flex;
   flex-direction: none;
   justify-content: space-evenly;
   align-items: center;
-}
-@media (max-width: 400px) {
-  #shop .shopContainer .shopMarketContainer {
-    margin: 0;
-  }
 }
 #shop .shopContainer .shopMarketContainer .shopMarketDescription {
   text-align: center;
@@ -438,16 +419,9 @@ h1 {
   background-color: black;
 }
 #shop .shopContainer .shopMarketContainer img {
-  width: 30rem;
-  height: 40rem;
+  width: 27rem;
   animation: zoomIn;
   animation-duration: 2s;
-  margin-left: 90px;
-}
-@media (max-width: 400px) {
-  #shop .shopContainer .shopMarketContainer img {
-    display: none;
-  }
 }
 
 @keyframes aparecer {
@@ -456,6 +430,220 @@ h1 {
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: 992px) {
+  .coverPageIndex h2 {
+    letter-spacing: 17px;
+  }
+
+  #nosotros {
+    flex-direction: column;
+  }
+  #nosotros img {
+    width: 20rem;
+  }
+
+  #shop .shopContainer .shopMarketContainer {
+    margin: 20px 0;
+  }
+  #shop .shopContainer .shopMarketContainer img {
+    width: 20rem;
+  }
+}
+@media (max-width: 768px) {
+  .coverPageIndex {
+    height: 40rem;
+  }
+  .coverPageIndex h2 {
+    font-size: 1.5rem;
+  }
+  .coverPageIndex .menuTitleLine {
+    margin-top: -140px;
+  }
+
+  #nosotros .nosotrosDescription h2 {
+    font-size: 2.5rem;
+  }
+
+  #nuestraCasa h2 {
+    font-size: 2.5rem;
+  }
+
+  #menuIndex .menuIndexDescription h2 {
+    font-size: 2.5rem;
+  }
+
+  #shop h2 {
+    font-size: 4rem;
+  }
+  #shop .shopContainer .shopMarketContainer .shopMarketDescription p {
+    font-size: 0.9rem;
+  }
+  #shop .shopContainer .shopMarketContainer .shopMarketDescription a {
+    font-size: 0.9rem;
+  }
+  #shop .shopContainer .shopMarketContainer img {
+    width: 15rem;
+  }
+}
+@media (max-width: 576px) {
+  .coverPageIndex {
+    height: 20rem;
+    justify-content: center;
+  }
+  .coverPageIndex .transparentBox {
+    display: none;
+  }
+  .coverPageIndex .menuTitleLine {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+  .coverPageIndex h2 {
+    font-size: 1rem;
+    letter-spacing: 10px;
+    height: 1rem;
+  }
+
+  #nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px;
+  }
+  #nosotros img {
+    width: 20rem;
+  }
+  #nosotros .nosotrosDescription {
+    padding: 70px 12px 10px;
+  }
+  #nosotros .nosotrosDescription h2 {
+    font-size: 2rem;
+  }
+  #nosotros .nosotrosDescription p {
+    font-size: small;
+  }
+
+  #nuestraCasa {
+    padding: 25px;
+  }
+  #nuestraCasa h2 {
+    font-size: 2rem;
+  }
+  #nuestraCasa .carouselSize {
+    width: 90%;
+  }
+
+  #menuIndex .menuIndexDescription {
+    padding: 15rem 2rem;
+  }
+
+  #shop {
+    padding: 50px 30px;
+  }
+  #shop h2 {
+    font-size: 3.5rem;
+  }
+  #shop p {
+    font-size: small;
+  }
+  #shop .shopContainer .shopMarketContainer {
+    margin: 20px 5px;
+  }
+  #shop .shopContainer .shopMarketContainer a {
+    font-size: small;
+  }
+  #shop .shopContainer .shopMarketContainer img {
+    width: 15rem;
+    height: 18rem;
+    margin: 20px;
+  }
+}
+@media (max-width: 375px) {
+  .coverPageIndex {
+    height: 20rem;
+    justify-content: center;
+  }
+  .coverPageIndex .transparentBox {
+    display: none;
+  }
+  .coverPageIndex .menuTitleLine {
+    font-size: 1rem;
+    margin-top: 0;
+  }
+  .coverPageIndex h2 {
+    font-size: 1rem;
+    letter-spacing: 6px;
+    height: 1rem;
+  }
+
+  #nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+  }
+  #nosotros img {
+    width: 15rem;
+  }
+  #nosotros .nosotrosDescription {
+    padding: 40px 0;
+  }
+  #nosotros .nosotrosDescription h2 {
+    font-size: 2rem;
+  }
+  #nosotros .nosotrosDescription p {
+    font-size: smaller;
+    letter-spacing: 0;
+  }
+
+  #nuestraCasa {
+    margin: 10px, auto;
+    padding: 10px;
+  }
+  #nuestraCasa h2 {
+    font-size: 2rem;
+  }
+  #nuestraCasa .carouselSize {
+    width: 90%;
+  }
+
+  #menuIndex {
+    height: 33rem;
+  }
+  #menuIndex .menuIndexDescription {
+    padding: 15rem 2rem;
+  }
+  #menuIndex .menuIndexDescription h2 {
+    font-size: 2rem;
+  }
+
+  #shop {
+    padding: 50px 3px;
+  }
+  #shop h2 {
+    font-size: 3.5rem;
+  }
+  #shop p {
+    font-size: small;
+  }
+  #shop .shopContainer .shopMarketContainer {
+    flex-direction: column-reverse;
+    margin: 20px 5px;
+  }
+  #shop .shopContainer .shopMarketContainer a {
+    font-size: small;
+  }
+  #shop .shopContainer .shopMarketContainer img {
+    width: 15rem;
+    height: 18rem;
+    margin: 20px;
+  }
+  #shop .shopContainer .shopMarketContainerMethod {
+    flex-direction: column;
+  }
+  #shop .shopContainer .shopMarketContainerMethod img {
+    height: 23rem;
   }
 }
 .video {
