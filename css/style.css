@@ -16,9 +16,10 @@ a {
 }
 
 footer {
-  background-image: url(../Imagenes/bg-footer.webp);
+  background-image: url(../Imagenes/bgFooter.webp);
   background-position: bottom;
   background-attachment: fixed;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: none;
   justify-content: space-evenly;
@@ -154,7 +155,7 @@ footer .firmaFooter span {
   }
 }
 @media (max-width: 768px) {
-  footer .footerForm h3 {
+  footer footer .footerForm h3 {
     font-size: 2.5rem;
   }
 }
