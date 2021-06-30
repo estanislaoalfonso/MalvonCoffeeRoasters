@@ -41,7 +41,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../Imagenes/home-3-parallax-1.jpg);
+    background-image: url(../Imagenes/nuestraCasaBackground.webp);
     background-size: cover;
     background-attachment: fixed;
     padding: 60px 0;
@@ -67,7 +67,7 @@ h1 {
 }
 
 #menuIndex {
-    background-image: url(../Imagenes/menuIndexBarista2.jpg);
+    background-image: url(../Imagenes/menuIndexBarista.webp);
     background-position: center;
     background-attachment: fixed;
     height: 50rem;
@@ -124,7 +124,7 @@ h1 {
         }
 
         .shopContainer {
-            background-image: url(../Imagenes/ShopIndexBackground-1-1.jpg);
+            background-image: url(../Imagenes/ShopIndexBackground.webp);
             background-repeat: no-repeat;
             background-attachment: fixed;
 
@@ -296,6 +296,7 @@ h1 {
 
             p {
                 font-size: small;
+                line-height: 28px;
             }
         }
     }
@@ -384,7 +385,7 @@ h1 {
         }
 
         .nosotrosDescription {
-            padding: 40px 0;
+            padding: 40px 0 0 0;
 
             h2 {
                 font-size:2rem;

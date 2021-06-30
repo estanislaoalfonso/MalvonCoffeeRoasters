@@ -16,7 +16,7 @@ a {
 }
 
 footer {
-  background-image: url(../Imagenes/bg-footer.jpg);
+  background-image: url(../Imagenes/bg-footer.webp);
   background-position: bottom;
   background-attachment: fixed;
   display: flex;
@@ -223,7 +223,7 @@ header nav ul li a:hover {
 }
 
 .coverPageIndex {
-  background-image: url("../Imagenes/Portada-1-1.jpg");
+  background-image: url("../Imagenes/portadaIndex.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -239,7 +239,7 @@ header nav ul li a:hover {
 }
 
 .coverPageMethodShop {
-  background-image: url("../Imagenes/PortadaMetodShop.jpg");
+  background-image: url("../Imagenes/PortadaMetodShop.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -333,7 +333,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(../Imagenes/home-3-parallax-1.jpg);
+  background-image: url(../Imagenes/nuestraCasaBackground.webp);
   background-size: cover;
   background-attachment: fixed;
   padding: 60px 0;
@@ -355,7 +355,7 @@ h1 {
 }
 
 #menuIndex {
-  background-image: url(../Imagenes/menuIndexBarista2.jpg);
+  background-image: url(../Imagenes/menuIndexBarista.webp);
   background-position: center;
   background-attachment: fixed;
   height: 50rem;
@@ -395,7 +395,7 @@ h1 {
   letter-spacing: 1.5px;
 }
 #shop .shopContainer {
-  background-image: url(../Imagenes/ShopIndexBackground-1-1.jpg);
+  background-image: url(../Imagenes/ShopIndexBackground.webp);
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
@@ -522,6 +522,7 @@ h1 {
   }
   #nosotros .nosotrosDescription p {
     font-size: small;
+    line-height: 28px;
   }
 
   #nuestraCasa {
@@ -587,7 +588,7 @@ h1 {
     width: 15rem;
   }
   #nosotros .nosotrosDescription {
-    padding: 40px 0;
+    padding: 40px 0 0 0;
   }
   #nosotros .nosotrosDescription h2 {
     font-size: 2rem;
@@ -648,7 +649,7 @@ h1 {
 }
 .video {
   padding: 1rem 0;
-  background-image: url(../Imagenes/coffeeBeans.jpg);
+  background-image: url(../Imagenes/coffeeBeans.webp);
   background-repeat: repeat;
   background-attachment: fixed;
 }
@@ -674,7 +675,7 @@ h1 {
 }
 
 #menuGeneral {
-  background-image: url(../Imagenes/menuBackgroundNew.jpg);
+  background-image: url(../Imagenes/menuBackgroundNew.webp);
   background-position: center;
   background-attachment: fixed;
   display: flex;
@@ -857,7 +858,7 @@ header .mainTitle {
 
 .separator {
   height: 300px;
-  background-image: url(../Imagenes/coffeeBeans.jpg);
+  background-image: url(../Imagenes/coffeeBeans.webp);
   background-repeat: repeat;
   background-attachment: fixed;
   box-shadow: inset 0 0 35px 20px black;
@@ -1181,7 +1182,7 @@ header .mainTitle {
   background-size: cover;
   background-position: 35rem;
   height: 0;
-  background-image: url(../Imagenes/PortadaMetodShop.jpg);
+  background-image: url(../Imagenes/PortadaMetodShop.webp);
 }
 
 .mainMethodShop {
@@ -1369,7 +1370,7 @@ header .mainTitle {
   }
 
   .mainMethodShop {
-    background-image: url(../Imagenes/chemexStyle.jpg);
+    background-image: url(../Imagenes/chemexStyle.webp);
     background-size: cover;
   }
   .mainMethodShop img {

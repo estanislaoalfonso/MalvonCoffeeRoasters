@@ -1,5 +1,5 @@
 .coverPageIndex {
-    background-image: url('../Imagenes/Portada-1-1.jpg');
+    background-image: url('../Imagenes/portadaIndex.webp');
     @include backgroundStyle (no-repeat, cover, center, 55rem);
     @extend %coverPageStandard;
 }
@@ -11,7 +11,7 @@
 }
 
 .coverPageMethodShop {
-    background-image: url('../Imagenes/PortadaMetodShop.jpg');
+    background-image: url('../Imagenes/PortadaMetodShop.webp');
     @include backgroundStyle (no-repeat, cover, center, 55rem);
     @extend %coverPageStandard;
 }

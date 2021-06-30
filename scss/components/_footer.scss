@@ -1,7 +1,7 @@
 @import '../utilities/mixins';
 
 footer {
-    background-image: url(../Imagenes/bg-footer.jpg);
+    background-image: url(../Imagenes/bg-footer.webp);
     background-position: bottom;
     background-attachment: fixed;
     @include boxStyle (none, space-evenly, top);
