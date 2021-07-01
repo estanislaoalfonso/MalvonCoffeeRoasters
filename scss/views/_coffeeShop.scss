@@ -119,7 +119,7 @@ header {
      padding: 25px;
      text-transform: uppercase;
      font-family: nth($fontFamily, 4), serif;
-     @media (max-width: 400px) {
+     @media (max-width: 505px) {
          padding: 2px;    
      }
 
@@ -138,7 +138,7 @@ header {
             font-size: $fontSizeBase*4;
             margin-top: 18px;
     
-            @media (max-width: 400px) {
+            @media (max-width: 505px) {
                 font-size: 1.6rem;
             }
          }
@@ -157,7 +157,7 @@ header {
                  color: nth($color ,3);
              }
      
-             @media (max-width: 400px) {
+             @media (max-width: 505px) {
                  padding: 5%;
                  text-align: justify;
                  font-size: 0.9rem;
@@ -169,18 +169,18 @@ header {
         @include boxStyle (none, center, center);
         margin-bottom: 70px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 505px) {
             @include boxStyle (column, none, none);
             margin: 10px;
             border: 1px solid rgb(207, 206, 206);
             border-radius: 12px;
         }
         .cardImage {
-            width: 11%;
+            width: 160px;
             border-radius: 10px;
             box-shadow: $coffeeShopImageShadows;
 
-            @media (max-width: 400px) {
+            @media (max-width: 505px) {
                 width: 100%;
                 height: 200px;
                 box-shadow: none;
@@ -194,7 +194,7 @@ header {
             width: 45%;
             margin-left: 25px;
 
-            @media (max-width: 400px) {
+            @media (max-width: 505px) {
                 @include boxStyle (column, none, center);
                 width: 100%;
                 margin: 0px;
@@ -205,7 +205,7 @@ header {
                 letter-spacing: $letterSpacingBase + 2;
                 color: nth($color , 3);
 
-                @media (max-width: 400px) {
+                @media (max-width: 505px) {
                     margin: 20px;
                 }
             }
@@ -220,7 +220,7 @@ header {
                 font-family: 'Work Sans', sans-serif;
                 font-size: 1rem;
 
-                @media (max-width: 400px) {
+                @media (max-width: 505px) {
                     padding: 12px;
                 }
             }
@@ -233,7 +233,7 @@ header {
                     color: white;
                 }
 
-                @media (max-width: 400px) {
+                @media (max-width: 505px) {
                     margin-bottom: 14px;
                 }
             }
@@ -334,9 +334,7 @@ header {
         }
 
         .cardContainer {
-            .cardImage {
-                width: 20%;
-            }
+            
             .cardDescription {
                 p {
                     font-size: 0.95rem;
@@ -402,10 +400,7 @@ header {
         }
 
         .cardContainer {
-            .cardImage {
-                width: 30%;
-            }
-
+            
             .cardDescription {
                 p {
                     font-size: 0.8rem;
@@ -418,7 +413,7 @@ header {
     }
 }
 
-@media (max-width: 442px) {
+@media (max-width: 505px) {
     .coverPageCoffeeShop {
 
         height: 25rem;
