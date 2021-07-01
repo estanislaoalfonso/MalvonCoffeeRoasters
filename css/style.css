@@ -561,7 +561,7 @@ h1 {
     margin: 20px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 442px) {
   .coverPageIndex {
     height: 20rem;
     justify-content: center;
@@ -790,7 +790,7 @@ h1 {
     width: 100%;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 442px) {
   #menuGeneral {
     padding: 1rem 0;
   }
@@ -1145,7 +1145,7 @@ header .mainTitle {
     font-size: 0.8rem;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 442px) {
   .coverPageCoffeeShop {
     height: 25rem;
   }
@@ -1357,7 +1357,7 @@ header .mainTitle {
     padding-right: 0;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 442px) {
   .coverPageMethodShop {
     height: 28rem;
   }
