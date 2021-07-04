@@ -4,7 +4,7 @@ h1 {
 }
 
 #nosotros {
-    padding: 80px 30px;
+    padding: 80px 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,7 +55,7 @@ h1 {
         text-transform: uppercase;
 
         span {
-            color: nth($color, 5);
+            color: $colorDefault;
         }
     }
 
@@ -88,6 +88,10 @@ h1 {
             font-size: $fontSizeTitles;
             text-transform: uppercase;
             margin-bottom: 40px;
+
+            span {
+                color: $colorDefault;
+            }
         }
 
         a {
@@ -167,9 +171,24 @@ h1 {
     }
 }
 
+@media (max-width: 1450px) {
+    #nosotros {
+        padding: 80px 70px;
+    }    
+}
+
+@media (max-width: 1180px) {
+    #nosotros {
+        flex-direction: column;
+        img {
+            width: 20rem;
+        }
+    }
+}
+
 @media (max-width: 992px) {
     
-    .coverPageIndex {
+    #coverPageIndex {
         
         h2 {
             letter-spacing: 17px;
@@ -183,22 +202,41 @@ h1 {
         }
     }
 
+    #nuestraCasa {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: inherit;
+    }
+
+    #menuIndex {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: inherit;
+    }
+
     #shop {
-      
-       .shopContainer {
-           .shopMarketContainer {
-             margin: 20px 0;
-             
-             img {
-                 width: 20rem;
-             }
-           }  
-       }
+
+        .shopContainer {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: inherit;
+
+            .shopMarketContainer {
+                margin: 20px 0;
+                
+                img {
+                    width: 20rem;
+                }
+            }  
+        }
     }
 }
 
 @media (max-width: 768px) {
-    .coverPageIndex {
+    #coverPageIndex {
         height: 40rem;
 
         h2 {
@@ -256,7 +294,7 @@ h1 {
 
 @media (max-width: 684px) {
     
-    .coverPageIndex {
+    #coverPageIndex {
         
         height: 20rem;
         justify-content: center;
@@ -353,7 +391,7 @@ h1 {
 }
 
 @media (max-width: 488px) {
-    .coverPageIndex {
+    #coverPageIndex {
         
         height: 20rem;
         justify-content: center;
@@ -399,10 +437,6 @@ h1 {
     }
 
     #nuestraCasa {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: inherit;
         margin: 10px, auto;
         padding: 10px;
 

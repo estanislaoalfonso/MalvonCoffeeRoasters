@@ -1,4 +1,4 @@
-.video {
+#video {
     padding: 1rem 0;
     background-image:url(../Imagenes/coffeeBeans.webp);
     background-repeat: repeat;
@@ -98,12 +98,17 @@
 }
 
 @media (max-width: 992px) {
-    .video {
+    
+    #video {
         height: 30rem;
     }
 
     #menuGeneral {
         padding: 3rem 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: inherit;
         
         .menuLists {
             margin: 0;
@@ -151,11 +156,17 @@
 }
 
 @media (max-width: 684px) {
-    .video {
+    
+    
+    #video {
         height: auto;
     }
 
     #menuGeneral {
+
+        background-image: none;
+        background-color: rgb(8, 8, 8);
+
         .menuTitle {
             padding: 3rem 0;
             .menuTitleParagraph {

@@ -155,11 +155,19 @@ footer {
 
     @media (max-width: 992px) {
         
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: inherit;
+
+                
             .footerForm {
                 h3 {
                     font-size: 2.5rem;
                 }
             }
+        
+        
     }
 
     @media (max-width: 768px) {

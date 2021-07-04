@@ -150,6 +150,12 @@ footer .firmaFooter span {
   letter-spacing: 1px;
 }
 @media (max-width: 992px) {
+  footer {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+  }
   footer .footerForm h3 {
     font-size: 2.5rem;
   }
@@ -210,20 +216,21 @@ header nav ul li {
 }
 header nav ul li a {
   letter-spacing: 2px !important;
-  color: white !important;
   text-transform: uppercase !important;
   transition: all 0.5s !important;
+  color: white !important;
+  padding: 0.1rem 1rem !important;
 }
 header nav ul li a:hover {
   color: #c7a17a !important;
 }
-@media (max-width: 980px) {
-  header nav {
-    position: fixed;
+@media (max-width: 991px) {
+  header nav ul li a {
+    padding: 0.5rem 1rem !important;
   }
 }
 
-.coverPageIndex {
+#coverPageIndex {
   background-image: url("../Imagenes/portadaIndex.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -231,7 +238,7 @@ header nav ul li a:hover {
   height: 55rem;
 }
 
-.coverPageCoffeeShop {
+#coverPageCoffeeShop {
   background-image: url("../Imagenes/PortadaCoffeeShop1.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,7 +246,7 @@ header nav ul li a:hover {
   height: 55rem;
 }
 
-.coverPageMethodShop {
+#coverPageMethodShop {
   background-image: url("../Imagenes/PortadaMetodShop.webp");
   background-repeat: no-repeat;
   background-size: cover;
@@ -247,15 +254,15 @@ header nav ul li a:hover {
   height: 55rem;
 }
 
-.coverPageIndex, .coverPageCoffeeShop, .coverPageMethodShop {
+#coverPageIndex, #coverPageCoffeeShop, #coverPageMethodShop {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.coverPageIndex .transparentBox, .coverPageCoffeeShop .transparentBox, .coverPageMethodShop .transparentBox {
+#coverPageIndex .transparentBox, #coverPageCoffeeShop .transparentBox, #coverPageMethodShop .transparentBox {
   height: 40%;
 }
-.coverPageIndex h2, .coverPageCoffeeShop h2, .coverPageMethodShop h2 {
+#coverPageIndex h2, #coverPageCoffeeShop h2, #coverPageMethodShop h2 {
   height: 25%;
   text-align: center;
   color: white;
@@ -263,7 +270,7 @@ header nav ul li a:hover {
   text-transform: uppercase;
   letter-spacing: 25px;
 }
-.coverPageIndex .menuTitleLine, .coverPageCoffeeShop .menuTitleLine, .coverPageMethodShop .menuTitleLine {
+#coverPageIndex .menuTitleLine, #coverPageCoffeeShop .menuTitleLine, #coverPageMethodShop .menuTitleLine {
   color: #c7a17a;
   margin-top: -200px;
   font-size: 3rem;
@@ -276,7 +283,7 @@ header nav ul li a:hover {
   z-index: 2;
 }
 
-.errorContainer .errorDescription .errorButton, .methodShopList .methodsContainer .itemButton, .mainCoffeeShop .cardContainer .cardDescription a, .ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
+.errorContainer .errorDescription .errorButton, #methodShopList .methodsContainer .itemButton, #mainCoffeeShop .cardContainer .cardDescription a, #ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
   background-color: #c7a17a;
   color: white;
   text-transform: uppercase;
@@ -288,7 +295,7 @@ header nav ul li a:hover {
   text-decoration: none;
   transition: all 0.6s;
 }
-.errorContainer .errorDescription .errorButton:hover, .methodShopList .methodsContainer .itemButton:hover, .mainCoffeeShop .cardContainer .cardDescription a:hover, .ourCoffee .ourCoffeeDetail a:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
+.errorContainer .errorDescription .errorButton:hover, #methodShopList .methodsContainer .itemButton:hover, #mainCoffeeShop .cardContainer .cardDescription a:hover, #ourCoffee .ourCoffeeDetail a:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
   background-color: white;
   color: black;
 }
@@ -298,7 +305,7 @@ h1 {
 }
 
 #nosotros {
-  padding: 80px 30px;
+  padding: 80px 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -348,7 +355,7 @@ h1 {
   text-transform: uppercase;
 }
 #nuestraCasa h2 span {
-  color: #c28842;
+  color: #c7a17a;
 }
 #nuestraCasa .carouselSize {
   padding: 1rem;
@@ -373,6 +380,9 @@ h1 {
   font-size: 3rem;
   text-transform: uppercase;
   margin-bottom: 40px;
+}
+#menuIndex .menuIndexDescription h2 span {
+  color: #c7a17a;
 }
 #shop {
   background-color: black;
@@ -433,8 +443,21 @@ h1 {
     opacity: 1;
   }
 }
+@media (max-width: 1450px) {
+  #nosotros {
+    padding: 80px 70px;
+  }
+}
+@media (max-width: 1180px) {
+  #nosotros {
+    flex-direction: column;
+  }
+  #nosotros img {
+    width: 20rem;
+  }
+}
 @media (max-width: 992px) {
-  .coverPageIndex h2 {
+  #coverPageIndex h2 {
     letter-spacing: 17px;
   }
 
@@ -445,6 +468,26 @@ h1 {
     width: 20rem;
   }
 
+  #nuestraCasa {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+  }
+
+  #menuIndex {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+  }
+
+  #shop .shopContainer {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+  }
   #shop .shopContainer .shopMarketContainer {
     margin: 20px 0;
   }
@@ -453,13 +496,13 @@ h1 {
   }
 }
 @media (max-width: 768px) {
-  .coverPageIndex {
+  #coverPageIndex {
     height: 40rem;
   }
-  .coverPageIndex h2 {
+  #coverPageIndex h2 {
     font-size: 1.5rem;
   }
-  .coverPageIndex .menuTitleLine {
+  #coverPageIndex .menuTitleLine {
     margin-top: -140px;
   }
 
@@ -489,18 +532,18 @@ h1 {
   }
 }
 @media (max-width: 684px) {
-  .coverPageIndex {
+  #coverPageIndex {
     height: 20rem;
     justify-content: center;
   }
-  .coverPageIndex .transparentBox {
+  #coverPageIndex .transparentBox {
     display: none;
   }
-  .coverPageIndex .menuTitleLine {
+  #coverPageIndex .menuTitleLine {
     font-size: 1rem;
     margin-top: 0;
   }
-  .coverPageIndex h2 {
+  #coverPageIndex h2 {
     font-size: 1rem;
     letter-spacing: 10px;
     height: 1rem;
@@ -562,18 +605,18 @@ h1 {
   }
 }
 @media (max-width: 488px) {
-  .coverPageIndex {
+  #coverPageIndex {
     height: 20rem;
     justify-content: center;
   }
-  .coverPageIndex .transparentBox {
+  #coverPageIndex .transparentBox {
     display: none;
   }
-  .coverPageIndex .menuTitleLine {
+  #coverPageIndex .menuTitleLine {
     font-size: 1rem;
     margin-top: 0;
   }
-  .coverPageIndex h2 {
+  #coverPageIndex h2 {
     font-size: 1rem;
     letter-spacing: 6px;
     height: 1rem;
@@ -600,10 +643,6 @@ h1 {
   }
 
   #nuestraCasa {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: inherit;
     margin: 10px, auto;
     padding: 10px;
   }
@@ -652,7 +691,7 @@ h1 {
     height: 23rem;
   }
 }
-.video {
+#video {
   padding: 1rem 0;
   background-image: url(../Imagenes/coffeeBeans.webp);
   background-repeat: repeat;
@@ -739,12 +778,16 @@ h1 {
 }
 
 @media (max-width: 992px) {
-  .video {
+  #video {
     height: 30rem;
   }
 
   #menuGeneral {
     padding: 3rem 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
   }
   #menuGeneral .menuLists {
     margin: 0;
@@ -775,10 +818,14 @@ h1 {
   }
 }
 @media (max-width: 684px) {
-  .video {
+  #video {
     height: auto;
   }
 
+  #menuGeneral {
+    background-image: none;
+    background-color: #080808;
+  }
   #menuGeneral .menuTitle {
     padding: 3rem 0;
   }
@@ -810,11 +857,11 @@ header .mainTitle {
   display: none;
 }
 
-.coverPageCoffeeShop .menuTitleLine {
+#coverPageCoffeeShop .menuTitleLine {
   margin-top: -230px;
 }
 
-.coffeeShopIntro {
+#coffeeShopIntro {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -822,14 +869,14 @@ header .mainTitle {
   height: 468px;
   margin: 100px 40px;
 }
-.coffeeShopIntro .aboutMarket {
+#coffeeShopIntro .aboutMarket {
   background-image: url(../Imagenes/about-bg.png);
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   height: 456px;
 }
-.coffeeShopIntro .aboutMarket .aboutMarketTitleMini {
+#coffeeShopIntro .aboutMarket .aboutMarketTitleMini {
   font-family: "Oswald", "sans-serif";
   font-weight: bold;
   color: #c7a17a;
@@ -837,27 +884,30 @@ header .mainTitle {
   margin: 0;
   margin-bottom: -10px;
 }
-.coffeeShopIntro .aboutMarket h2 {
+#coffeeShopIntro .aboutMarket h2 {
   font-family: "Oswald", "sans-serif";
   font-weight: bold;
   font-size: 60px;
   margin-bottom: 20px;
 }
-.coffeeShopIntro .aboutMarket p {
+#coffeeShopIntro .aboutMarket h2 span {
+  color: #c7a17a;
+}
+#coffeeShopIntro .aboutMarket p {
   font-family: "Open Sans", "sans-serif";
   font-size: 24px;
   text-align: justify;
   padding-right: 129px;
 }
-.coffeeShopIntro .aboutMarketDescription {
+#coffeeShopIntro .aboutMarketDescription {
   max-width: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.coffeeShopIntro .aboutMarketDescription .marketDescriptionItems {
+#coffeeShopIntro .aboutMarketDescription .marketDescriptionItems {
   margin: 10px;
 }
-.coffeeShopIntro .aboutMarketDescription img {
+#coffeeShopIntro .aboutMarketDescription img {
   margin-bottom: 7px;
 }
 
@@ -869,18 +919,18 @@ header .mainTitle {
   box-shadow: inset 0 0 35px 20px black;
 }
 
-.ourCoffee {
+#ourCoffee {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: black;
 }
-.ourCoffee img {
+#ourCoffee img {
   width: 50%;
   border-radius: 15px;
   box-shadow: 0 0 35px 20px black;
 }
-.ourCoffee .ourCoffeeDetail {
+#ourCoffee .ourCoffeeDetail {
   color: white;
   font-family: "Oswald", "sans-serif";
   font-size: 40px;
@@ -890,15 +940,15 @@ header .mainTitle {
   align-items: center;
   letter-spacing: -1px;
 }
-.ourCoffee .ourCoffeeDetail p {
+#ourCoffee .ourCoffeeDetail p {
   padding: 40px;
   font-size: 3rem;
 }
-.ourCoffee .ourCoffeeDetail a {
+#ourCoffee .ourCoffeeDetail a {
   font-size: 20px;
 }
 
-.mainCoffeeShop {
+#mainCoffeeShop {
   background-image: url(../Imagenes/bg-blog-image.jpg);
   background-repeat: repeat;
   display: flex;
@@ -910,18 +960,18 @@ header .mainTitle {
   font-family: "Cormorant Garamond", serif;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop {
+  #mainCoffeeShop {
     padding: 2px;
   }
 }
-.mainCoffeeShop .mainCoffeeShopDescription {
+#mainCoffeeShop .mainCoffeeShopDescription {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-right: 50%;
   margin-bottom: 50px;
 }
-.mainCoffeeShop .mainCoffeeShopDescription h2 {
+#mainCoffeeShop .mainCoffeeShopDescription h2 {
   align-items: flex-start;
   letter-spacing: 4.8px;
   font-family: "Oswald", "sans-serif";
@@ -929,11 +979,11 @@ header .mainTitle {
   margin-top: 18px;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .mainCoffeeShopDescription h2 {
+  #mainCoffeeShop .mainCoffeeShopDescription h2 {
     font-size: 1.6rem;
   }
 }
-.mainCoffeeShop .mainCoffeeShopDescription p {
+#mainCoffeeShop .mainCoffeeShopDescription p {
   text-align: start;
   align-items: flex-start;
   padding-right: 20%;
@@ -943,17 +993,17 @@ header .mainTitle {
   text-transform: initial;
   font-size: 1.2rem;
 }
-.mainCoffeeShop .mainCoffeeShopDescription p span {
+#mainCoffeeShop .mainCoffeeShopDescription p span {
   color: #eb9d29ef;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .mainCoffeeShopDescription p {
+  #mainCoffeeShop .mainCoffeeShopDescription p {
     padding: 5%;
     text-align: justify;
     font-size: 0.9rem;
   }
 }
-.mainCoffeeShop .cardContainer {
+#mainCoffeeShop .cardContainer {
   display: flex;
   flex-direction: none;
   justify-content: center;
@@ -961,7 +1011,7 @@ header .mainTitle {
   margin-bottom: 70px;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .cardContainer {
+  #mainCoffeeShop .cardContainer {
     display: flex;
     flex-direction: column;
     justify-content: none;
@@ -971,13 +1021,13 @@ header .mainTitle {
     border-radius: 12px;
   }
 }
-.mainCoffeeShop .cardContainer .cardImage {
+#mainCoffeeShop .cardContainer .cardImage {
   width: 160px;
   border-radius: 10px;
   box-shadow: -15px -10px 22.5px 0px black;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .cardContainer .cardImage {
+  #mainCoffeeShop .cardContainer .cardImage {
     width: 100%;
     height: 200px;
     box-shadow: none;
@@ -986,12 +1036,12 @@ header .mainTitle {
     padding: 3px;
   }
 }
-.mainCoffeeShop .cardContainer .cardDescription {
+#mainCoffeeShop .cardContainer .cardDescription {
   width: 45%;
   margin-left: 25px;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .cardContainer .cardDescription {
+  #mainCoffeeShop .cardContainer .cardDescription {
     display: flex;
     flex-direction: column;
     justify-content: none;
@@ -1000,17 +1050,17 @@ header .mainTitle {
     margin: 0px;
   }
 }
-.mainCoffeeShop .cardContainer .cardDescription h4 {
+#mainCoffeeShop .cardContainer .cardDescription h4 {
   border-bottom: 1px solid #dfdede;
   letter-spacing: 6px;
   color: #eb9d29ef;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .cardContainer .cardDescription h4 {
+  #mainCoffeeShop .cardContainer .cardDescription h4 {
     margin: 20px;
   }
 }
-.mainCoffeeShop .cardContainer .cardDescription p {
+#mainCoffeeShop .cardContainer .cardDescription p {
   text-align: justify;
   text-transform: initial;
   letter-spacing: 0.4px;
@@ -1021,61 +1071,61 @@ header .mainTitle {
   font-size: 1rem;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .cardContainer .cardDescription p {
+  #mainCoffeeShop .cardContainer .cardDescription p {
     padding: 12px;
   }
 }
-.mainCoffeeShop .cardContainer .cardDescription a:hover {
+#mainCoffeeShop .cardContainer .cardDescription a:hover {
   background-color: black;
   color: white;
 }
 @media (max-width: 505px) {
-  .mainCoffeeShop .cardContainer .cardDescription a {
+  #mainCoffeeShop .cardContainer .cardDescription a {
     margin-bottom: 14px;
   }
 }
 
 @media (max-width: 992px) {
-  .coffeeShopIntro .aboutMarket p {
+  #coffeeShopIntro .aboutMarket p {
     font-size: 15px;
   }
-  .coffeeShopIntro .aboutMarketDescription .marketDescriptionItems p {
+  #coffeeShopIntro .aboutMarketDescription .marketDescriptionItems p {
     font-size: 15px;
   }
 
-  .mainCoffeeShop .mainCoffeeShopDescription {
+  #mainCoffeeShop .mainCoffeeShopDescription {
     padding-right: 30%;
   }
 }
 @media (max-width: 768px) {
-  .coverPageCoffeeShop {
+  #coverPageCoffeeShop {
     height: 45rem;
   }
-  .coverPageCoffeeShop .menuTitleLine {
+  #coverPageCoffeeShop .menuTitleLine {
     margin-top: -188px;
   }
 
-  .coffeeShopIntro {
+  #coffeeShopIntro {
     margin: 90px 10px;
     padding: 0;
   }
-  .coffeeShopIntro .aboutMarket .aboutMarketTitleMini {
+  #coffeeShopIntro .aboutMarket .aboutMarketTitleMini {
     font-size: 20px;
   }
-  .coffeeShopIntro .aboutMarket h2 {
+  #coffeeShopIntro .aboutMarket h2 {
     font-size: 43px;
   }
-  .coffeeShopIntro .aboutMarket p {
+  #coffeeShopIntro .aboutMarket p {
     font-size: 15px;
     padding: 5px;
   }
-  .coffeeShopIntro .aboutMarketDescription .marketDescriptionItems img {
+  #coffeeShopIntro .aboutMarketDescription .marketDescriptionItems img {
     width: 37px;
   }
-  .coffeeShopIntro .aboutMarketDescription .marketDescriptionItems h3 {
+  #coffeeShopIntro .aboutMarketDescription .marketDescriptionItems h3 {
     font-size: 1.3rem;
   }
-  .coffeeShopIntro .aboutMarketDescription .marketDescriptionItems p {
+  #coffeeShopIntro .aboutMarketDescription .marketDescriptionItems p {
     font-size: 13px;
   }
 
@@ -1083,35 +1133,35 @@ header .mainTitle {
     height: 170px;
   }
 
-  .ourCoffee .ourCoffeeDetail p {
+  #ourCoffee .ourCoffeeDetail p {
     font-size: 2rem;
   }
-  .ourCoffee .ourCoffeeDetail a {
+  #ourCoffee .ourCoffeeDetail a {
     font-size: 1rem;
   }
 
-  .mainCoffeeShop .mainCoffeeShopDescription {
+  #mainCoffeeShop .mainCoffeeShopDescription {
     padding-right: 20%;
   }
-  .mainCoffeeShop .cardContainer .cardDescription p {
+  #mainCoffeeShop .cardContainer .cardDescription p {
     font-size: 0.95rem;
   }
 }
 @media (max-width: 684px) {
-  .coverPageCoffeeShop {
+  #coverPageCoffeeShop {
     height: 30rem;
   }
-  .coverPageCoffeeShop .menuTitleLine {
+  #coverPageCoffeeShop .menuTitleLine {
     margin-top: -130px;
   }
 
-  .coffeeShopIntro {
+  #coffeeShopIntro {
     margin: 15px 10px;
   }
-  .coffeeShopIntro .aboutMarket {
+  #coffeeShopIntro .aboutMarket {
     justify-content: center;
   }
-  .coffeeShopIntro .aboutMarketDescription {
+  #coffeeShopIntro .aboutMarketDescription {
     display: none;
   }
 
@@ -1119,39 +1169,39 @@ header .mainTitle {
     height: 110px;
   }
 
-  .ourCoffee .ourCoffeeDetail p {
+  #ourCoffee .ourCoffeeDetail p {
     padding: 0;
     font-size: 1.5rem;
   }
-  .ourCoffee .ourCoffeeDetail a {
+  #ourCoffee .ourCoffeeDetail a {
     font-size: 1rem;
   }
 
-  .mainCoffeeShop .mainCoffeeShopDescription {
+  #mainCoffeeShop .mainCoffeeShopDescription {
     padding-right: 10%;
   }
-  .mainCoffeeShop .mainCoffeeShopDescription h2 {
+  #mainCoffeeShop .mainCoffeeShopDescription h2 {
     font-size: 47px;
   }
-  .mainCoffeeShop .mainCoffeeShopDescription p {
+  #mainCoffeeShop .mainCoffeeShopDescription p {
     font-size: 1rem;
   }
-  .mainCoffeeShop .cardContainer .cardDescription p {
+  #mainCoffeeShop .cardContainer .cardDescription p {
     font-size: 0.8rem;
   }
-  .mainCoffeeShop .cardContainer .cardDescription a {
+  #mainCoffeeShop .cardContainer .cardDescription a {
     font-size: 0.8rem;
   }
 }
 @media (max-width: 505px) {
-  .coverPageCoffeeShop {
+  #coverPageCoffeeShop {
     height: 25rem;
   }
-  .coverPageCoffeeShop h2 {
+  #coverPageCoffeeShop h2 {
     font-size: 1rem;
     letter-spacing: 20px;
   }
-  .coverPageCoffeeShop .menuTitleLine {
+  #coverPageCoffeeShop .menuTitleLine {
     margin-top: -115px;
     font-size: 2rem;
   }
@@ -1160,19 +1210,19 @@ header .mainTitle {
     height: 72px;
   }
 
-  .ourCoffee {
+  #ourCoffee {
     display: flex;
     flex-direction: column;
   }
-  .ourCoffee .ourCoffeeDetail a {
+  #ourCoffee .ourCoffeeDetail a {
     font-size: 0.8rem;
   }
 
-  .mainCoffeeShop .mainCoffeeShopDescription {
+  #mainCoffeeShop .mainCoffeeShopDescription {
     padding: 0;
     align-items: center;
   }
-  .mainCoffeeShop .mainCoffeeShopDescription h2 {
+  #mainCoffeeShop .mainCoffeeShopDescription h2 {
     font-size: 36px;
   }
 }
@@ -1184,59 +1234,59 @@ header .mainTitle {
   background-image: url(../Imagenes/PortadaMetodShop.webp);
 }
 
-.mainMethodShop {
+#mainMethodShop {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: black;
   color: white;
 }
-.mainMethodShop .mainMethodShopDescription {
+#mainMethodShop .mainMethodShopDescription {
   max-width: 50%;
 }
-.mainMethodShop .mainMethodShopDescription h2 {
+#mainMethodShop .mainMethodShopDescription h2 {
   font-size: 4.5rem;
   letter-spacing: 10px;
   text-transform: uppercase;
   font-family: "Oswald", "sans-serif";
   margin-bottom: 25px;
 }
-.mainMethodShop .mainMethodShopDescription h2 span {
+#mainMethodShop .mainMethodShopDescription h2 span {
   color: #c7a17a;
 }
-.mainMethodShop .mainMethodShopDescription p {
+#mainMethodShop .mainMethodShopDescription p {
   text-align: justify;
   font-family: "Archivo Narrow", "sans-serif";
   font-size: 1.2rem;
   letter-spacing: 1.2px;
   padding: 0 85px;
 }
-.mainMethodShop .mainMethodShopDescription p span {
+#mainMethodShop .mainMethodShopDescription p span {
   color: #eb9d29ef;
 }
 
-.methodShopList {
+#methodShopList {
   background-image: url(../Imagenes/bg-blog-image.jpg);
   padding: 25px;
 }
-.methodShopList .methodShopListDescription {
+#methodShopList .methodShopListDescription {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding-right: 50%;
   margin-bottom: 50px;
 }
-.methodShopList .methodShopListDescription h2 {
+#methodShopList .methodShopListDescription h2 {
   align-items: flex-start;
   letter-spacing: 4.8px;
   font-family: "Oswald", "sans-serif";
   font-size: 4rem;
   margin-top: 18px;
 }
-.methodShopList .methodShopListDescription h2 span {
+#methodShopList .methodShopListDescription h2 span {
   color: #c7a17a;
 }
-.methodShopList .methodShopListDescription p {
+#methodShopList .methodShopListDescription p {
   text-align: start;
   align-items: flex-start;
   padding-right: 20%;
@@ -1246,10 +1296,10 @@ header .mainTitle {
   text-transform: initial;
   font-size: 1.2rem;
 }
-.methodShopList .methodShopListDescription p span {
+#methodShopList .methodShopListDescription p span {
   color: #eb9d29ef;
 }
-.methodShopList .methodsContainer {
+#methodShopList .methodsContainer {
   display: flex;
   flex-direction: none;
   justify-content: space-evenly;
@@ -1257,7 +1307,7 @@ header .mainTitle {
   flex-wrap: wrap;
   padding-left: 0;
 }
-.methodShopList .methodsContainer li {
+#methodShopList .methodsContainer li {
   display: flex;
   flex-direction: column;
   justify-content: none;
@@ -1265,127 +1315,128 @@ header .mainTitle {
   width: 30rem;
   margin-bottom: 60px;
 }
-.methodShopList .methodsContainer li:hover {
+#methodShopList .methodsContainer li:hover {
   transform: translateY(-6px) scale(1.03);
   transition: 0.9s;
   cursor: pointer;
 }
-.methodShopList .methodsContainer li h4 {
-  color: #FF8671;
+#methodShopList .methodsContainer li h4 {
+  color: #c7a17a;
   font-family: "Oswald", "sans-serif";
   font-size: 1.5em;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   padding: 1px;
+  font-weight: bold;
 }
-.methodShopList .methodsContainer li img {
+#methodShopList .methodsContainer li img {
   width: 6rem;
   height: 8rem;
   border-radius: 100%;
 }
-.methodShopList .methodsContainer li p {
+#methodShopList .methodsContainer li p {
   text-align: center;
   padding: 0;
   margin-bottom: 15px;
   font-family: "Archivo Narrow", "sans-serif";
 }
-.methodShopList .methodsContainer .itemButton {
+#methodShopList .methodsContainer .itemButton {
   text-transform: uppercase;
 }
-.methodShopList .methodsContainer .itemButton:hover {
+#methodShopList .methodsContainer .itemButton:hover {
   background-color: black;
   color: white;
 }
 
 @media (max-width: 992px) {
-  .coverPageMethodShop h2 {
+  #coverPageMethodShop h2 {
     letter-spacing: 20px;
   }
 
-  .mainMethodShop .mainMethodShopDescription p {
+  #mainMethodShop .mainMethodShopDescription p {
     padding: 0 8px;
     font-size: 1rem;
   }
 
-  .methodShopList .methodShopListDescription {
+  #methodShopList .methodShopListDescription {
     padding-right: 20%;
   }
-  .methodShopList .methodsContainer li {
+  #methodShopList .methodsContainer li {
     width: 15rem;
   }
 }
 @media (max-width: 768px) {
-  .coverPageMethodShop {
+  #coverPageMethodShop {
     height: 45rem;
   }
-  .coverPageMethodShop h2 {
+  #coverPageMethodShop h2 {
     letter-spacing: 15px;
   }
-  .coverPageMethodShop .menuTitleLine {
+  #coverPageMethodShop .menuTitleLine {
     font-size: 2rem;
     margin-top: -150px;
   }
 
-  .mainMethodShop img {
+  #mainMethodShop img {
     width: 52%;
   }
-  .mainMethodShop .mainMethodShopDescription h2 {
+  #mainMethodShop .mainMethodShopDescription h2 {
     font-size: 4rem;
   }
-  .mainMethodShop .mainMethodShopDescription p {
+  #mainMethodShop .mainMethodShopDescription p {
     font-size: 0.8rem;
   }
 }
 @media (max-width: 684px) {
-  .coverPageMethodShop {
+  #coverPageMethodShop {
     height: 35rem;
   }
-  .coverPageMethodShop h2 {
+  #coverPageMethodShop h2 {
     letter-spacing: 9px;
   }
-  .coverPageMethodShop .menuTitleLine {
+  #coverPageMethodShop .menuTitleLine {
     margin-top: -132px;
     font-size: 1.8rem;
   }
 
-  .mainMethodShop .mainMethodShopDescription h2 {
+  #mainMethodShop .mainMethodShopDescription h2 {
     font-size: 3rem;
   }
 
-  .methodShopList .methodShopListDescription {
+  #methodShopList .methodShopListDescription {
     padding-right: 0;
   }
 }
 @media (max-width: 488px) {
-  .coverPageMethodShop {
+  #coverPageMethodShop {
     height: 28rem;
   }
-  .coverPageMethodShop h2 {
+  #coverPageMethodShop h2 {
     font-size: 1rem;
     letter-spacing: 6px;
   }
-  .coverPageMethodShop .menuTitleLine {
+  #coverPageMethodShop .menuTitleLine {
     font-size: 1rem;
     margin-top: -106px;
   }
 
-  .mainMethodShop {
+  #mainMethodShop {
     background-image: url(../Imagenes/chemexStyle.webp);
     background-size: cover;
   }
-  .mainMethodShop img {
+  #mainMethodShop img {
     display: none;
   }
-  .mainMethodShop .mainMethodShopDescription {
+  #mainMethodShop .mainMethodShopDescription {
     max-width: fit-content;
   }
 
-  .methodShopList {
+  #methodShopList {
     padding: 15px;
   }
-  .methodShopList .methodShopListDescription h2 {
+  #methodShopList .methodShopListDescription h2 {
     font-size: 3rem;
   }
-  .methodShopList .methodShopListDescription p {
+  #methodShopList .methodShopListDescription p {
     padding-right: 0;
     text-align: justify;
     font-size: 1rem;

@@ -1,27 +1,35 @@
 header {
     nav {
         @include animationDefault (aparecer, 4s);
-                ul {      
-                    li {
-                        font-family: $fontTextStandard!important;
-                        
-                        a {
-                            letter-spacing: 2px !important;
-                            color: white !important;
-                            text-transform: uppercase !important;
-                            transition: all 0.5s !important;
-                                           
-                            &:hover {
-                                color:$colorDefault !important;
-                            }
+            ul {      
+                li {
+                    font-family: $fontTextStandard!important;
+                    
+                    a {
+                        letter-spacing: 2px !important;
+                        text-transform: uppercase !important;
+                        transition: all 0.5s !important;
+                        color: white !important;
+                        padding: .1rem 1rem !important;
+                                        
+                        &:hover {
+                            color:$colorDefault !important;
                         }
                     }
                 }
-   
-        @media (max-width: 980px) {
-            position: fixed;
+            }
+    }
+
+    @media (max-width: 991px) {
+        nav {
+            ul {
+                li {
+                    a {
+                        padding: .5rem 1rem !important;
+                    }
+                }
+            }
         }
-    
     }
 
 }

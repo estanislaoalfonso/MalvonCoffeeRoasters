@@ -3,7 +3,7 @@
     background-image: url(../Imagenes/PortadaMetodShop.webp);
 }
 
-.mainMethodShop {
+#mainMethodShop {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -37,13 +37,13 @@
                 color: nth($color, 3);
             }
         }
-}
+    }
 
 }
 
 
 
-.methodShopList {
+#methodShopList {
     background-image: url(../Imagenes/bg-blog-image.jpg);
     padding: 25px;
 
@@ -101,11 +101,12 @@
             }
             
             h4 {
-                color: nth($color, 4);
+                color: $colorDefault;
                 font-family: $fontTitlesStandard;
                 font-size: 1.5em;
-                letter-spacing: 1.5px;
+                letter-spacing: 1.8px;
                 padding: 1px;
+                font-weight: bold;
             
             }
 
@@ -138,13 +139,13 @@
 
 
 @media (max-width: 992px) {
-    .coverPageMethodShop {
+    #coverPageMethodShop {
         h2 {
             letter-spacing: 20px;
         }
     }
 
-    .mainMethodShop {
+    #mainMethodShop {
         .mainMethodShopDescription {
             p {
                 padding: 0 8px;
@@ -153,7 +154,7 @@
         }
     }
 
-    .methodShopList {
+    #methodShopList {
         .methodShopListDescription {
             padding-right: 20%;
         }
@@ -168,7 +169,7 @@
 }
 
 @media (max-width: 768px) {
-    .coverPageMethodShop {
+    #coverPageMethodShop {
 
         height: 45rem;
 
@@ -182,7 +183,7 @@
         }
     }
 
-    .mainMethodShop {
+    #mainMethodShop {
         img {
             width: 52%;
         }
@@ -200,7 +201,7 @@
 }
 
 @media (max-width: 684px) {
-    .coverPageMethodShop {
+    #coverPageMethodShop {
         height: 35rem;
         h2 {
             letter-spacing: 9px;
@@ -211,7 +212,7 @@
         }
     }
 
-    .mainMethodShop {
+    #mainMethodShop {
         .mainMethodShopDescription {
             h2 {
                 font-size: 3rem;
@@ -219,7 +220,7 @@
         }
     }
 
-    .methodShopList {
+    #methodShopList {
         .methodShopListDescription {
             padding-right: 0;
         }
@@ -227,7 +228,7 @@
 }
 
 @media (max-width: 488px) {
-    .coverPageMethodShop {
+    #coverPageMethodShop {
         height: 28rem;
 
         h2 {
@@ -241,7 +242,7 @@
         }
     }
 
-    .mainMethodShop {
+    #mainMethodShop {
 
         background-image: url(../Imagenes/chemexStyle.webp);
         background-size: cover;
@@ -255,7 +256,7 @@
         }
     }
 
-    .methodShopList {
+    #methodShopList {
         padding: 15px;
         .methodShopListDescription {
             h2 {
