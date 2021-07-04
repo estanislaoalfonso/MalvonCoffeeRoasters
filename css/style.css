@@ -149,6 +149,14 @@ footer .firmaFooter span {
   color: #c7a17a;
   letter-spacing: 1px;
 }
+@media (max-width: 1024px) {
+  footer {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+  }
+}
 @media (max-width: 992px) {
   footer {
     background-size: cover;
@@ -269,10 +277,11 @@ header nav ul li a:hover {
   font-family: "Oswald", "sans-serif";
   text-transform: uppercase;
   letter-spacing: 25px;
+  font-size: 27px;
 }
 #coverPageIndex .menuTitleLine, #coverPageCoffeeShop .menuTitleLine, #coverPageMethodShop .menuTitleLine {
   color: #c7a17a;
-  margin-top: -200px;
+  margin-top: -215px;
   font-size: 3rem;
 }
 
@@ -332,9 +341,10 @@ h1 {
 }
 #nosotros div p {
   letter-spacing: 1px;
-  line-height: 40px;
+  line-height: 37px;
   text-align: justify;
   font-family: "Open Sans", "sans-serif";
+  font-size: 0.9rem;
 }
 
 #nuestraCasa {
@@ -777,6 +787,18 @@ h1 {
   letter-spacing: 1px;
 }
 
+@media (max-width: 1025px) {
+  #video {
+    display: none;
+  }
+
+  #menuGeneral {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+  }
+}
 @media (max-width: 992px) {
   #video {
     height: 30rem;

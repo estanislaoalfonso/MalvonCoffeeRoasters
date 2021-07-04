@@ -97,6 +97,19 @@
     }
 }
 
+@media (max-width: 1025px) {
+    #video {
+        display: none;
+    }
+
+    #menuGeneral {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: inherit;
+    }
+}
+
 @media (max-width: 992px) {
     
     #video {
