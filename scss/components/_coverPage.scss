@@ -2,6 +2,7 @@
     background-image: url('../Imagenes/portadaIndex.webp');
     @include backgroundStyle (no-repeat, cover, center, 55rem);
     @extend %coverPageStandard;
+
 }
 
 #coverPageCoffeeShop {
