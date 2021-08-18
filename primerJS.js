@@ -69,101 +69,104 @@ junte todos y los sume para arrojar el total de una compra*/
 //2. Creo la variable sobre la cual se irá cargando el total a gastar. 
 let sumaProductos = 0;
 
-/*3. Genero el bucle que me permite que el cliente compre todo lo que necesite y cuando termine
-pueda dar una finalización mediante la palabra "LISTO" la etapa de selección de productos. 
+/*3. Genero la función carrito donde incluyo el bucle que me permite que el cliente compre todo lo que necesite y cuando termine
+pueda dar una finalización mediante la palabra "LISTO". 
 Mientras, acumulo el gasto total mediante la ecuación de suma, dentro del bucle while y switch*/
 
-let cesta = (prompt ( "Ingrese el número de producto que desea comprar.\nEn caso que no quiera mas productos, entonces escriba LISTO para salir."));
+function carrito () {
+    let cesta = prompt ( "Ingrese el número de producto que desea comprar.\nEn caso que no quiera mas productos, entonces escriba LISTO para salir.");
 
-while ( cesta != "LISTO") {
-    switch (cesta) {
-        case "1":
-        productosCafe[0].sumaIva();
-        sumaProductos = productosCafe[0].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[0].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "2":
-        productosCafe[1].sumaIva();
-        sumaProductos = productosCafe[1].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[1].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "3":
-            productosCafe[2].sumaIva();
-        sumaProductos = productosCafe[2].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[2].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "4":
-        productosCafe[3].sumaIva(); 
-        sumaProductos = productosCafe[3].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[3].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "5":
-        productosCafe[4].sumaIva();
-        sumaProductos = productosCafe[4].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[4].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "6":
-        productosCafe[5].sumaIva();
-        sumaProductos = productosCafe[5].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[5].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "7":
-        productosCafe[6].sumaIva();
-        sumaProductos = productosCafe[6].precioCafe + sumaProductos;
-        console.log ("El usuario compró: " + productosCafe[6].nombreCafe + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "8":
-        productosMetodos[0].sumaIva();
-        sumaProductos = productosMetodos[0].precioMetodo + sumaProductos;
-        console.log ("El usuario compró: " + productosMetodos[0].nombreMetodo + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "9":
-        productosMetodos[1].sumaIva();
-        sumaProductos = productosMetodos[1].precioMetodo + sumaProductos;
-        console.log ("El usuario compró: " + productosMetodos[1].nombreMetodo + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "10":
-        productosMetodos[2].sumaIva();
-        sumaProductos = productosMetodos[2].precioMetodo + sumaProductos;
-        console.log ("El usuario compró: " + productosMetodos[2].nombreMetodo + ". Total parcial: $" + sumaProductos);
-        break;
-
-
-        case "11":
-        productosMetodos[3].sumaIva();
-        sumaProductos = productosMetodos[3].precioMetodo + sumaProductos;
-        console.log ("El usuario compró: " + productosMetodos[3].nombreMetodo + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "12":
-        productosMetodos[4].sumaIva();
-        sumaProductos = productosMetodos[4].precioMetodo + sumaProductos;
-        console.log ("El usuario compró: " + productosMetodos[4].nombreMetodo + ". Total parcial: $" + sumaProductos);
-        break;
-
-        case "13":
-        productosMetodos[5].sumaIva();
-        sumaProductos = productosMetodos[5].precioMetodo + sumaProductos;
-        console.log ("El usuario compró: " + productosMetodos[5].nombreMetodo + ". Total parcial: $" + sumaProductos);
-        break;
-
-        default:
-        alert ("Producto no encontrado")
-        break;
+    while ( cesta != "LISTO") {
+        switch (cesta) {
+            case "1":
+            productosCafe[0].sumaIva();
+            sumaProductos = productosCafe[0].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[0].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "2":
+            productosCafe[1].sumaIva();
+            sumaProductos = productosCafe[1].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[1].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "3":
+                productosCafe[2].sumaIva();
+            sumaProductos = productosCafe[2].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[2].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "4":
+            productosCafe[3].sumaIva(); 
+            sumaProductos = productosCafe[3].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[3].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "5":
+            productosCafe[4].sumaIva();
+            sumaProductos = productosCafe[4].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[4].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "6":
+            productosCafe[5].sumaIva();
+            sumaProductos = productosCafe[5].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[5].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "7":
+            productosCafe[6].sumaIva();
+            sumaProductos = productosCafe[6].precioCafe + sumaProductos;
+            console.log ("El usuario compró: " + productosCafe[6].nombreCafe + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "8":
+            productosMetodos[0].sumaIva();
+            sumaProductos = productosMetodos[0].precioMetodo + sumaProductos;
+            console.log ("El usuario compró: " + productosMetodos[0].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "9":
+            productosMetodos[1].sumaIva();
+            sumaProductos = productosMetodos[1].precioMetodo + sumaProductos;
+            console.log ("El usuario compró: " + productosMetodos[1].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "10":
+            productosMetodos[2].sumaIva();
+            sumaProductos = productosMetodos[2].precioMetodo + sumaProductos;
+            console.log ("El usuario compró: " + productosMetodos[2].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            break;
+    
+    
+            case "11":
+            productosMetodos[3].sumaIva();
+            sumaProductos = productosMetodos[3].precioMetodo + sumaProductos;
+            console.log ("El usuario compró: " + productosMetodos[3].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "12":
+            productosMetodos[4].sumaIva();
+            sumaProductos = productosMetodos[4].precioMetodo + sumaProductos;
+            console.log ("El usuario compró: " + productosMetodos[4].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            case "13":
+            productosMetodos[5].sumaIva();
+            sumaProductos = productosMetodos[5].precioMetodo + sumaProductos;
+            console.log ("El usuario compró: " + productosMetodos[5].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            break;
+    
+            default:
+            alert ("Producto no encontrado")
+            break;
+        }
+    cesta = prompt ( "Excelente! Agregaste un producto a tu cesta.\nTu total hasta ahora es de: $" + sumaProductos + "\nPuedes continuar comprando o recuerda que tipeando la palabra LISTO finalizas tu selección.\nElige otro producto si deseas continuar.");
     }
-cesta = prompt ( "Excelente! Agregaste un producto a tu cesta.\nTu total hasta ahora es de: $" + sumaProductos + "\nPuedes continuar comprando o recuerda que tipeando la palabra LISTO finalizas tu selección.\nElige otro producto si deseas continuar.");
 }
 
-
+//Activo el carrito
+carrito ();
 
 /*4. Finalizo mostrando el total comprado y sacando además por consola el gasto total, para pasar a la etapa 
 de uso de tarjeta*/
@@ -176,14 +179,16 @@ console.log ("El total de la compra del usuario es de: $ " + sumaProductos);
 //1. Le pedimos al usuario que elija el banco y si tiene, cuotas sin interés.
 
 alert ( "Por favor, selecciona el Banco de la tarjeta con el cual quieres abonar: " );
+
 let bancoUsuario = prompt ("Ingrese el Banco al que pertenece la tarjeta de crédito. Si tienes algúna facilidad de pago te la informamos!");
 
-function posibilidadCuotasSinInteres(bancoUsuario) {
+function formasDePago() {
+    
     let cuotSinInt;
-        switch (bancoUsuario) {
+        switch (bancoUsuario.toUpperCase()) {
                 
-            case "Santander Rio":
-                let cuotasSantander = prompt ( "Con " + bancoUsuario + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
+            case "SANTANDER RIO":
+                let cuotasSantander = prompt ( "Con " + bancoUsuario.toUpperCase() + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
                 if (cuotasSantander == "6") {
                     cuotSinInt = 6
                 } else if (cuotasSantander == "12") { 
@@ -193,8 +198,8 @@ function posibilidadCuotasSinInteres(bancoUsuario) {
                 }
             break;
 
-            case "Ciudad":
-                let cuotasCiudad = prompt ( "Con " + bancoUsuario + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
+            case "CIUDAD":
+                let cuotasCiudad = prompt ( "Con " + bancoUsuario.toUpperCase() + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
                 if (cuotasCiudad == "6") {
                     cuotSinInt = 6;
                 } else if (cuotasCiudad == "12") {
@@ -205,7 +210,7 @@ function posibilidadCuotasSinInteres(bancoUsuario) {
             break;    
                 
             case "BBVA":
-                let cuotasBBVA = prompt ( "Con " + bancoUsuario + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
+                let cuotasBBVA = prompt ( "Con " + bancoUsuario.toUpperCase() + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
                 if (cuotasBBVA == "6") {
                     cuotSinInt = 6;
                 } else if (cuotasBBVA == "12") {
@@ -215,8 +220,8 @@ function posibilidadCuotasSinInteres(bancoUsuario) {
                 }
             break;   
 
-            case "Itau":
-                let cuotasItau = prompt ( "Con " + bancoUsuario + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
+            case "ITAU":
+                let cuotasItau = prompt ( "Con " + bancoUsuario.toUpperCase() + " tenés de 6 o 12 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 12 pagos sin interés: 12.\nPara 1 solo pago: 1");
                 if (cuotasItau == "6") {
                     cuotSinInt = 6
                 } else {
@@ -225,7 +230,7 @@ function posibilidadCuotasSinInteres(bancoUsuario) {
             break;
             
             case "ICBC":
-                let cuotasICBC = prompt ( "Con " + bancoUsuario + " tenés hasta 6 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 1 solo pago: 1");
+                let cuotasICBC = prompt ( "Con " + bancoUsuario.toUpperCase() + " tenés hasta 6 pagos sin interés.\nTipea:\nPara 6 pagos sin interés: 6.\nPara 1 solo pago: 1");
                 if (cuotasICBC == "6") {
                     cuotSinInt = 6;
                 } else {
@@ -244,28 +249,27 @@ function posibilidadCuotasSinInteres(bancoUsuario) {
     return cuotSinInt;
 }
 
-let cantidadCuotasSeleccionadas = posibilidadCuotasSinInteres(bancoUsuario);
-console.log ("El banco del usuario es: " + bancoUsuario);
+let cantidadCuotasSeleccionadas = formasDePago();
 console.log ("La cantidad de cuotas seleccionadas por el usuario son de: "+ cantidadCuotasSeleccionadas);
 
 
 //ETAPA DE MONTO DE LA CUOTA MENSUAL ---------------------------------------------------
+
+let totalAPagar = sumaProductos;
+let cuotas = cantidadCuotasSeleccionadas;
 
 function totalFinal (totalAPagar, cuotas) {
     let totalPorCuota = totalAPagar / cuotas;
     return totalPorCuota;
 }
 
-let totalAPagar = sumaProductos;
-let cuotas = cantidadCuotasSeleccionadas;
-
 let totalCuotaMensual = totalFinal (totalAPagar,cuotas);
 
-alert ("Muchas gracias por realizar tu compra, el total por cuota será de: $" + totalCuotaMensual + " y será incluido en tu próxima liquidación del banco " + bancoUsuario);
+alert ("Muchas gracias por realizar tu compra, el total por cuota será de: $" + totalCuotaMensual + " y será incluido en tu próxima liquidación del banco " + bancoUsuario.toUpperCase());
 console.log ("El total mensual a abonar por el usuario será de: " + totalCuotaMensual);
 
 
-/*Aplicamos el método filter para que me muestre todos los productos cuyo precio es mejor a 1.000 en cafés
+/*Aplicamos el método filter para que me muestre todos los productos cuyo precio es menor a 1.000 en cafés
 y a 10.000 en métodos*/
 
 const filtroCafePrecios = productosCafe.filter (item => item.precioCafe <= 1000);
