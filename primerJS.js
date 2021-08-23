@@ -3,12 +3,13 @@
 //Creamos las clases de productos a comercializar:
 
 class Cafe {
-    constructor (nombreCafe, sabor, intensidad, origen, precioCafe) {
+    constructor (nombreCafe, sabor, intensidad, origen, precioCafe, counterCafe) {
         this.nombreCafe = nombreCafe.toUpperCase();
         this.sabor = sabor;
         this.intensidad = intensidad;
         this.origen = origen;
-        this.precioCafe = parseFloat(precioCafe);
+        this.precioCafe = parseInt(precioCafe);
+        this.counterCafe = parseInt (counterCafe); //genero la variable que me permitira contar el café
     }
 
     sumaIva() {
@@ -17,6 +18,10 @@ class Cafe {
 
     mostrar () {
         console.log (this);
+    }
+
+    contadorProducto () {
+        this.counterCafe = this.counterCafe + 1; //genero la función que me permite hacer el conteo.
     }
 
 }
@@ -41,13 +46,13 @@ class Metodo {
 //Creando los arrays de productos de café en base a la clase de café:
 //1. Cafés: 
 const productosCafe = []; //acá creo el array y debajo, vienen los productos incluidos en el mismo.
-productosCafe.push (new Cafe ("Café de Colombia", "Sabores dulces y florales", "Intensidad media", "Origen: Colombia", 800));
-productosCafe.push (new Cafe ("Café de Guatemala", "Sabor floral", "Intensidad baja", "Origen: Guatemala", 600));
-productosCafe.push (new Cafe ("Cafe de Antigua Guatemala", "Sabor dulce", "Intensidad baja", "Origen: Antigua Guatemala", 1000));
-productosCafe.push (new Cafe ("Café de Brasil", "Sabor dulce", "Intensidad alta", "Origen: Brasil", 700 ));
-productosCafe.push (new Cafe ("Café de Jamaica", "Sabor dulce y cremoso", "Intensidad suave", "Origen: Jamaica", 1200));
-productosCafe.push (new Cafe ("Café de Costa Rica", "Sabor floral", "Intensidad media", "Origen: Costa Rica", 1100));
-productosCafe.push (new Cafe ("Café de Etiopía", "Sabor dulce", "Intensidad alta", "Origen: Etiopía", 1500));
+productosCafe.push (new Cafe ("Café de Colombia", "Sabores dulces y florales", "Intensidad media", "Origen: Colombia", 800, 0));
+productosCafe.push (new Cafe ("Café de Guatemala", "Sabor floral", "Intensidad baja", "Origen: Guatemala", 600, 0));
+productosCafe.push (new Cafe ("Cafe de Antigua Guatemala", "Sabor dulce", "Intensidad baja", "Origen: Antigua Guatemala", 1000, 0));
+productosCafe.push (new Cafe ("Café de Brasil", "Sabor dulce", "Intensidad alta", "Origen: Brasil", 700, 0));
+productosCafe.push (new Cafe ("Café de Jamaica", "Sabor dulce y cremoso", "Intensidad suave", "Origen: Jamaica", 1200, 0));
+productosCafe.push (new Cafe ("Café de Costa Rica", "Sabor floral", "Intensidad media", "Origen: Costa Rica", 1100, 0));
+productosCafe.push (new Cafe ("Café de Etiopía", "Sabor dulce", "Intensidad alta", "Origen: Etiopía", 1500, 0));
 
 
 //2. Métodos:
@@ -73,6 +78,8 @@ let sumaProductos = 0;
 pueda dar una finalización mediante la palabra "LISTO". 
 Mientras, acumulo el gasto total mediante la ecuación de suma, dentro del bucle while y switch*/
 
+
+
 function carrito () {
     let cesta = prompt ( "Ingrese el número de producto que desea comprar.\nEn caso que no quiera mas productos, entonces escriba LISTO para salir.");
 
@@ -82,42 +89,56 @@ function carrito () {
             productosCafe[0].sumaIva();
             sumaProductos = productosCafe[0].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[0].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[0].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productosCafe[0].counterCafe; // Para visualizar en WEB
             break;
     
             case "2":
             productosCafe[1].sumaIva();
             sumaProductos = productosCafe[1].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[1].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[1].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag2").value = productosCafe[1].counterCafe; // Para visualizar en WEB
             break;
     
             case "3":
                 productosCafe[2].sumaIva();
             sumaProductos = productosCafe[2].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[2].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[2].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag3").value = productosCafe[2].counterCafe; // Para visualizar en WEB
             break;
     
             case "4":
             productosCafe[3].sumaIva(); 
             sumaProductos = productosCafe[3].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[3].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[3].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag4").value = productosCafe[3].counterCafe; // Para visualizar en WEB
             break;
     
             case "5":
             productosCafe[4].sumaIva();
             sumaProductos = productosCafe[4].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[4].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[4].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag5").value = productosCafe[4].counterCafe; // Para visualizar en WEB
             break;
     
             case "6":
             productosCafe[5].sumaIva();
             sumaProductos = productosCafe[5].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[5].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[5].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag6").value = productosCafe[5].counterCafe; // Para visualizar en WEB
             break;
     
             case "7":
             productosCafe[6].sumaIva();
             sumaProductos = productosCafe[6].precioCafe + sumaProductos;
             console.log ("El usuario compró: " + productosCafe[6].nombreCafe + ". Total parcial: $" + sumaProductos);
+            productosCafe[6].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag7").value = productosCafe[6].counterCafe; // Para visualizar en WEB
             break;
     
             case "8":

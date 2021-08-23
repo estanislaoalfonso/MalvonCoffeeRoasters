@@ -241,6 +241,16 @@ header {
                     margin-bottom: 14px;
                 }
             }
+
+            #counterBag1, #counterBag2, #counterBag3, #counterBag4, #counterBag5, #counterBag6, #counterBag7 { 
+                width: 40px;
+                margin-left: 5px;
+                background-color: $colorDefault;
+                color: white;
+                border: 1px solid black;
+                border-radius: 3px;
+                text-align: center;
+            }
         }
 
     }

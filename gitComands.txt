@@ -1,0 +1,29 @@
+
+git log (para ver el historial de cambios)
+
+git status
+git add ("all" "." "index.html")
+git commit -m "Nombre del cambio"
+
+git branch -l (¿en que rama estoy? y que ramas tenemos)
+
+git branch laNikiRama (Creamos la rama)
+git branch -l (Listamos de nuevo para ver en que rama 
+estamos y ver si se creó la rama que queríamos "laNikiRama")
+
+git checkout laNikiRama (me posiciona en la nueva rama)
+git branch -l (me muestra todas las ramas y en verde en la que estoy posicionado)
+
+git status (para que me muestre si tengo cambios sin guardar y donde)
+git diff (para ver los cambios o agregados que sumé al proyecto)
+git commit -m "completo el menu"
+git status (para ver nuevamente si tengo o no algo que commitear)
+
+git merge laNikiRama (mergea todo lo que hice en laNikiRama - 
+Esto se hace siempre sobre la rama master)
+
+
+
+
+
+

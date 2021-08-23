@@ -1106,6 +1106,15 @@ header .mainTitle {
     margin-bottom: 14px;
   }
 }
+#mainCoffeeShop .cardContainer .cardDescription #counterBag1, #mainCoffeeShop .cardContainer .cardDescription #counterBag2, #mainCoffeeShop .cardContainer .cardDescription #counterBag3, #mainCoffeeShop .cardContainer .cardDescription #counterBag4, #mainCoffeeShop .cardContainer .cardDescription #counterBag5, #mainCoffeeShop .cardContainer .cardDescription #counterBag6, #mainCoffeeShop .cardContainer .cardDescription #counterBag7 {
+  width: 40px;
+  margin-left: 5px;
+  background-color: #c7a17a;
+  color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-align: center;
+}
 
 @media (max-width: 992px) {
   #coffeeShopIntro .aboutMarket p {
