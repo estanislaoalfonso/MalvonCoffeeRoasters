@@ -1109,6 +1109,9 @@ header .mainTitle {
 #mainCoffeeShop .cardContainer .cardDescription .oculto {
   display: none;
 }
+#mainCoffeeShop .cardContainer .cardDescription .visible {
+  display: initial;
+}
 #mainCoffeeShop .cardContainer .cardDescription #counterBag1, #mainCoffeeShop .cardContainer .cardDescription #counterBag2, #mainCoffeeShop .cardContainer .cardDescription #counterBag3, #mainCoffeeShop .cardContainer .cardDescription #counterBag4, #mainCoffeeShop .cardContainer .cardDescription #counterBag5, #mainCoffeeShop .cardContainer .cardDescription #counterBag6, #mainCoffeeShop .cardContainer .cardDescription #counterBag7 {
   width: 40px;
   margin-left: 5px;
