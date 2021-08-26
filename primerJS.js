@@ -4,16 +4,16 @@
 
 class Cafe {
     constructor (nombreCafe, sabor, intensidad, origen, precioCafe, counterCafe) {
-        this.nombreCafe = nombreCafe.toUpperCase();
+        this.nombre = nombreCafe.toUpperCase();
         this.sabor = sabor;
         this.intensidad = intensidad;
         this.origen = origen;
-        this.precioCafe = parseInt(precioCafe);
-        this.counterCafe = parseInt (counterCafe); //genero la variable que me permitira contar el café
+        this.precio = parseInt(precioCafe);
+        this.counter = parseInt (counterCafe); //genero la variable que me permitira contar el café
     }
 
     sumaIva() {
-        this.precioCafe = this.precioCafe * 1.21;
+        this.precio = this.precio * 1.21;
     }
 
     mostrar () {
@@ -21,48 +21,49 @@ class Cafe {
     }
 
     contadorProducto () {
-        this.counterCafe = this.counterCafe + 1; //genero la función que me permite hacer el conteo.
+        this.counter = this.counter + 1; //genero la función que me permite hacer el conteo.
     }
 
 }
 
 class Metodo {
-    constructor (nombreMetodo, molienda, tipoVertido, precioMetodo) {
-        this.nombreMetodo = nombreMetodo.toUpperCase();
+    constructor (nombreMetodo, molienda, tipoVertido, precioMetodo,counterMetodo) {
+        this.nombre = nombreMetodo.toUpperCase();
         this.sabor = molienda;
         this.tipoVertido = tipoVertido;
-        this.precioMetodo = parseFloat(precioMetodo);
+        this.precio = parseInt(precioMetodo);
+        this.counter = parseInt (counterMetodo);
     }
 
     sumaIva () {
-        this.precioMetodo = this.precioMetodo * 1.21;
+        this.precio = this.precio * 1.21;
     }
 
     mostrar () {
         console.log (this);
     }
+
+    contadorProducto () {
+        this.counter = this.counter + 1; //genero la función que me permite hacer el conteo.
+    }
 }
 
-//Creando los arrays de productos de café en base a la clase de café:
+//Creando los arrays de productos de café y Métodos en base a su clase:
 //1. Cafés: 
-const productosCafe = []; //acá creo el array y debajo, vienen los productos incluidos en el mismo.
-productosCafe.push (new Cafe ("Café de Colombia", "Sabores dulces y florales", "Intensidad media", "Origen: Colombia", 800, 0));
-productosCafe.push (new Cafe ("Café de Guatemala", "Sabor floral", "Intensidad baja", "Origen: Guatemala", 600, 0));
-productosCafe.push (new Cafe ("Cafe de Antigua Guatemala", "Sabor dulce", "Intensidad baja", "Origen: Antigua Guatemala", 1000, 0));
-productosCafe.push (new Cafe ("Café de Brasil", "Sabor dulce", "Intensidad alta", "Origen: Brasil", 700, 0));
-productosCafe.push (new Cafe ("Café de Jamaica", "Sabor dulce y cremoso", "Intensidad suave", "Origen: Jamaica", 1200, 0));
-productosCafe.push (new Cafe ("Café de Costa Rica", "Sabor floral", "Intensidad media", "Origen: Costa Rica", 1100, 0));
-productosCafe.push (new Cafe ("Café de Etiopía", "Sabor dulce", "Intensidad alta", "Origen: Etiopía", 1500, 0));
-
-
-//2. Métodos:
-const productosMetodos =[];
-productosMetodos.push (new Metodo ("V60", "Molienda Fina", "Vertido: Balanceado", 5000));
-productosMetodos.push (new Metodo ("Aeropress", "Molienda media", "Vertido: Ácido", 7000));
-productosMetodos.push (new Metodo ("Moka", "Molienda media", "Vertido: Intenso", 8000));
-productosMetodos.push (new Metodo ("Syphon", "Molienda fina", "Vertido: suave", 15000));
-productosMetodos.push (new Metodo ("Chemex", "Molienda fina", "Vertido: suave", 11000));
-productosMetodos.push (new Metodo ("French Press", "Molienda fina", "Vertido: Balanceado", 8000));
+const productos = []; //acá creo el array y debajo, vienen los productos incluidos en el mismo.
+productos.push (new Cafe ("Café de Colombia", "Sabores dulces y florales", "Intensidad media", "Origen: Colombia", 800, 0));
+productos.push (new Cafe ("Café de Guatemala", "Sabor floral", "Intensidad baja", "Origen: Guatemala", 600, 0));
+productos.push (new Cafe ("Cafe de Antigua Guatemala", "Sabor dulce", "Intensidad baja", "Origen: Antigua Guatemala", 1000, 0));
+productos.push (new Cafe ("Café de Brasil", "Sabor dulce", "Intensidad alta", "Origen: Brasil", 700, 0));
+productos.push (new Cafe ("Café de Jamaica", "Sabor dulce y cremoso", "Intensidad suave", "Origen: Jamaica", 1200, 0));
+productos.push (new Cafe ("Café de Costa Rica", "Sabor floral", "Intensidad media", "Origen: Costa Rica", 1100, 0));
+productos.push (new Cafe ("Café de Etiopía", "Sabor dulce", "Intensidad alta", "Origen: Etiopía", 1500, 0));
+productos.push (new Metodo ("V60", "Molienda Fina", "Vertido: Balanceado", 5000, 0));
+productos.push (new Metodo ("Aeropress", "Molienda media", "Vertido: Ácido", 7000, 0));
+productos.push (new Metodo ("Moka", "Molienda media", "Vertido: Intenso", 8000, 0));
+productos.push (new Metodo ("Syphon", "Molienda fina", "Vertido: suave", 15000, 0));
+productos.push (new Metodo ("Chemex", "Molienda fina", "Vertido: suave", 11000, 0));
+productos.push (new Metodo ("French Press", "Molienda fina", "Vertido: Balanceado", 8000, 0));
 
 
 /*BUCLE CESTA ----------------------------------------------------------------------
@@ -78,6 +79,34 @@ let sumaProductos = 0;
 pueda dar una finalización mediante la palabra "LISTO". 
 Mientras, acumulo el gasto total mediante la ecuación de suma, dentro del bucle while y switch*/
 
+//EVENTOS - 9
+let botonCarrito = document.getElementById ("carrito");
+let carritosVisibles = false; //Estado inicial del carrito (no visible)
+
+botonCarrito.onclick = () => {
+    mostrarOcultar("seccionCompra", carritosVisibles); //Le paso por parametros el div a manipular y la variable falsa.
+    carritosVisibles = !carritosVisibles;
+    if (carritosVisibles == true) {
+        carrito ();
+    } 
+}
+
+//Creo la función mostrarOcultar 
+function mostrarOcultar (nombre, visibilidad) {
+    let elemento = document.getElementById (nombre);
+    if (visibilidad == false) {
+        if (elemento.classList.contains("oculto")){
+            elemento.classList.remove("oculto");
+        }
+        elemento.className += " visible";
+    } else {
+        if (elemento.classList.contains("visible")){
+            elemento.classList.remove("visible");
+        } 
+        elemento.className += " oculto";
+    }
+}
+
 
 
 function carrito () {
@@ -86,98 +115,110 @@ function carrito () {
     while ( cesta != "LISTO") {
         switch (cesta) {
             case "1":
-            productosCafe[0].sumaIva();
-            sumaProductos = productosCafe[0].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[0].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[0].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productosCafe[0].counterCafe; // Para visualizar en WEB
+            productos[0].sumaIva();                                                                               
+            sumaProductos = productos[0].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[0].nombre + ". Total parcial: $" + sumaProductos);
+            productos[0].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[0].counter; // Para visualizar en WEB
             break;
     
             case "2":
-            productosCafe[1].sumaIva();
-            sumaProductos = productosCafe[1].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[1].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[1].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag2").value = productosCafe[1].counterCafe; // Para visualizar en WEB
+            productos[1].sumaIva();                                                                               
+            sumaProductos = productos[1].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[1].nombre + ". Total parcial: $" + sumaProductos);
+            productos[1].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[1].counter; // Para visualizar en WEB
             break;
     
             case "3":
-                productosCafe[2].sumaIva();
-            sumaProductos = productosCafe[2].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[2].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[2].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag3").value = productosCafe[2].counterCafe; // Para visualizar en WEB
+            productos[2].sumaIva();                                                                               
+            sumaProductos = productos[2].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[1].nombre + ". Total parcial: $" + sumaProductos);
+            productos[2].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[2].counter; // Para visualizar en WEB
             break;
     
             case "4":
-            productosCafe[3].sumaIva(); 
-            sumaProductos = productosCafe[3].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[3].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[3].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag4").value = productosCafe[3].counterCafe; // Para visualizar en WEB
+            productos[3].sumaIva();                                                                               
+            sumaProductos = productos[3].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[3].nombre + ". Total parcial: $" + sumaProductos);
+            productos[3].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[3].counter; // Para visualizar en WEB
             break;
     
             case "5":
-            productosCafe[4].sumaIva();
-            sumaProductos = productosCafe[4].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[4].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[4].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag5").value = productosCafe[4].counterCafe; // Para visualizar en WEB
+            productos[4].sumaIva();                                                                               
+            sumaProductos = productos[4].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[4].nombre + ". Total parcial: $" + sumaProductos);
+            productos[4].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[4].counter; // Para visualizar en WEB
             break;
     
             case "6":
-            productosCafe[5].sumaIva();
-            sumaProductos = productosCafe[5].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[5].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[5].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag6").value = productosCafe[5].counterCafe; // Para visualizar en WEB
+            productos[5].sumaIva();                                                                               
+            sumaProductos = productos[5].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[5].nombre + ". Total parcial: $" + sumaProductos);
+            productos[5].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[5].counter; // Para visualizar en WEB
             break;
     
             case "7":
-            productosCafe[6].sumaIva();
-            sumaProductos = productosCafe[6].precioCafe + sumaProductos;
-            console.log ("El usuario compró: " + productosCafe[6].nombreCafe + ". Total parcial: $" + sumaProductos);
-            productosCafe[6].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag7").value = productosCafe[6].counterCafe; // Para visualizar en WEB
+            productos[6].sumaIva();                                                                               
+            sumaProductos = productos[6].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[6].nombre + ". Total parcial: $" + sumaProductos);
+            productos[6].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[6].counter; // Para visualizar en WEB
             break;
     
             case "8":
-            productosMetodos[0].sumaIva();
-            sumaProductos = productosMetodos[0].precioMetodo + sumaProductos;
-            console.log ("El usuario compró: " + productosMetodos[0].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            productos[7].sumaIva();                                                                               
+            sumaProductos = productos[7].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[7].nombre + ". Total parcial: $" + sumaProductos);
+            productos[7].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[7].counter; // Para visualizar en WEB
             break;
     
             case "9":
-            productosMetodos[1].sumaIva();
-            sumaProductos = productosMetodos[1].precioMetodo + sumaProductos;
-            console.log ("El usuario compró: " + productosMetodos[1].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            productos[8].sumaIva();                                                                               
+            sumaProductos = productos[8].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[8].nombre + ". Total parcial: $" + sumaProductos);
+            productos[8].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[8].counter; // Para visualizar en WEB
             break;
     
             case "10":
-            productosMetodos[2].sumaIva();
-            sumaProductos = productosMetodos[2].precioMetodo + sumaProductos;
-            console.log ("El usuario compró: " + productosMetodos[2].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            productos[9].sumaIva();                                                                               
+            sumaProductos = productos[9].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[9].nombre + ". Total parcial: $" + sumaProductos);
+            productos[9].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[9].counter; // Para visualizar en WEB
             break;
     
     
             case "11":
-            productosMetodos[3].sumaIva();
-            sumaProductos = productosMetodos[3].precioMetodo + sumaProductos;
-            console.log ("El usuario compró: " + productosMetodos[3].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            productos[10].sumaIva();                                                                               
+            sumaProductos = productos[10].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[10].nombre + ". Total parcial: $" + sumaProductos);
+            productos[10].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[10].counter; // Para visualizar en WEB
             break;
     
             case "12":
-            productosMetodos[4].sumaIva();
-            sumaProductos = productosMetodos[4].precioMetodo + sumaProductos;
-            console.log ("El usuario compró: " + productosMetodos[4].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            productos[11].sumaIva();                                                                               
+            sumaProductos = productos[11].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[10].nombre + ". Total parcial: $" + sumaProductos);
+            productos[11].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[11].counter; // Para visualizar en WEB
             break;
     
             case "13":
-            productosMetodos[5].sumaIva();
-            sumaProductos = productosMetodos[5].precioMetodo + sumaProductos;
-            console.log ("El usuario compró: " + productosMetodos[5].nombreMetodo + ". Total parcial: $" + sumaProductos);
+            productos[12].sumaIva();                                                                               
+            sumaProductos = productos[12].precio + sumaProductos;
+            console.log ("El usuario compró: " + productos[12].nombre + ". Total parcial: $" + sumaProductos);
+            productos[12].contadorProducto(); //Activo la función para el producto elegido.
+            document.getElementById ("counterBag1").value = productos[12].counter; // Para visualizar en WEB
             break;
-    
+
             default:
             alert ("Producto no encontrado")
             break;
@@ -187,21 +228,21 @@ function carrito () {
 }
 
 //Activo el carrito
-carrito ();
+// carrito ();
 
 /*4. Finalizo mostrando el total comprado y sacando además por consola el gasto total, para pasar a la etapa 
 de uso de tarjeta*/
-alert ("Muchas gracias por elegirnos!\nTu total es de: $ " + sumaProductos +"\nAhora puedes pasar a la etapa de pago.");
-console.log ("El total de la compra del usuario es de: $ " + sumaProductos);
+// alert ("Muchas gracias por elegirnos!\nTu total es de: $ " + sumaProductos +"\nAhora puedes pasar a la etapa de pago.");
+// console.log ("El total de la compra del usuario es de: $ " + sumaProductos);
 
 
 //ETAPA DE CUOTAS --------------------------------------------------------------------
 
 //1. Le pedimos al usuario que elija el banco y si tiene, cuotas sin interés.
 
-alert ( "Por favor, selecciona el Banco de la tarjeta con el cual quieres abonar: " );
+// alert ( "Por favor, selecciona el Banco de la tarjeta con el cual quieres abonar: " );
 
-let bancoUsuario = prompt ("Ingrese el Banco al que pertenece la tarjeta de crédito. Si tienes algúna facilidad de pago te la informamos!");
+// let bancoUsuario = prompt ("Ingrese el Banco al que pertenece la tarjeta de crédito. Si tienes algúna facilidad de pago te la informamos!");
 
 function formasDePago() {
     
@@ -286,15 +327,18 @@ function totalFinal (totalAPagar, cuotas) {
 
 let totalCuotaMensual = totalFinal (totalAPagar,cuotas);
 
-alert ("Muchas gracias por realizar tu compra, el total por cuota será de: $" + totalCuotaMensual + " y será incluido en tu próxima liquidación del banco " + bancoUsuario.toUpperCase());
-console.log ("El total mensual a abonar por el usuario será de: " + totalCuotaMensual);
+// alert ("Muchas gracias por realizar tu compra, el total por cuota será de: $" + totalCuotaMensual + " y será incluido en tu próxima liquidación del banco " + bancoUsuario.toUpperCase());
+// console.log ("El total mensual a abonar por el usuario será de: " + totalCuotaMensual);
 
 
 /*Aplicamos el método filter para que me muestre todos los productos cuyo precio es menor a 1.000 en cafés
 y a 10.000 en métodos*/
 
-const filtroCafePrecios = productosCafe.filter (item => item.precioCafe <= 1000);
-console.log (filtroCafePrecios);
+// const filtroCafePrecios = productosCafe.filter (item => item.precioCafe <= 1000);
+// console.log (filtroCafePrecios);
 
-const filtroMetodosPrecios = productosMetodos.filter (item => item.precioMetodo <= 10000);
-console.log (filtroMetodosPrecios);
+// const filtroMetodosPrecios = productosMetodos.filter (item => item.precioMetodo <= 10000);
+// console.log (filtroMetodosPrecios);
+
+
+

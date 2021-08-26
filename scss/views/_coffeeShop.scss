@@ -198,6 +198,8 @@ header {
             width: 45%;
             margin-left: 25px;
 
+            
+
             @media (max-width: 505px) {
                 @include boxStyle (column, none, center);
                 width: 100%;
@@ -242,6 +244,14 @@ header {
                 }
             }
 
+            .oculto {
+                display: none;
+            }
+    
+            // .visible {
+            //     display: initial;
+            // }
+        
             #counterBag1, #counterBag2, #counterBag3, #counterBag4, #counterBag5, #counterBag6, #counterBag7 { 
                 width: 40px;
                 margin-left: 5px;
@@ -252,6 +262,8 @@ header {
                 text-align: center;
             }
         }
+
+        
 
     }
 }
