@@ -3,13 +3,14 @@
 //Creamos las clases de productos a comercializar:
 
 class Cafe {
-    constructor (nombreCafe, sabor, intensidad, origen, precioCafe, counterCafe) {
+    constructor (nombreCafe, sabor, intensidad, origen, precio, counter, imagen) {
         this.nombre = nombreCafe.toUpperCase();
         this.sabor = sabor;
         this.intensidad = intensidad;
         this.origen = origen;
-        this.precio = parseInt(precioCafe);
-        this.counter = parseInt (counterCafe); //genero la variable que me permitira contar el café
+        this.precio = parseInt(precio);
+        this.counter = parseInt (counter); //genero la variable que me permitira contar el café
+        this.imagen = imagen;
     }
 
     sumaIva() {
@@ -27,12 +28,13 @@ class Cafe {
 }
 
 class Metodo {
-    constructor (nombreMetodo, molienda, tipoVertido, precioMetodo,counterMetodo) {
+    constructor (nombreMetodo, molienda, tipoVertido, precio,counter,imagen) {
         this.nombre = nombreMetodo.toUpperCase();
         this.sabor = molienda;
         this.tipoVertido = tipoVertido;
-        this.precio = parseInt(precioMetodo);
-        this.counter = parseInt (counterMetodo);
+        this.precio = parseInt(precio);
+        this.counter = parseInt (counter);
+        this.imagen = imagen;
     }
 
     sumaIva () {
@@ -51,7 +53,7 @@ class Metodo {
 //Creando los arrays de productos de café y Métodos en base a su clase:
 //1. Cafés: 
 const productos = []; //acá creo el array y debajo, vienen los productos incluidos en el mismo.
-productos.push (new Cafe ("Café de Colombia", "Sabores dulces y florales", "Intensidad media", "Origen: Colombia", 800, 0));
+productos.push (new Cafe ("Café de Colombia", "Sabores dulces y florales", "Intensidad media", "Origen: Colombia", 800, 0,));
 productos.push (new Cafe ("Café de Guatemala", "Sabor floral", "Intensidad baja", "Origen: Guatemala", 600, 0));
 productos.push (new Cafe ("Cafe de Antigua Guatemala", "Sabor dulce", "Intensidad baja", "Origen: Antigua Guatemala", 1000, 0));
 productos.push (new Cafe ("Café de Brasil", "Sabor dulce", "Intensidad alta", "Origen: Brasil", 700, 0));
@@ -85,7 +87,7 @@ let carritosVisibles = false; //Estado inicial del carrito (no visible)
 
 botonCarrito.onclick = () => {
     mostrarOcultar("seccionCompra", carritosVisibles); //Le paso por parametros el div a manipular y la variable falsa.
-    carritosVisibles = !carritosVisibles;
+    carritosVisibles = !carritosVisibles; //Aplico para que en caso que la class fuese falsa, pase a verdadera. Porque cada vez que clickeo el boton arranca en false en la funcion, entonces al cambiar, no se agrega dos veces a la class. 
     if (carritosVisibles == true) {
         carrito ();
     } 
@@ -127,7 +129,7 @@ function carrito () {
             sumaProductos = productos[1].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[1].nombre + ". Total parcial: $" + sumaProductos);
             productos[1].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[1].counter; // Para visualizar en WEB
+            document.getElementById ("counterBag2").value = productos[1].counter; // Para visualizar en WEB
             break;
     
             case "3":
@@ -135,7 +137,7 @@ function carrito () {
             sumaProductos = productos[2].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[1].nombre + ". Total parcial: $" + sumaProductos);
             productos[2].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[2].counter; // Para visualizar en WEB
+            document.getElementById ("counterBag3").value = productos[2].counter; // Para visualizar en WEB
             break;
     
             case "4":
@@ -143,7 +145,7 @@ function carrito () {
             sumaProductos = productos[3].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[3].nombre + ". Total parcial: $" + sumaProductos);
             productos[3].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[3].counter; // Para visualizar en WEB
+            document.getElementById ("counterBag4").value = productos[3].counter; // Para visualizar en WEB
             break;
     
             case "5":
@@ -151,7 +153,7 @@ function carrito () {
             sumaProductos = productos[4].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[4].nombre + ". Total parcial: $" + sumaProductos);
             productos[4].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[4].counter; // Para visualizar en WEB
+            document.getElementById ("counterBag5").value = productos[4].counter; // Para visualizar en WEB
             break;
     
             case "6":
@@ -159,7 +161,7 @@ function carrito () {
             sumaProductos = productos[5].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[5].nombre + ". Total parcial: $" + sumaProductos);
             productos[5].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[5].counter; // Para visualizar en WEB
+            document.getElementById ("counterBag6").value = productos[5].counter; // Para visualizar en WEB
             break;
     
             case "7":
@@ -167,7 +169,7 @@ function carrito () {
             sumaProductos = productos[6].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[6].nombre + ". Total parcial: $" + sumaProductos);
             productos[6].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[6].counter; // Para visualizar en WEB
+            document.getElementById ("counterBag7").value = productos[6].counter; // Para visualizar en WEB
             break;
     
             case "8":
@@ -175,7 +177,7 @@ function carrito () {
             sumaProductos = productos[7].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[7].nombre + ". Total parcial: $" + sumaProductos);
             productos[7].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[7].counter; // Para visualizar en WEB
+            // document.getElementById ("counterBag8").value = productos[7].counter; // Para visualizar en WEB
             break;
     
             case "9":
@@ -183,7 +185,7 @@ function carrito () {
             sumaProductos = productos[8].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[8].nombre + ". Total parcial: $" + sumaProductos);
             productos[8].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[8].counter; // Para visualizar en WEB
+            // document.getElementById ("counterBag9").value = productos[8].counter; // Para visualizar en WEB
             break;
     
             case "10":
@@ -191,7 +193,7 @@ function carrito () {
             sumaProductos = productos[9].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[9].nombre + ". Total parcial: $" + sumaProductos);
             productos[9].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[9].counter; // Para visualizar en WEB
+            // document.getElementById ("counterBag10").value = productos[9].counter; // Para visualizar en WEB
             break;
     
     
@@ -200,7 +202,7 @@ function carrito () {
             sumaProductos = productos[10].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[10].nombre + ". Total parcial: $" + sumaProductos);
             productos[10].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[10].counter; // Para visualizar en WEB
+            // document.getElementById ("counterBag11").value = productos[10].counter; // Para visualizar en WEB
             break;
     
             case "12":
@@ -208,7 +210,7 @@ function carrito () {
             sumaProductos = productos[11].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[10].nombre + ". Total parcial: $" + sumaProductos);
             productos[11].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[11].counter; // Para visualizar en WEB
+            // document.getElementById ("counterBag12").value = productos[11].counter; // Para visualizar en WEB
             break;
     
             case "13":
@@ -216,7 +218,7 @@ function carrito () {
             sumaProductos = productos[12].precio + sumaProductos;
             console.log ("El usuario compró: " + productos[12].nombre + ". Total parcial: $" + sumaProductos);
             productos[12].contadorProducto(); //Activo la función para el producto elegido.
-            document.getElementById ("counterBag1").value = productos[12].counter; // Para visualizar en WEB
+            // document.getElementById ("counterBag13").value = productos[12].counter; // Para visualizar en WEB
             break;
 
             default:
@@ -240,9 +242,9 @@ de uso de tarjeta*/
 
 //1. Le pedimos al usuario que elija el banco y si tiene, cuotas sin interés.
 
-// alert ( "Por favor, selecciona el Banco de la tarjeta con el cual quieres abonar: " );
+alert ( "Por favor, selecciona el Banco de la tarjeta con el cual quieres abonar: " );
 
-// let bancoUsuario = prompt ("Ingrese el Banco al que pertenece la tarjeta de crédito. Si tienes algúna facilidad de pago te la informamos!");
+let bancoUsuario = prompt ("Ingrese el Banco al que pertenece la tarjeta de crédito. Si tienes algúna facilidad de pago te la informamos!");
 
 function formasDePago() {
     
