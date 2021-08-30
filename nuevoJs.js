@@ -31,9 +31,18 @@ for (const producto of productos) {
     cardsDescription.setAttribute ("class", "cardsDescription");
     cardsDescription.innerHTML = `${producto.descripcion}`;
 
+    let cardsButtonSection = document.createElement("div");
+    cardsButtonSection.setAttribute ("class", "buttonDivs")
+
     let cardsButton = document.createElement ("button");
     cardsButton.setAttribute ("class", "cardsButton");
-    cardsButton.innerHTML = "COMPRAR";
+    cardsButton.innerHTML = "CARRITO";
+    cardsButtonSection.appendChild(cardsButton);
+
+    let cardsButtonDelete = document.createElement ("button");
+    cardsButtonDelete.setAttribute ("class", "cardsButtonDelete");
+    cardsButtonDelete.innerHTML = "BORRAR";
+    cardsButtonSection.appendChild(cardsButtonDelete);
     
     let cards = document.createElement("div");
     cards.setAttribute ("class", "cards");
@@ -41,7 +50,7 @@ for (const producto of productos) {
     cards.prepend(imagen);
     cards.appendChild(cardsTitle);
     cards.appendChild(cardsDescription);
-    cards.appendChild(cardsButton);
+    cards.appendChild(cardsButtonSection);   
     
     cardsGeneral.appendChild(cards);
     
@@ -60,7 +69,7 @@ let totalesEnTabla = document.createElement ("tr");
 
 const alertar = () => { //Animación de la librería de JQuery
     Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'success',
         title: '¡Tu procuto se agregó al carrito!',
         showConfirmButton: false,
@@ -118,8 +127,8 @@ for (let i = 0; i< buttonClick.length; i++) {
         let precioProducto = productos[i].precio;
         
         const productosArrayAlStorage = {nombreProducto, descripcionProducto, precioProducto}; //Creo array de productos con los datos que quiero mostrar en mi localstorage
-        const productoAlLocalStorage = (clave, valor) => { //genero una función para que la guarda local pueda ser guardada con la key = id
-            localStorage.setItem(clave, valor);
+        const productoAlLocalStorage = (clave, valor) => { //para que la guarda local pueda ser con la key = id
+            localStorage.setItem (clave, valor);
         };
         
         productoAlLocalStorage (productos[i].id, JSON.stringify(productosArrayAlStorage));
@@ -128,6 +137,9 @@ for (let i = 0; i< buttonClick.length; i++) {
     buttonClick[i].addEventListener ("click", alertar);
 
 };
+
+let buttonClickDelete = document.getElementsByClassName("cardsButtonDelete");
+
 
 
 

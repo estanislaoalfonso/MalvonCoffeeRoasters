@@ -1537,21 +1537,43 @@ body {
 #tablasGeneral {
   align-content: center;
   width: max-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+#tablasGeneral .tablasTitle {
+  color: #c7a17a;
+  align-items: center;
+  font-family: "Oswald", "sans-serif";
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-top: 20px;
 }
 
 #tituloCarrito {
-  background-color: black;
+  background-image: url(../Imagenes/coffeeBeans.jpg);
+  background-position: top;
+  height: 2.8em;
+  display: flex;
   align-items: center;
+  justify-content: center;
   color: white;
-  font-family: "Archivo Narrow", "sans-serif";
+  font-family: "Oswald", "sans-serif";
   letter-spacing: 5px;
   font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 #cardsGeneral {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 #cardsGeneral .cards {
   width: 300px;
@@ -1565,12 +1587,15 @@ body {
   margin: 20px;
   background-color: #faf9f9;
   padding: 2px;
+  box-shadow: 10px 7px 5px #afadad;
 }
 #cardsGeneral .cards .cardsTitle {
   font-family: "Oswald", "sans-serif";
   margin-top: 20px;
   font-size: 1.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  color: #c7a17a;
+  text-transform: uppercase;
 }
 #cardsGeneral .cards .cardsDescription {
   font-family: "Archivo Narrow", "sans-serif";
@@ -1587,6 +1612,10 @@ body {
   padding: 7px;
   border: 1px;
   margin-bottom: 3px;
+}
+#cardsGeneral .cards .cardsButtonDelete {
+  margin-left: 20px;
+  background-color: #f74b4b;
 }
 
 /*# sourceMappingURL=style.css.map */
