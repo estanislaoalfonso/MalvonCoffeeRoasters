@@ -168,6 +168,8 @@ const ordenar = () => {
     accionarBoton ();
 }
 
+//Trabajando sobre funcion filtro.
+
 const filtrar = () => {
     let seleccionFiltro = $("#sortBy").val();
     if (seleccionFiltro == "metodos") {
