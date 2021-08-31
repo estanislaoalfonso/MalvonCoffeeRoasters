@@ -36,6 +36,13 @@
     <div id="tituloCarrito"> 
         <p>CARRITO DE COMPRAS</p>
     </div>
+    <select id="sortBy" class="form-select" aria-label="Default select example" onchange= "ordenar(), filtrar();">
+        <option selected> ORDENAR POR</option>
+        <option value="menorPrecio">Menor Precio</option>
+        <option value="mayorPrecio">Mayor Precio</option>
+        <option value="metodos">Ver Métodos</option>
+        <option value="cafe">Ver Cafés</option>
+    </select>
     <div id="tablasGeneral">
         <div>
             <p class="tablasTitle">Tu Carrito:</p>
