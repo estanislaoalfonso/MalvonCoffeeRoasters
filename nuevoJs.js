@@ -17,62 +17,24 @@ const productos = [//acá creo el array y debajo, vienen los productos incluidos
 ];
 
 //Creo la funcion para crear cards y recorro los objetos con un for of para crearlas:
-
 const renderizarCards = () => {
     for (const producto of productos) {
-        let imagen = document.createElement("img");
-        imagen.setAttribute ("src", producto.imagen);
-        
-        let cardsTitle = document.createElement("h3");
-        cardsTitle.setAttribute ("class", "cardsTitle");
-        cardsTitle.innerHTML = `${producto.nombre}`;
-    
-        let cardsDescription = document.createElement("p");
-        cardsDescription.setAttribute ("class", "cardsDescription");
-        cardsDescription.innerHTML = `${producto.descripcion}`;
-
-        let cardsPrecio = document.createElement ("p");
-        cardsPrecio.setAttribute ("class", "cardsPrecio");
-        cardsPrecio.innerHTML = `$ ${producto.precio}`;
-    
-        let cardsButtonSection = document.createElement("div");
-        cardsButtonSection.setAttribute ("class", "buttonDivs")
-    
-        let cardsButton = document.createElement ("button");
-        cardsButton.setAttribute ("class", "cardsButton");
-        cardsButton.innerHTML = "CARRITO";
-        cardsButtonSection.appendChild(cardsButton);
-    
-        let cardsButtonDelete = document.createElement ("button");
-        cardsButtonDelete.setAttribute ("class", "cardsButtonDelete");
-        cardsButtonDelete.innerHTML = "BORRAR";
-        cardsButtonSection.appendChild(cardsButtonDelete);
-        
-        let cards = document.createElement("div");
-        cards.setAttribute ("class", "cards");
-    
-        cards.prepend(imagen);
-        cards.appendChild(cardsTitle);
-        cards.appendChild(cardsDescription);
-        cards.appendChild(cardsPrecio);
-        cards.appendChild(cardsButtonSection);   
-        
-        cardsGeneral.appendChild(cards);
-        
-    }
+        $("#cardsGeneral").append(`<div class="cards">
+                                        <img src="${producto.imagen}"></img>
+                                        <h3 class="cardsTitle">${producto.nombre}</h3>
+                                        <p class="cardsDescription"> ${producto.descripcion}</p>
+                                        <p class="cardsPrecio"> $ ${producto.precio}</p>
+                                        <div class="buttonDivs">
+                                            <button class="cardsButton"> CARRITO </button>
+                                            <button class="cardsButtonDelete"> BORRAR </button>
+                                        </div>
+                                    </div>`);
+    };
 }
 renderizarCards ();
 
-
 let sumaProductos = 0
 let contadorDeProductos = 0 
-
-//Creo la tabla de productos. 1.44
-let tablaCompras = document.createElement("tabla");
-tablaCompras.setAttribute ("class", "table table-striped") //Incluí el CSS de bootstrap para estas clases
-let tablaComprasBody = document.createElement ("tbody");
-tablasGeneral.appendChild(tablaCompras);
-let totalesEnTabla = document.createElement ("tr");
 
 const alertar = () => { //Animación de la librería de JQuery
     Swal.fire({
@@ -84,70 +46,63 @@ const alertar = () => { //Animación de la librería de JQuery
       })
 }
 
+
+// Creo la tabla de productos. 1.44
+
+$("#tablasGeneral").append(`<table class="table table-striped">
+<tbody class="tablaBody"></tbody>
+</table>`);
+
 /*Recorro todos los productos para asignar la funcion "accionarBoton" a cada boton y que funcione para ese producto en particular.
 Agrego todas las funciones que se van a poder hacer con el boton.*/
 
-const accionarBoton = () => {
+const accionarBotonCompra = () => {
     let buttonClick = document.getElementsByClassName ("cardsButton");
+    function contadorProducto (i) {
+        contadorDeProductos = productos[i].contador + contadorDeProductos;
+        console.log ("Cantidad de productos comprados: " + contadorDeProductos);
+    };
+    function sumarProductos (i) {
+        sumaProductos = productos[i].precio + sumaProductos;
+        console.log ("Lleva gastado: $" + sumaProductos);
+    };
+    function sumarAlLocalStorage (i) {
+        let nombreProducto = productos[i].nombre;
+        let descripcionProducto = productos[i].descripcion;
+        let precioProducto = productos[i].precio;
+        let idProducto = productos[i].id;
+        const productoSeleccionadoStorage = {nombreProducto, descripcionProducto, precioProducto,idProducto}; //Creo array de productos con los datos que quiero mostrar en mi localstorage
+            if (localStorage.getItem("productosSeleccionados") === null) {
+                let productosSeleccionadosArray = [];
+                productosSeleccionadosArray.push (productoSeleccionadoStorage);
+                localStorage.setItem ("productosSeleccionados", JSON.stringify(productosSeleccionadosArray));
+            } else {
+                let productosYaEnLocalStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+                productosYaEnLocalStorage.push(productoSeleccionadoStorage);
+                localStorage.setItem("productosSeleccionados",JSON.stringify(productosYaEnLocalStorage));
+            }
+    }
+        
     for (let i = 0; i< buttonClick.length; i++) {
         //Agrego el evento que va a corresponder a cada boton.
         buttonClick[i].addEventListener ("click", crearTabla);
         function crearTabla () {
-            let fila = document.createElement("tr");
-            
-            let celda = document.createElement("td");
-            celda.innerText = productos[i].id;
-            fila.appendChild(celda);
-    
-            let celda1 = document.createElement("td");
-            celda1.innerText = productos[i].tipo;
-            fila.appendChild(celda1);
-        
-            let celda2 = document.createElement ("td");
-            celda2.innerText = productos[i].nombre;
-            fila.appendChild (celda2);
-        
-            let celda3 = document.createElement ("td");
-            celda3.innerHTML = `<b> $ ${productos[i].precio}</b>`;
-            fila.appendChild (celda3);
-        
-            tablaComprasBody.appendChild (fila);
-            tablaCompras.appendChild (tablaComprasBody);
-        }
-    
-        buttonClick[i].addEventListener ("click", contadorProducto);
-        function contadorProducto () {
-            contadorDeProductos = productos[i].contador + contadorDeProductos; 
-            console.log ("Cantidad de productos comprados: " + contadorDeProductos);
+            $(".tablaBody").append(`<tr>
+            <td>${productos[i].id}</td>
+            <td>${productos[i].tipo}</td>
+            <td>${productos[i].nombre}</td>
+            <td><b> $ ${productos[i].precio}</b></td>
+            </tr>`);
         };
-        
-        buttonClick[i].addEventListener ("click", sumarProductos);
-        function sumarProductos () {
-            sumaProductos = productos[i].precio + sumaProductos;
-            console.log ("Lleva gastado: $" + sumaProductos);
-        };
-    
-        buttonClick[i].addEventListener ("click", sumarAlLocalStorage);    
-        function sumarAlLocalStorage () {
-            
-            let nombreProducto = productos[i].nombre;
-            let descripcionProducto = productos[i].descripcion;
-            let precioProducto = productos[i].precio;
-            
-            const productosArrayAlStorage = {nombreProducto, descripcionProducto, precioProducto}; //Creo array de productos con los datos que quiero mostrar en mi localstorage
-            const productoAlLocalStorage = (clave, valor) => { //para que la guarda local pueda ser con la key = id
-                localStorage.setItem (clave, valor);
-            };
-            
-            productoAlLocalStorage (productos[i].id, JSON.stringify(productosArrayAlStorage));
-        }
-    
-        buttonClick[i].addEventListener ("click", alertar);
-    
+        buttonClick[i].addEventListener ("click", () => {
+            contadorProducto(i);
+            sumarProductos(i);
+            sumarAlLocalStorage(i);
+            alertar();
+        });
     };
 }
-
-accionarBoton ();
+accionarBotonCompra ();
 
 
 //Función para ordenar los productos.
@@ -165,32 +120,7 @@ const ordenar = () => {
 
     $ (".cards").remove(); //Para que no me duplique el renderizado sino que solo se mantenga uno. Elimina el 1ro y genera uno nuevo.
     renderizarCards (); //renderizo las cards con la función para renderizar.
-    accionarBoton ();
+    accionarBotonCompra ();
 }
-
-//Trabajando sobre funcion filtro.
-
-const filtrar = () => {
-    let seleccionFiltro = $("#sortBy").val();
-    if (seleccionFiltro == "metodos") {
-        let metodosFiltrados = productos.filter (productos => productos.tipo === "Método");
-        console.log (metodosFiltrados);
-    } else if (seleccionFiltro == "cafe") {
-        let cafeFiltrados = productos.filter (productos => productos.tipo === "Café");
-        console.log (cafeFiltrados);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 

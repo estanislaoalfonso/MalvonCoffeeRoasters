@@ -29,6 +29,11 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <!--JQuery desde mi pc, linqueado-->
+    <script src="jquery-3.6.0.min.js"></script>
+    
+
     <a class="navbar-brand logo" href="index.html">
         <img src="Imagenes/malvonLogo.webp" alt="malvonLogo"
           style="width: 50%; border-radius: 15px; border: solid 2px white">
@@ -36,17 +41,15 @@
     <div id="tituloCarrito"> 
         <p>CARRITO DE COMPRAS</p>
     </div>
-    <select id="sortBy" class="form-select" aria-label="Default select example" onchange= "ordenar(), filtrar();">
+    <select id="sortBy" class="form-select" aria-label="Default select example" onchange= "ordenar()">
         <option selected> ORDENAR POR</option>
         <option value="menorPrecio">Menor Precio</option>
         <option value="mayorPrecio">Mayor Precio</option>
-        <option value="metodos">Ver Métodos</option>
-        <option value="cafe">Ver Cafés</option>
     </select>
     <div id="tablasGeneral">
-        <div>
-            <p class="tablasTitle">Tu Carrito:</p>
-        </div>
+            <div>
+                <p class="tablasTitle">Tu Carrito:</p>
+            </div>
     </div>  
     <div id="cardsGeneral"></div>
 
@@ -115,12 +118,7 @@
     crossorigin="anonymous"></script>
     <!--Mi JS-->
     <script src="nuevoJs.js"></script>
-    <!--JQuery desde mi pc, linqueado-->
-    <script src="jquery-3.6.0.min.js"></script>
     <!--Sweet Alerts-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-
 </body>
 </html>

@@ -344,3 +344,12 @@ y a 10.000 en métodos*/
 
 
 
+// $("#tablaBody").append(`<tr>
+//                             <td>${productos[i].id}</td>
+//                             <td>${productos[i].tipo}</td>
+//                             <td>${productos[i].nombre}</td>
+//                             <td>${productos[i].precio}</td>
+//                         </tr>`);
+
+
+
