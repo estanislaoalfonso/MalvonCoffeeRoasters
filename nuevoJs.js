@@ -146,14 +146,14 @@ $(".allButtonDelete").click (function () {
 $("#btnVerCafe").click(function() { 
     $(".cardsCafé").toggle(900, function () {
         if ($("#btnVerCafe").html()=="Ocultar Cafés") {
-            $("#btnVerCafe").html("VER CAFÉS");
+            $("#btnVerCafe").html("MOSTRAR CAFÉS");
         }
     });
 });
 $("#btnVerMetodo").click(function() { 
     $(".cardsMétodo").toggle(900, function () {
         if ($("#btnVerMetodo").html()=="Ocultar Métodos") {
-            $("#btnVerMetodo").html("VER MÉTODOS");
+            $("#btnVerMetodo").html("MOSTRAR MÉTODOS");
         }
     });
 });
