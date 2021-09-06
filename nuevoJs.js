@@ -19,16 +19,77 @@ const productos = [//acá creo el array y debajo, vienen los productos incluidos
 //Creo la funcion para crear cards y recorro los objetos con un for of para crearlas:
 const renderizarCards = () => {
     for (const producto of productos) {
-        $("#cardsGeneral").append(`<div class="cards">
+        $("#cardsGeneral").append(`<div class="cards${producto.tipo}">
                                         <img src="${producto.imagen}"></img>
                                         <h3 class="cardsTitle">${producto.nombre}</h3>
                                         <p class="cardsDescription"> ${producto.descripcion}</p>
                                         <p class="cardsPrecio"> $ ${producto.precio}</p>
                                         <div class="buttonDivs">
-                                            <button class="cardsButton"> CARRITO </button>
-                                            <button class="cardsButtonDelete"> BORRAR </button>
+                                            <button id="btnComprar${producto.id}"> CARRITO </button>
+                                            <button id="btnBorrar${producto.id}"> BORRAR </button>
                                         </div>
                                     </div>`);
+
+        //Creo las funciones que van a corresponder al boton del carrito.                                
+        $(`#btnComprar${producto.id}`).click (function () {
+            function contadorProducto () {
+                contadorDeProductos = producto.contador + contadorDeProductos;
+                console.log ("Cantidad de productos comprados: " + contadorDeProductos);
+            };
+            function sumarProductos () {
+                sumaProductos = producto.precio + sumaProductos;
+                console.log ("Lleva gastado: $" + sumaProductos);
+            };
+            function sumarAlLocalStorage () {
+                let nombreProducto = producto.nombre;
+                let descripcionProducto = producto.descripcion;
+                let precioProducto = producto.precio;
+                let idProducto = producto.id;
+                const productoSeleccionado = {nombreProducto, descripcionProducto, precioProducto,idProducto}; //Creo array de productos con los datos que quiero mostrar en mi localstorage
+                    if (localStorage.getItem("productosSeleccionados") === null) {
+                        let productosSeleccionadosArray = [];
+                        productosSeleccionadosArray.push (productoSeleccionado);
+                        localStorage.setItem ("productosSeleccionados", JSON.stringify(productosSeleccionadosArray));
+                    } else {
+                        let productosYaEnLocalStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+                        productosYaEnLocalStorage.push(productoSeleccionado);
+                        localStorage.setItem("productosSeleccionados",JSON.stringify(productosYaEnLocalStorage));
+                    }
+            }
+            
+            function crearTabla () {
+                $(".tablaBody").append(`<tr id="table${producto.id}">
+                                        <td>${producto.id}</td>
+                                        <td>${producto.tipo}</td>
+                                        <td>${producto.nombre}</td>
+                                        <td><b> $ ${producto.precio}</b></td>
+                                        </tr>`);
+            };
+            
+            contadorProducto ();
+            sumarProductos ();
+            sumarAlLocalStorage ();
+            crearTabla();
+            compraRealizada();
+        });
+
+        $(`#btnBorrar${producto.id}`).click (function () {
+            function borrarFilaTabla () {
+                $(`#table${producto.id}`).remove();
+            }
+            //recorro el localStorage
+            function borrarDelLocalStorage () {
+                let productosStorage = JSON.parse (localStorage.getItem("productosSeleccionados"));
+                console.log (productosStorage);
+                let newProductosStorage = productosStorage.filter(item => {
+                    return item.idProducto !== producto.id;
+                });
+                console.log(newProductosStorage);
+            };
+            borrarFilaTabla();
+            borrarDelLocalStorage ();
+        });
+
     };
 }
 renderizarCards ();
@@ -36,15 +97,19 @@ renderizarCards ();
 let sumaProductos = 0
 let contadorDeProductos = 0 
 
-const alertar = () => { //Animación de la librería de JQuery
+
+//Animación de la librería de JQuery
+const compraRealizada = () => { 
     Swal.fire({
         position: 'center',
         icon: 'success',
         title: '¡Tu procuto se agregó al carrito!',
         showConfirmButton: false,
-        timer: 1500
-      })
+        timer: 800
+    })
 }
+
+
 
 
 // Creo la tabla de productos. 1.44
@@ -53,59 +118,7 @@ $("#tablasGeneral").append(`<table class="table table-striped">
 <tbody class="tablaBody"></tbody>
 </table>`);
 
-/*Recorro todos los productos para asignar la funcion "accionarBoton" a cada boton y que funcione para ese producto en particular.
-Agrego todas las funciones que se van a poder hacer con el boton.*/
-
-const accionarBotonCompra = () => {
-    let buttonClick = document.getElementsByClassName ("cardsButton");
-    function contadorProducto (i) {
-        contadorDeProductos = productos[i].contador + contadorDeProductos;
-        console.log ("Cantidad de productos comprados: " + contadorDeProductos);
-    };
-    function sumarProductos (i) {
-        sumaProductos = productos[i].precio + sumaProductos;
-        console.log ("Lleva gastado: $" + sumaProductos);
-    };
-    function sumarAlLocalStorage (i) {
-        let nombreProducto = productos[i].nombre;
-        let descripcionProducto = productos[i].descripcion;
-        let precioProducto = productos[i].precio;
-        let idProducto = productos[i].id;
-        const productoSeleccionadoStorage = {nombreProducto, descripcionProducto, precioProducto,idProducto}; //Creo array de productos con los datos que quiero mostrar en mi localstorage
-            if (localStorage.getItem("productosSeleccionados") === null) {
-                let productosSeleccionadosArray = [];
-                productosSeleccionadosArray.push (productoSeleccionadoStorage);
-                localStorage.setItem ("productosSeleccionados", JSON.stringify(productosSeleccionadosArray));
-            } else {
-                let productosYaEnLocalStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
-                productosYaEnLocalStorage.push(productoSeleccionadoStorage);
-                localStorage.setItem("productosSeleccionados",JSON.stringify(productosYaEnLocalStorage));
-            }
-    }
-        
-    for (let i = 0; i< buttonClick.length; i++) {
-        //Agrego el evento que va a corresponder a cada boton.
-        buttonClick[i].addEventListener ("click", crearTabla);
-        function crearTabla () {
-            $(".tablaBody").append(`<tr>
-            <td>${productos[i].id}</td>
-            <td>${productos[i].tipo}</td>
-            <td>${productos[i].nombre}</td>
-            <td><b> $ ${productos[i].precio}</b></td>
-            </tr>`);
-        };
-        buttonClick[i].addEventListener ("click", () => {
-            contadorProducto(i);
-            sumarProductos(i);
-            sumarAlLocalStorage(i);
-            alertar();
-        });
-    };
-}
-accionarBotonCompra ();
-
-
-//Función para ordenar los productos.
+//Creo la función ordenar para poder ordenar los productos.
 const ordenar = () => {
     let seleccionado = $("#sortBy").val(); //llamo al boton select.
     if (seleccionado == "menorPrecio") { //condicion para que ordene de menor a mayor
@@ -118,9 +131,72 @@ const ordenar = () => {
         });
     }
 
-    $ (".cards").remove(); //Para que no me duplique el renderizado sino que solo se mantenga uno. Elimina el 1ro y genera uno nuevo.
+    $(".cardsCafé").remove(); //Para que no me duplique el renderizado sino que solo se mantenga uno. Elimina el 1ro y genera uno nuevo.
+    $(".cardsMétodo").remove();
     renderizarCards (); //renderizo las cards con la función para renderizar.
-    accionarBotonCompra ();
-}
+};
 
 
+//Botón para vaciar todo el carrito
+$(".allButtonDelete").click (function () {
+    localStorage.clear();
+});
+
+//Agregamos un botón y un div con jQuery
+$("#btnVerCafe").click(function() { 
+    $(".cardsCafé").toggle(900, function () {
+        if ($("#btnVerCafe").html()=="Ocultar Cafés") {
+            $("#btnVerCafe").html("VER CAFÉS");
+        }
+    });
+});
+$("#btnVerMetodo").click(function() { 
+    $(".cardsMétodo").toggle(900, function () {
+        if ($("#btnVerMetodo").html()=="Ocultar Métodos") {
+            $("#btnVerMetodo").html("VER MÉTODOS");
+        }
+    });
+});
+// $("#btnVerMetodo").click(() => { 
+//     $(".cardsMétodo").toggle("5000");
+// });
+
+
+
+
+// const compraCancelada = () => {
+//     const swalWithBootstrapButtons = Swal.mixin({
+//         customClass: {
+//           confirmButton: 'btn btn-success',
+//           cancelButton: 'btn btn-danger'
+//         },
+//         buttonsStyling: false
+//       })
+      
+//       swalWithBootstrapButtons.fire({
+//         title: 'Are you sure?',
+//         text: "You won't be able to revert this!",
+//         icon: 'warning',
+//         showCancelButton: true,
+//         confirmButtonText: 'Yes, delete it!',
+//         cancelButtonText: 'No, cancel!',
+//         reverseButtons: true
+//       }).then((result) => {
+//         if (result.isConfirmed) {
+//           swalWithBootstrapButtons.fire(
+//             'Deleted!',
+//             'Your file has been deleted.',
+//             'success'
+//           )
+//         } else if (
+//           /* Read more about handling dismissals below */
+//           result.dismiss === Swal.DismissReason.cancel
+//         ) {
+//           swalWithBootstrapButtons.fire(
+//             'Cancelled',
+//             'Your imaginary file is safe :)',
+//             'error'
+//           )
+//         }
+//       })
+// }

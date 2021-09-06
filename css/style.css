@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -292,7 +293,7 @@ header nav ul li a:hover {
   z-index: 2;
 }
 
-#cardsGeneral .cards button, .errorContainer .errorDescription .errorButton, #methodShopList .methodsContainer .itemButton, #mainCoffeeShop .cardContainer .cardDescription a, #ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
+.showProductos #btnVerCafe, .showProductos #btnVerMetodo, #cardsGeneral .cardsCafé button, #cardsGeneral .cardsMétodo button, #tablasGeneral div .allButtonDelete, .errorContainer .errorDescription .errorButton, #methodShopList .methodsContainer .itemButton, #mainCoffeeShop .cardContainer .cardDescription a, #ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
   background-color: #c7a17a;
   color: white;
   text-transform: uppercase;
@@ -304,7 +305,7 @@ header nav ul li a:hover {
   text-decoration: none;
   transition: all 0.6s;
 }
-#cardsGeneral .cards button:hover, .errorContainer .errorDescription .errorButton:hover, #methodShopList .methodsContainer .itemButton:hover, #mainCoffeeShop .cardContainer .cardDescription a:hover, #ourCoffee .ourCoffeeDetail a:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
+.showProductos #btnVerCafe:hover, .showProductos #btnVerMetodo:hover, #cardsGeneral .cardsCafé button:hover, #cardsGeneral .cardsMétodo button:hover, #tablasGeneral div .allButtonDelete:hover, .errorContainer .errorDescription .errorButton:hover, #methodShopList .methodsContainer .itemButton:hover, #mainCoffeeShop .cardContainer .cardDescription a:hover, #ourCoffee .ourCoffeeDetail a:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
   background-color: white;
   color: black;
 }
@@ -1564,7 +1565,13 @@ body {
   justify-content: center;
   margin-left: 10px;
 }
-#tablasGeneral .tablasTitle {
+#tablasGeneral div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#tablasGeneral div .tablasTitle {
   color: #c7a17a;
   align-items: center;
   font-family: "Oswald", "sans-serif";
@@ -1574,14 +1581,24 @@ body {
   text-transform: uppercase;
   margin-top: 20px;
 }
+#tablasGeneral div .allButtonDelete {
+  background-color: rgba(158, 38, 38, 0.575);
+  margin-bottom: 20px;
+}
+
+#sortBy {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
 
 #cardsGeneral {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  justify-content: center;
 }
-#cardsGeneral .cards {
+#cardsGeneral .cardsCafé, #cardsGeneral .cardsMétodo {
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -1595,7 +1612,7 @@ body {
   padding: 2px;
   box-shadow: 10px 7px 5px #afadad;
 }
-#cardsGeneral .cards .cardsTitle {
+#cardsGeneral .cardsCafé .cardsTitle, #cardsGeneral .cardsMétodo .cardsTitle {
   font-family: "Oswald", "sans-serif";
   margin-top: 20px;
   font-size: 1.5rem;
@@ -1603,28 +1620,38 @@ body {
   color: #c7a17a;
   text-transform: uppercase;
 }
-#cardsGeneral .cards .cardsDescription {
+#cardsGeneral .cardsCafé .cardsDescription, #cardsGeneral .cardsMétodo .cardsDescription {
   font-family: "Archivo Narrow", "sans-serif";
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
-#cardsGeneral .cards .cardsPrecio {
+#cardsGeneral .cardsCafé .cardsPrecio, #cardsGeneral .cardsMétodo .cardsPrecio {
   font-weight: bold;
 }
-#cardsGeneral .cards img {
+#cardsGeneral .cardsCafé img, #cardsGeneral .cardsMétodo img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: inherit;
 }
-#cardsGeneral .cards button {
+#cardsGeneral .cardsCafé button, #cardsGeneral .cardsMétodo button {
   padding: 7px;
   border: 1px;
   margin-bottom: 3px;
 }
-#cardsGeneral .cards .cardsButtonDelete {
+#cardsGeneral .cardsCafé .cardsButtonDelete, #cardsGeneral .cardsMétodo .cardsButtonDelete {
   margin-left: 20px;
-  background-color: #f74b4b;
+  background-color: #742f2f;
+}
+
+.showProductos {
+  display: flex;
+  align-items: flex-start;
+}
+.showProductos #btnVerCafe, .showProductos #btnVerMetodo {
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

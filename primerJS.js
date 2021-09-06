@@ -353,3 +353,48 @@ y a 10.000 en métodos*/
 
 
 
+const accionarBotonCompra = () => {
+    let buttonClick = document.getElementsByClassName ("cardsButton");
+    function contadorProducto (i) {
+        contadorDeProductos = productos[i].contador + contadorDeProductos;
+        console.log ("Cantidad de productos comprados: " + contadorDeProductos);
+    };
+    function sumarProductos (i) {
+        sumaProductos = productos[i].precio + sumaProductos;
+        console.log ("Lleva gastado: $" + sumaProductos);
+    };
+    function sumarAlLocalStorage (i) {
+        let nombreProducto = productos[i].nombre;
+        let descripcionProducto = productos[i].descripcion;
+        let precioProducto = productos[i].precio;
+        let idProducto = productos[i].id;
+        const productoSeleccionadoStorage = {nombreProducto, descripcionProducto, precioProducto,idProducto}; //Creo array de productos con los datos que quiero mostrar en mi localstorage
+            if (localStorage.getItem("productosSeleccionados") === null) {
+                let productosSeleccionadosArray = [];
+                productosSeleccionadosArray.push (productoSeleccionadoStorage);
+                localStorage.setItem ("productosSeleccionados", JSON.stringify(productosSeleccionadosArray));
+            } else {
+                let productosYaEnLocalStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+                productosYaEnLocalStorage.push(productoSeleccionadoStorage);
+                localStorage.setItem("productosSeleccionados",JSON.stringify(productosYaEnLocalStorage));
+            }
+    }
+        
+        //Agrego el evento que va a corresponder a cada boton.
+        $(".cardsButton").click ( function() {
+            $(".tablaBody").append(`<tr>
+            <td>${productos[i].id}</td>
+            <td>${productos[i].tipo}</td>
+            <td>${productos[i].nombre}</td>
+            <td><b> $ ${productos[i].precio}</b></td>
+            </tr>`);
+        });
+        
+        $(".cardsButton").click ( function () {
+            contadorProducto(i);
+            sumarProductos(i);
+            sumarAlLocalStorage(i);
+            alertar();
+        });
+};
+accionarBotonCompra ();

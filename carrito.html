@@ -41,16 +41,22 @@
     <div id="tituloCarrito"> 
         <p>CARRITO DE COMPRAS</p>
     </div>
+    
+    <div id="tablasGeneral">
+        <div>
+            <p class="tablasTitle">Tu Carrito:</p>
+            <button class="allButtonDelete"> VACIAR CARRITO </button>
+        </div>
+    </div>  
     <select id="sortBy" class="form-select" aria-label="Default select example" onchange= "ordenar()">
         <option selected> ORDENAR POR</option>
         <option value="menorPrecio">Menor Precio</option>
         <option value="mayorPrecio">Mayor Precio</option>
     </select>
-    <div id="tablasGeneral">
-            <div>
-                <p class="tablasTitle">Tu Carrito:</p>
-            </div>
-    </div>  
+    <div class="showProductos">
+        <button id="btnVerCafe">Ocultar Cafés</button>
+        <button id="btnVerMetodo">Ocultar Métodos</button>
+    </div>
     <div id="cardsGeneral"></div>
 
 
