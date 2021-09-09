@@ -1,22 +1,24 @@
-//1. Creo mi array de productos
+//genero un array global de productos, para que cuando tome los datos del JSON, se puedan cargar los productos en un array global, para hacer funcionar todas las demas funciones que tengo.
+let productos = [];
 
-const productos = [//acá creo el array y debajo, vienen los productos incluidos en el mismo.
-{id: 1, tipo: "Café", nombre: "Café de Colombia", descripcion: "Sabor dulce y floral.Intensidad media", precio: 800, imagen: "Imagenes/productImage2.webp", contador: 1},
-{id: 2, tipo: "Café", nombre: "Café de Guatemala", descripcion: "Sabor floral. De intensidad baja", precio: 600, imagen: "Imagenes/productImage3.webp", contador: 1},
-{id: 3, tipo: "Café", nombre: "Cafe de Antigua Guatemala", descripcion: "Intensidad baja", precio: 1000, imagen: "Imagenes/productImage1.webp", contador: 1},
-{id: 4, tipo: "Café", nombre: "Café de Brasil", descripcion: "Sabor dulce. De intensidad alta", precio: 700, imagen: "Imagenes/productImage5.webp", contador: 1},
-{id: 5, tipo: "Café", nombre: "Café de Jamaica", descripcion: "Sabor dulce y cremoso. De intensidad suave", precio: 1200, imagen: "Imagenes/productImage4.webp", contador: 1},
-{id: 6, tipo: "Café", nombre: "Café de Costa Rica", descripcion: "Sabor floral. De intensidad media", precio: 1100, imagen: "Imagenes/productImage1.webp", contador: 1},
-{id: 7, tipo: "Café", nombre: "Café de Etiopía", descripcion: "Sabor dulce. De intensidad alta", precio: 1500, imagen: "Imagenes/productImage2.webp", contador: 1},
-{id: 8, tipo: "Método", nombre: "V60", descripcion: "Molienda Fina. Vertido: Balanceado", precio: 5000, imagen: "Imagenes/V60Carrito.jpg", contador: 1},
-{id: 9, tipo: "Método", nombre: "Aeropress", descripcion: "Molienda media. Vertido: Ácido", precio: 7000, imagen: "Imagenes/AeropressCarrito.png", contador: 1},
-{id: 10, tipo: "Método", nombre: "Moka", descripcion: "Molienda media. Vertido: Intenso", precio: 8000, imagen: "Imagenes/MokaCarrito.jpg", contador: 1},
-{id: 11, tipo: "Método", nombre: "Syphon", descripcion: "Molienda fina. Vertido: Suave", precio: 15000, imagen: "Imagenes/SyphonCarrito.jpg", contador: 1},
-{id: 12, tipo: "Método", nombre: "Chemex", descripcion: "Molienda fina. Vertido: suave", precio: 11000, imagen: "Imagenes/ChemexCarrito.jpg", contador: 1},
-{id: 13, tipo: "Método", nombre: "French Press", descripcion: "Molienda fina. Vertido: Balanceado", precio: 8000, imagen: "Imagenes/FrenchPress.jpg", contador: 1},
-];
+$(document).ready(function () {
+    obtenerJsonProductos ();
+})
+
+const obtenerJsonProductos = () => {
+    //Primero busco la ruta donde están alojados los objetos
+    const urlProductos = "productos.json";
+    $.getJSON (urlProductos, function (respuesta, estado) {
+        if (estado == "success") {
+            productos = respuesta.product; //acá lo que hago es cargar los productos en la variable QUE ES GLOBAL.
+            renderizarCards (); //acá renderízo las cards, porque si está todo ok para mostrarlas, las muestra. Si no, se hace una llamada asincrónica y pueden no verse cuando yo las necesito.
+        }
+    });
+}
+
 
 //Creo la funcion para crear cards y recorro los objetos con un for of para crearlas:
+
 const renderizarCards = () => {
     for (const producto of productos) {
         $("#cardsGeneral").append(`<div class="cards${producto.tipo}">
@@ -33,13 +35,17 @@ const renderizarCards = () => {
         //Creo las funciones que van a corresponder al boton del carrito.                                
         $(`#btnComprar${producto.id}`).click (function () {
             function contadorProducto () {
-                contadorDeProductos = producto.contador + contadorDeProductos;
-                console.log ("Cantidad de productos comprados: " + contadorDeProductos);
+                    contadorDeProductos = producto.contador + contadorDeProductos;
+                    console.log ("Cantidad de productos comprados: " + contadorDeProductos);
+                    return contadorDeProductos;
             };
+
             function sumarProductos () {
                 sumaProductos = producto.precio + sumaProductos;
                 console.log ("Lleva gastado: $" + sumaProductos);
+                return sumaProductos;
             };
+
             function sumarAlLocalStorage () {
                 let nombreProducto = producto.nombre;
                 let descripcionProducto = producto.descripcion;
@@ -59,11 +65,12 @@ const renderizarCards = () => {
             
             function crearTabla () {
                 $(".tablaBody").append(`<tr id="table${producto.id}">
-                                        <td>${producto.id}</td>
                                         <td>${producto.tipo}</td>
                                         <td>${producto.nombre}</td>
+                                        <td style="text-align: center">${contadorDeProductos}</td>
                                         <td><b> $ ${producto.precio}</b></td>
                                         </tr>`);
+                                        
             };
             
             contadorProducto ();
@@ -84,7 +91,11 @@ const renderizarCards = () => {
                 let newProductosStorage = productosStorage.filter(item => {
                     return item.idProducto !== producto.id;
                 });
+                localStorage.clear();
                 console.log(newProductosStorage);
+                let newProductosSeleccionadosArray = [];
+                newProductosSeleccionadosArray.push(newProductosStorage);
+                localStorage.setItem ("newProductosStorage", JSON.stringify(newProductosSeleccionadosArray));
             };
             borrarFilaTabla();
             borrarDelLocalStorage ();
@@ -92,7 +103,6 @@ const renderizarCards = () => {
 
     };
 }
-renderizarCards ();
 
 let sumaProductos = 0
 let contadorDeProductos = 0 
@@ -103,19 +113,29 @@ const compraRealizada = () => {
     Swal.fire({
         position: 'center',
         icon: 'success',
-        title: '¡Tu procuto se agregó al carrito!',
+        title: '¡Tu producto se agregó al carrito!',
         showConfirmButton: false,
         timer: 800
     })
 }
 
-
-
-
 // Creo la tabla de productos. 1.44
 
 $("#tablasGeneral").append(`<table class="table table-striped">
-<tbody class="tablaBody"></tbody>
+<tbody class="tablaBody">
+<tr>
+<tr>
+<td style ="background-color: black; color: white;">Total de productos comprados: ${contadorDeProductos}</td>
+</tr>
+<tr>
+<td>Total: ${sumaProductos}</td>
+</tr>
+<td>Tipo</td>
+<td>Nombre</td>
+<td>Cantidad</td>
+<td>Precio</td>
+</tr>
+</tbody>
 </table>`);
 
 //Creo la función ordenar para poder ordenar los productos.
@@ -137,12 +157,13 @@ const ordenar = () => {
 };
 
 
-//Botón para vaciar todo el carrito
+//Botón para vaciar todo el carrito.-
 $(".allButtonDelete").click (function () {
     localStorage.clear();
+    window.location.reload();
 });
 
-//Agregamos un botón y un div con jQuery
+//Botones para mostrar/quitar los cafés y métodos.-
 $("#btnVerCafe").click(function() { 
     $(".cardsCafé").toggle(900, function () {
         if ($("#btnVerCafe").html()=="Ocultar Cafés") {
@@ -157,46 +178,3 @@ $("#btnVerMetodo").click(function() {
         }
     });
 });
-// $("#btnVerMetodo").click(() => { 
-//     $(".cardsMétodo").toggle("5000");
-// });
-
-
-
-
-// const compraCancelada = () => {
-//     const swalWithBootstrapButtons = Swal.mixin({
-//         customClass: {
-//           confirmButton: 'btn btn-success',
-//           cancelButton: 'btn btn-danger'
-//         },
-//         buttonsStyling: false
-//       })
-      
-//       swalWithBootstrapButtons.fire({
-//         title: 'Are you sure?',
-//         text: "You won't be able to revert this!",
-//         icon: 'warning',
-//         showCancelButton: true,
-//         confirmButtonText: 'Yes, delete it!',
-//         cancelButtonText: 'No, cancel!',
-//         reverseButtons: true
-//       }).then((result) => {
-//         if (result.isConfirmed) {
-//           swalWithBootstrapButtons.fire(
-//             'Deleted!',
-//             'Your file has been deleted.',
-//             'success'
-//           )
-//         } else if (
-//           /* Read more about handling dismissals below */
-//           result.dismiss === Swal.DismissReason.cancel
-//         ) {
-//           swalWithBootstrapButtons.fire(
-//             'Cancelled',
-//             'Your imaginary file is safe :)',
-//             'error'
-//           )
-//         }
-//       })
-// }
