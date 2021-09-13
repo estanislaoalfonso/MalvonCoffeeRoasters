@@ -47,7 +47,10 @@
             <p class="tablasTitle">Tu Carrito:</p>
             <button class="allButtonDelete"> VACIAR CARRITO </button>
         </div>
-    </div>  
+        <div id="cantProd">
+            <p>Tengo: 0</p>
+        </div>  
+    </div>
     <select id="sortBy" class="form-select" aria-label="Default select example" onchange= "ordenar()">
         <option selected> ORDENAR POR</option>
         <option value="menorPrecio">Menor Precio</option>
@@ -58,6 +61,20 @@
         <button id="btnVerMetodo">Ocultar Métodos</button>
     </div>
     <div id="cardsGeneral"></div>
+
+    <table id="tablaLibrosLS">
+        <thead>
+            <tr>
+                <td> Tipo </td>
+                <td> Nombre </td>
+                <td> Cantidad </td>
+                <td> Precio </td>
+            </tr>
+        </thead>
+        <tbody class="tbodyLS">
+
+        </tbody>>
+    </table>
 
 
     
