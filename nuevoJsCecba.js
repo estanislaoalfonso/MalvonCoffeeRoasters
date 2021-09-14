@@ -23,36 +23,50 @@ const obtenerJsonProductos = () => {
 }
 
 
+
 function refrescarTabla (productosDelArrayStorage) {
-    console.log(productosDelArrayStorage);
+    $(".tablaBody").empty()
     for(productos of productosDelArrayStorage) {
         $(".tablaBody").append(`<tr id="table${productos.idProducto}">
-                                        <td>${productos.tipoProducto}</td>
-                                        <td>${productos.nombreProducto}</td>
-                                        <td style="text-align: center">${cantProdComprados}</td>
-                                        <td><b> $ ${productos.precioProducto}</b></td>
-                                        </tr>`);
+                                <td>${productos.tipoProducto}</td>
+                                <td>${productos.nombreProducto}</td>
+                                <td><b> $ ${productos.precioProducto}</b></td>
+                                <td><button id="btnBorrar${productos.idProducto}"> Borrar </button></td> 
+                                </tr>`);
+
+                                
+        $(`#btnBorrar${productos.idProducto}`).click (function () {
+            //Me traigo los productos del LS.
+            let prodStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+            //Activo la función para eliminar un producto determinado.
+            eliminarDelArrayStorage (prodStorage, productos.idProducto);
+            //guardo en el local storage el producto.
+            localStorage.setItem("productosSeleccionados",JSON.stringify(prodStorage));
+            //refrésco la tabla pasandole como parametro el nombre del nuevo array creado.
+            refrescarTabla(prodStorage);
+            //MUestro cantidad adquirida.
+            cantidadProdStorageHTML();
+            //Muestro total gastado.
+            totalGastadoStorage();
+        });
     }
-    
 }
 
 function eliminarDelArrayStorage (productosDelArrayStorage, idAEliminar) {
+    //Genero una variable donde voy a guardar la posición VERDADERA de la condición.
     let posicion;
     for(i=0; i<productosDelArrayStorage.length; i++){
-        if(productosDelArrayStorage[i].idProducto == idAEliminar){
-        posicion = i;
+        //Recorro todo el array y en la posición donde el id del prod es = al parámetro que yo le paso, guardo ese dato.
+        if(productosDelArrayStorage[i].idProducto === idAEliminar){
+            posicion = i;
+        }
     }
-    
-    productosDelArrayStorage.slice(posicion,1);    
-    console.log("La posicion es esta:" + posicion);
-    console.log (productosDelArrayStorage);
-    }
+    //Quito ese dato del array y devuelvo mi array completo.
+    productosDelArrayStorage.splice(posicion,1);    
+    return productosDelArrayStorage;
 }
 
-
-
 //Creo la funcion para crear cards y recorro los objetos con un for of para crearlas:
-
 const renderizarCards = () => {
     for (const producto of productos) {
         $("#cardsGeneral").append(`<div class="cards${producto.tipo}">
@@ -61,24 +75,13 @@ const renderizarCards = () => {
                                         <p class="cardsDescription"> ${producto.descripcion}</p>
                                         <p class="cardsPrecio"> $ ${producto.precio}</p>
                                         <div class="buttonDivs">
-                                            <button id="btnComprar${producto.id}"> CARRITO </button>
-                                            <button id="btnBorrar${producto.id}"> BORRAR </button>
+                                            <button id="btnComprar${producto.id}"> COMPRAR </button>
                                         </div>
                                     </div>`);
 
         //Creo las funciones que van a corresponder al boton de comprar.                                
-        $(`#btnComprar${producto.id}`).click (function () {
-    
-            
-            //Genero una función que me va sumando los productos que voy comprando.
-            function contadorProducto () {
-                    cantProdComprados = producto.contador + cantProdComprados;
-                    // console.log ("Cantidad de productos comprados: " + cantProdComprados);
-                    return cantProdComprados;
-            };
-
-
-            //Genero una función que me mande al localStorage los objetos comprados.
+        $(`#btnComprar${producto.id}`).click (function () { 
+            //Genero una función que me mande al localStorage los objetos comprados.            
             function sumarAlLocalStorage () {
                 let nombreProducto = producto.nombre;
                 let descripcionProducto = producto.descripcion;
@@ -106,29 +109,16 @@ const renderizarCards = () => {
                 };
             }
             
-            
-            contadorProducto ();
             sumarAlLocalStorage ();
             compraRealizada(); //es un alert.-
             cantidadProdStorageHTML(); //Para ver en el HTML los productos comprados.
             totalGastadoStorage ();
-            // let arrayEnStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+            
             
         });
-
-        $(`#btnBorrar${producto.id}`).click (function () {
-
-            let prodStorage = JSON.parse(localStorage.getItem("productosSeleccionados"))
-            eliminarDelArrayStorage (prodStorage, producto.id);
-            localStorage.setItem("productosSeleccionados",JSON.stringify(prodStorage));
-            refrescarTabla(prodStorage);
-            cantidadProdStorageHTML();
-            totalGastadoStorage();
-
-        });
-
     };
 }
+
 
 //Animación de la librería de JQuery
 const compraRealizada = () => { 
@@ -177,7 +167,6 @@ $("#tablasGeneral").append(`<table class="table table-striped">
 <thead>
 <td>Tipo</td>
 <td>Nombre</td>
-<td>Cantidad</td>
 <td>Precio por unidad</td>
 </thead>
 </tbody>
@@ -224,15 +213,6 @@ $("#btnVerMetodo").click(function() {
 });
 
 
-// function eliminarDelArray(productosDelArray, idAEliminar){
-//     for(i=0; i<productosDelArray.length; i++){
-//         if(productosDelArray[i].id== idAEliminar){
-//             let posicion=i;
-//         }
-//     }
-//     productosDelArray.slice(posicion,1);
-//     return productosDelArray;
 
-// }
 
 
