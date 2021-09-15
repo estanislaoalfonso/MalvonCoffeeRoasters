@@ -52,6 +52,8 @@ function refrescarTabla (productosDelArrayStorage) {
     }
 }
 
+//find + indexof. 
+
 function eliminarDelArrayStorage (productosDelArrayStorage, idAEliminar) {
     //Genero una variable donde voy a guardar la posición VERDADERA de la condición.
     let posicion;
@@ -173,7 +175,8 @@ $("#tablasGeneral").append(`<table class="table table-striped">
 </table>`);
 
 //Creo la función ordenar para poder ordenar los productos.
-const ordenar = () => {
+
+$(`#sortBy`).on('change', function () {
     let seleccionado = $("#sortBy").val(); //llamo al boton select.
     if (seleccionado == "menorPrecio") { //condicion para que ordene de menor a mayor
         productos.sort (function (a,b) {
@@ -184,11 +187,12 @@ const ordenar = () => {
             return b.precio - a.precio;
         });
     }
-
+    
     $(".cardsCafé").remove(); //Para que no me duplique el renderizado sino que solo se mantenga uno. Elimina el 1ro y genera uno nuevo.
     $(".cardsMétodo").remove();
     renderizarCards (); //renderizo las cards con la función para renderizar.
-};
+});
+
 
 //Botón para vaciar todo el carrito.-
 $(".allButtonDelete").click (function () {
