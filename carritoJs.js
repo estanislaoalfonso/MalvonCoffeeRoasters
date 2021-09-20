@@ -221,4 +221,13 @@ $("#btnVerMetodo").click(function() {
 
 //probando pasar datos de windows y rescatarlos a mac
 
+/*1. descargar node desde la web de NODE. La recomendada para todos.
+    NO INSTALAR. 
+    PRIMERO PONER: node --version, si sale una versión es porque esta instalado.
+    2. npm install -g sass (la g significa que está instalando sass en toda la computadora)
+    3. npm init (enter metralla). - Te trae el primer Json e inicia NPM en el proyecto si no está iniciado. 
+    4. npm install -D node-sass nodemon (para instalar dependencias de JSON)
+*/
+
+// Últimos cambios realizados en Windows 20 09 2021 - 16.01 hs
 
