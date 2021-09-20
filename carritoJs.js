@@ -219,4 +219,6 @@ $("#btnVerMetodo").click(function() {
 
 // probando git con mi proyecto.
 
+//probando pasar datos de windows y rescatarlos a mac
+
 
