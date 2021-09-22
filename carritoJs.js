@@ -52,8 +52,6 @@ function refrescarTabla (productosDelArrayStorage) {
     }
 }
 
-//find + indexof. 
-
 //Funcion para pasar el parametro el id del elemento que quiero eliminar.
 function eliminarProductoArray (idAEliminar) {
     //saco del LS los objetos
