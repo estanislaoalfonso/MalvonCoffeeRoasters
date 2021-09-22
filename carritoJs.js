@@ -26,24 +26,24 @@ const obtenerJsonProductos = () => {
 
 function refrescarTabla (productosDelArrayStorage) {
     $(".tablaBody").empty()
-    for(productos of productosDelArrayStorage) {
-        $(".tablaBody").append(`<tr id="table${productos.idProducto}">
-                                <td>${productos.tipoProducto}</td>
-                                <td>${productos.nombreProducto}</td>
-                                <td><b> $ ${productos.precioProducto}</b></td>
-                                <td><button id="btnBorrar${productos.idProducto}"> Borrar </button></td> 
+    for(productoTabla of productosDelArrayStorage) {
+        $(".tablaBody").append(`<tr id= "tabla${productoTabla.idProducto}" transactionId= "${productoTabla.idProducto}">
+                                <td>${productoTabla.tipoProducto}</td>
+                                <td>${productoTabla.nombreProducto}</td>
+                                <td> ${productoTabla.idProducto}</td>
+                                <td><b> $ ${productoTabla.precioProducto}</b></td>
+                                <td><button id="btnBorrar${productoTabla.idProducto}"> Borrar </button></td> 
                                 </tr>`);
 
-                                
-        $(`#btnBorrar${productos.idProducto}`).click (function () {
-            //Me traigo los productos del LS.
-            let prodStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
-            //Activo la función para eliminar un producto determinado.
-            eliminarDelArrayStorage (prodStorage, productos.idProducto);
-            //guardo en el local storage el producto.
-            localStorage.setItem("productosSeleccionados",JSON.stringify(prodStorage));
-            //refrésco la tabla pasandole como parametro el nombre del nuevo array creado.
-            refrescarTabla(prodStorage);
+        $(`#btnBorrar${productoTabla.idProducto}`).on ("click", (event) =>{
+            //genero una variable donde AGARRO la fila de referencia a eliminar con el boton.
+            console.log (event.target.parentNode.parentNode);
+            let rowAEliminar = event.target.parentNode.parentNode
+            //busco el ID del atributo que cree en la tr de la tabla, cuyo valor es el numero de ID del producto a eliminar.
+            console.log (parseInt($(rowAEliminar).attr("transactionId")))
+            //creo una variable para AGARRAR el valor de su ID, y lo parseon para su comparacion.-
+            let transactionId = parseInt($(rowAEliminar).attr("transactionId"));
+            eliminarProductoArray (transactionId);
             //MUestro cantidad adquirida.
             cantidadProdStorageHTML();
             //Muestro total gastado.
@@ -54,19 +54,33 @@ function refrescarTabla (productosDelArrayStorage) {
 
 //find + indexof. 
 
-function eliminarDelArrayStorage (productosDelArrayStorage, idAEliminar) {
-    //Genero una variable donde voy a guardar la posición VERDADERA de la condición.
-    let posicion;
-    for(i=0; i<productosDelArrayStorage.length; i++){
-        //Recorro todo el array y en la posición donde el id del prod es = al parámetro que yo le paso, guardo ese dato.
-        if(productosDelArrayStorage[i].idProducto === idAEliminar){
-            posicion = i;
-        }
-    }
-    //Quito ese dato del array y devuelvo mi array completo.
-    productosDelArrayStorage.splice(posicion,1);    
-    return productosDelArrayStorage;
+//Funcion para pasar el parametro el id del elemento que quiero eliminar.
+function eliminarProductoArray (idAEliminar) {
+    //saco del LS los objetos
+    let prodStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+    //busco la posiciion de la transaccion que quiero eliminar
+    let eliminarProductoDelArray = prodStorage.findIndex(elemento => elemento.idProducto === idAEliminar);
+    //elimino el elemento de esa posicion
+    prodStorage.splice(eliminarProductoDelArray,1);
+    //refresco la tabla para mostrar lo que queda en el LS.
+    refrescarTabla (prodStorage);
+    //devuelvo nuevamente el objeto al LS sin el elemento que quise eliminar
+    localStorage.setItem("productosSeleccionados",JSON.stringify(prodStorage));
 }
+
+// function eliminarDelArrayStorage (productosDelArrayStorage, idAEliminar) {
+//     //Genero una variable donde voy a guardar la posición VERDADERA de la condición.
+//     let posicion;
+//     for(i=0; i<productosDelArrayStorage.length; i++){
+//         //Recorro todo el array y en la posición donde el id del prod es = al parámetro que yo le paso, guardo ese dato.
+//         if(productosDelArrayStorage[i].idProducto === idAEliminar){
+//             posicion = i;
+//         }
+//     }
+//     //Quito ese dato del array y devuelvo mi array completo.
+//     productosDelArrayStorage.splice(posicion,1);    
+//     return productosDelArrayStorage;
+// }
 
 //Creo la funcion para crear cards y recorro los objetos con un for of para crearlas:
 const renderizarCards = () => {
@@ -101,26 +115,24 @@ const renderizarCards = () => {
                     localStorage.setItem ("productosSeleccionados", JSON.stringify(productosSeleccionadosArray));
                     // console.log (productosSeleccionadosArray);
                     refrescarTabla(productosSeleccionadosArray);
+                    console.log(productosSeleccionadosArray);
                 }
                 //Si el array tiene productos, entonces lo parseo, le pusheo el nuevo producto y lo mando de nuevo al Sotrage. 
                 else {
                     let prodStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
                     prodStorage.push(productoSeleccionado);
                     localStorage.setItem("productosSeleccionados",JSON.stringify(prodStorage));
-                    refrescarTabla(prodStorage);  
+                    refrescarTabla(prodStorage);
+                    console.log(prodStorage);  
                 };
             }
-            
             sumarAlLocalStorage ();
             compraRealizada(); //es un alert.-
             cantidadProdStorageHTML(); //Para ver en el HTML los productos comprados.
             totalGastadoStorage ();
-            
-            
         });
     };
 }
-
 
 //Animación de la librería de JQuery
 const compraRealizada = () => { 
@@ -194,6 +206,7 @@ $(`#sortBy`).on('change', function () {
 });
 
 
+
 //Botón para vaciar todo el carrito.-
 $(".allButtonDelete").click (function () {
     localStorage.clear();
@@ -215,19 +228,4 @@ $("#btnVerMetodo").click(function() {
         }
     });
 });
-
-
-// probando git con mi proyecto.
-
-//probando pasar datos de windows y rescatarlos a mac
-
-/*1. descargar node desde la web de NODE. La recomendada para todos.
-    NO INSTALAR. 
-    PRIMERO PONER: node --version, si sale una versión es porque esta instalado.
-    2. npm install -g sass (la g significa que está instalando sass en toda la computadora)
-    3. npm init (enter metralla). - Te trae el primer Json e inicia NPM en el proyecto si no está iniciado. 
-    4. npm install -D node-sass nodemon (para instalar dependencias de JSON)
-*/
-
-// Últimos cambios realizados en Windows 20 09 2021 - 16.01 hs
 
