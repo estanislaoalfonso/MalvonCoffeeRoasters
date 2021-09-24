@@ -66,19 +66,6 @@ function eliminarProductoArray (idAEliminar) {
     localStorage.setItem("productosSeleccionados",JSON.stringify(prodStorage));
 }
 
-// function eliminarDelArrayStorage (productosDelArrayStorage, idAEliminar) {
-//     //Genero una variable donde voy a guardar la posición VERDADERA de la condición.
-//     let posicion;
-//     for(i=0; i<productosDelArrayStorage.length; i++){
-//         //Recorro todo el array y en la posición donde el id del prod es = al parámetro que yo le paso, guardo ese dato.
-//         if(productosDelArrayStorage[i].idProducto === idAEliminar){
-//             posicion = i;
-//         }
-//     }
-//     //Quito ese dato del array y devuelvo mi array completo.
-//     productosDelArrayStorage.splice(posicion,1);    
-//     return productosDelArrayStorage;
-// }
 
 //Creo la funcion para crear cards y recorro los objetos con un for of para crearlas:
 const renderizarCards = () => {
@@ -103,8 +90,9 @@ const renderizarCards = () => {
                 let precioProducto = producto.precio;
                 let idProducto = producto.id;
                 let cantidadProducto = producto.contador;
+                let productoImagen = producto.imagen;
                 //Creo array de productos con los datos que quiero mostrar en mi localstorage
-                const productoSeleccionado = {nombreProducto, descripcionProducto, precioProducto,tipoProducto,idProducto, cantidadProducto};
+                const productoSeleccionado = {nombreProducto, descripcionProducto, precioProducto,tipoProducto,idProducto, cantidadProducto, productoImagen};
 
                 //Si el LS está vacío, entonces me genera un array y pushea el producto comprado. 
                 if (localStorage.getItem("productosSeleccionados") === null) {
