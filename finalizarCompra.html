@@ -51,14 +51,8 @@
                 <div id="enSeisCuotas"></div>
                 <div id="enDoceCuotas"></div>
             </div>
-            <select id="cantCuotas" class="form-select" aria-label="Default select example">
-                <option selected> CANTIDAD DE CUOTAS</option>
-                <option value="unaCuotas">1 solo pago</option>    
-                <option value="seisCuotas">6 cuotas</option>
-                    <option value="doceCuotas">12 cuotas</option>
-            </select>
             <select id="bancoUsuario" class="form-select" aria-label="Default select example">
-                <option selected> BANCO </option>
+                <option selected value="banco"> BANCO </option>
                     <option value="super">Banco SuperVielle</option>
                     <option value="santa">Santander Rio</option>
                     <option value="ciudad">Banco Ciudad</option>
@@ -68,16 +62,47 @@
                     <option value="nacion">Banco Nacion</option>
                     <option value="galicia">Banco Galicia</option>
             </select>
+            <select id="cantCuotas" class="form-select" aria-label="Default select example">
+                <option selected value="cantidadCuotas"> CANTIDAD DE CUOTAS</option>
+                <option value="unaCuotas">1 solo pago</option>    
+                <option value="seisCuotas">6 cuotas</option>
+                    <option value="doceCuotas">12 cuotas</option>
+            </select>
             <p id="tieneDescuento" style="display: none">Tienes descuento!</p>
-            <button>COMPRAR</button>
+            <a id="buttonVolverCarrito" href="carrito.html" >SEGUIR COMPRANDO</a>
+            <button id="buttonComprar">FINALIZAR COMPRA</button>
         </div>
         <div class="resumenPagoImage"></div>
     </div>
+  
 
-
-    <div id="cuerpoTicket">
-        
+    <div id="modalCompra" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"  class="modal fade show" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div style="width: 700px;" class="form-group">
+                        <h4>FINALIZAR LA COMPRA</h4><hr>
+                        <input type="text" id="txtNombre" class="form-control" placeholder="NOMBRE">
+                        <input type="text" id="txtApellido" class="form-control" placeholder="APELLIDO">
+                        <input type="text" id="txtDni" class="form-control" placeholder="DNI/CUIT" maxlength="8">
+                        <input type="text" id="txtLocalidad" class="form-control" placeholder="LOCALIDAD/CIUDAD">
+                        <input type="text" id="txtNumeroTarjeta" class="form-control" placeholder="Numero de Tarjeta" maxlength="16">
+                        <input type="email" id="txtCorreo" class="form-control" placeholder="ejemplo@ejemplo.com">
+                        <input type="button" class="btn btn-danger" value="Volver al carrito" id="btnCancelar"> 
+                        <input type="button" class="btn btn-success" value="COMPRAR" id="btnComprar"> 
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+    
+    <div id="cuerpoTicket">
+    </div>
+    
     
 <!--JQuery desde mi pc, linqueado-->
 <script src="jquery-3.6.0.min.js"></script>
