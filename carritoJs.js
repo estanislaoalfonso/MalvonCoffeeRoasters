@@ -37,7 +37,7 @@ function refrescarTabla (productosDelArrayStorage) {
                                 <td>${productoTabla.tipoProducto}</td>
                                 <td>${productoTabla.nombreProducto}</td>
                                 <td><b> $ ${productoTabla.precioProducto}</b></td>
-                                <td><button id="btnBorrar${productoTabla.idProducto}" class = "btn btn-danger"> Borrar </button></td> 
+                                <td><button id="btnBorrar${productoTabla.idProducto}" class = "btn btn-danger"> Quitar </button></td> 
                                 </tr>`);
 
         $(`#btnBorrar${productoTabla.idProducto}`).on ("click", (event) =>{
