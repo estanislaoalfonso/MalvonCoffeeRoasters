@@ -4,12 +4,16 @@ console.log(productosLs);
 
 const renderizarCards = () => {
     for (const producto of productosLs) {
-        $("#cuerpoTicket").append(`<div class="ticket">
-                                        <img src="${producto.productoImagen}"></img>
-                                        <h3 class="cardsTitle">${producto.nombreProducto}</h3>
-                                        <p class="cardsDescription"> ${producto.descripcionProducto}</p>
-                                        <p class="cardsPrecio"> $ ${producto.precioProducto}</p>
-                                        <p class="cardsTipo"> Tipo de producto: ${producto.tipoProducto}</p>
+        $("#cuerpoTicket").append(`<div id="ticket">
+                                        <div id="imageContainer">
+                                        <img id="ticketImage" src="${producto.productoImagen}"></img>
+                                        </div>
+                                        <div id="ticketDescriptionContainer">
+                                        <h3 id="cardsTitle">${producto.nombreProducto}</h3>
+                                        <p id="cardsDescription"> ${producto.descripcionProducto}</p>
+                                        <p id="cardsPrecio"> Precio: $ ${producto.precioProducto}</p>
+                                        <p id="cardsTipo"> Tipo de producto: ${producto.tipoProducto}</p>
+                                        </div>
                                     </div>`);
     }
 }
@@ -25,39 +29,6 @@ function totalGastadoStorage () {
 }
 totalGastadoStorage ();
 
-
-//Funcion ON CHANGE CANTIDAD DE CUOTAS -----------------------------------
-// $('#enUnPago').append(`<p>En un solo pago: $ ${totalGastado}</p>`)
-$(`#cantCuotas`).on('change', function () {
-    let seleccionBanco = $(`#bancoUsuario`).val();
-    if (seleccionBanco == "banco") {
-        alert ("Elegir Banco");
-        window.location.reload();
-    } else {
-        let seleccionado = $("#cantCuotas").val(); //llamo al boton select.
-            if (seleccionado == "seisCuotas") {
-                let enSeisCuotas = totalGastado/6;
-                $('#enSeisCuotas').append(`<p>En 6 cuotas de: $ ${enSeisCuotas}</p>`);
-                $('#enDoceCuotas').empty()
-                $('#enUnPago').empty();
-                $('#enUnaCuotas').empty();
-    
-            } else if (seleccionado == "doceCuotas") {
-                let enDoceCuotas = totalGastado/12;
-                $('#enDoceCuotas').append(`<p>En 12 cuotas de: $ ${enDoceCuotas}</p>`);
-                $('#enSeisCuotas').empty()
-                $('#enUnPago').empty();
-                $('#enUnaCuotas').empty();
-    
-            } else if (seleccionado == "unaCuotas"){
-                let enUnaCuota = totalGastado;
-                $('#enUnaCuotas').append(`<p>En un solo pago: $ ${enUnaCuota}</p>`);
-                $('#enSeisCuotas').empty();
-                $('#enDoceCuotas').empty();
-                $('#enUnPago').empty();
-            }
-    }
-});
 
 //FUNCION PARA SELECCIONAR UN BANCO y DAR DESCUENTO DEL 20%
 $(`#bancoUsuario`).on('change', function () {
@@ -84,6 +55,46 @@ $(`#bancoUsuario`).on('change', function () {
         $('#totalGastado').append(`<p>Total a abonar: $ ${totalGastado}</p>`)
     }
 })
+
+
+//Funcion ON CHANGE CANTIDAD DE CUOTAS -----------------------------------
+$(`#cantCuotas`).on('change', function () {
+    let seleccionBanco = $(`#bancoUsuario`).val();
+    if (seleccionBanco == "banco") {
+        alert ("Elegir Banco");
+        window.location.reload();
+    } else {
+        let seleccionado = $("#cantCuotas").val(); //llamo al boton select.
+            if (seleccionado == "seisCuotas") {
+                let enSeisCuotas = Math.round(totalGastado/6);
+                $('#enSeisCuotas').append(`<p>En 6 cuotas sin interés de: $ ${enSeisCuotas}</p>`);
+                $('#enDoceCuotas').empty()
+                $('#enUnPago').empty();
+                $('#enUnaCuotas').empty();
+    
+            } else if (seleccionado == "doceCuotas") {
+                let enDoceCuotas = Math.round(totalGastado/12);
+                $('#enDoceCuotas').append(`<p>En 12 cuotas sin interés de: $ ${enDoceCuotas}</p>`);
+                $('#enSeisCuotas').empty()
+                $('#enUnPago').empty();
+                $('#enUnaCuotas').empty();
+    
+            } else if (seleccionado == "unaCuotas"){
+                let enUnaCuota = totalGastado;
+                $('#enUnaCuotas').append(`<p>En un solo pago: $ ${enUnaCuota}</p>`);
+                $('#enSeisCuotas').empty();
+                $('#enDoceCuotas').empty();
+                $('#enUnPago').empty();
+            }
+    }
+});
+
+
+//Button Seguir comprando
+$(`#buttonVolverCarrito`).on('click', function () {
+    window.location.href='carrito.html';
+})
+href="carrito.html"
 
 //ABRIR MODAL
 $(`#buttonComprar`).on("click", function () {
@@ -133,10 +144,10 @@ $(`#btnComprar`).on('click', function () {
         $(`#txtDni`).css('border-color', 'red').fadeIn();
         return false;
     } else if (!dniEntrada) {
-        alert('Ingrese numero');
+        alert('Ingrese su número de DNI para continuar.');
         return false;
     } else if (dniEntrada < 15000000) {
-        alert("dni invalido")
+        alert("DNI invalido")
         return false;
     } else {
         $(`#txtDni`).css('border-color', 'green').fadeIn();
@@ -153,10 +164,10 @@ $(`#btnComprar`).on('click', function () {
         $(`#txtNumeroTarjeta`).css('border-color', 'red').fadeIn();
         return false;
     } else if (!nroTarjeta) {
-        alert('Ingrese numero');
+        alert('Ingrese el número de su tarjeta de crédito.');
         return false;
     } else if (nroTarjeta < 999999999999999) {
-        alert("dni invalido")
+        alert("Nro. de tarjeta invalido. Por favor verificar.")
         return false;
     } else {
         $(`#txtNumeroTarjeta`).css('border-color', 'green').fadeIn();
@@ -169,8 +180,9 @@ $(`#btnComprar`).on('click', function () {
     } else {   
         $(`#txtCorreo`).css('border-color', 'green').fadeIn();
     }
-    alert ('Compra finalizada');
-        window.location.href='compraFinalizada.html';
+    // alert ('Compra finalizada');
+    alert("Tu compra se procesó correctamente");
+    window.location.href='compraFinalizada.html';
 });
 
 //VOLVER

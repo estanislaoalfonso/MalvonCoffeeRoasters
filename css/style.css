@@ -293,7 +293,8 @@ header nav ul li a:hover {
   z-index: 2;
 }
 
-.showProductos #btnVerCafe, .showProductos #btnVerMetodo, #cardsGeneral .cardsCafé button, #cardsGeneral .cardsMétodo button, #tablasGeneral div .allButtonDelete, .errorContainer .errorDescription .errorButton, #methodShopList .methodsContainer .itemButton, #mainCoffeeShop .cardContainer .cardDescription a, #ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
+#agradecimientoCompra #buttonVolverAlCarrito, #agradecimientoCompra #buttonPaginaPpal, .pagoContainer #resumenPagoContainer #buttonsFinalizarCompra #buttonComprar, .pagoContainer #resumenPagoContainer #buttonsFinalizarCompra #buttonVolverCarrito, .showProductos #btnVerMetodo, .showProductos #btnVerCafe, #cardsGeneral .cardsCafé button,
+#cardsGeneral .cardsMétodo button, .errorContainer .errorDescription .errorButton, #methodShopList .methodsContainer .itemButton, #carrito, #mainCoffeeShop .cardContainer .cardDescription a, #ourCoffee .ourCoffeeDetail a, #shop .shopContainer .shopMarketContainer .shopMarketDescription a, #menuIndex .menuIndexDescription a {
   background-color: #c7a17a;
   color: white;
   text-transform: uppercase;
@@ -305,7 +306,8 @@ header nav ul li a:hover {
   text-decoration: none;
   transition: all 0.6s;
 }
-.showProductos #btnVerCafe:hover, .showProductos #btnVerMetodo:hover, #cardsGeneral .cardsCafé button:hover, #cardsGeneral .cardsMétodo button:hover, #tablasGeneral div .allButtonDelete:hover, .errorContainer .errorDescription .errorButton:hover, #methodShopList .methodsContainer .itemButton:hover, #mainCoffeeShop .cardContainer .cardDescription a:hover, #ourCoffee .ourCoffeeDetail a:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
+#agradecimientoCompra #buttonVolverAlCarrito:hover, #agradecimientoCompra #buttonPaginaPpal:hover, .pagoContainer #resumenPagoContainer #buttonsFinalizarCompra #buttonComprar:hover, .pagoContainer #resumenPagoContainer #buttonsFinalizarCompra #buttonVolverCarrito:hover, .showProductos #btnVerMetodo:hover, .showProductos #btnVerCafe:hover, #cardsGeneral .cardsCafé button:hover,
+#cardsGeneral .cardsMétodo button:hover, .errorContainer .errorDescription .errorButton:hover, #methodShopList .methodsContainer .itemButton:hover, #carrito:hover, #mainCoffeeShop .cardContainer .cardDescription a:hover, #ourCoffee .ourCoffeeDetail a:hover, #shop .shopContainer .shopMarketContainer .shopMarketDescription a:hover, #menuIndex .menuIndexDescription a:hover {
   background-color: white;
   color: black;
 }
@@ -1032,6 +1034,7 @@ header .mainTitle {
   justify-content: center;
   align-items: center;
   margin-bottom: 70px;
+  margin-top: 40px;
 }
 @media (max-width: 505px) {
   #mainCoffeeShop .cardContainer {
@@ -1113,7 +1116,13 @@ header .mainTitle {
 #mainCoffeeShop .cardContainer .cardDescription .visible {
   display: initial;
 }
-#mainCoffeeShop .cardContainer .cardDescription #counterBag1, #mainCoffeeShop .cardContainer .cardDescription #counterBag2, #mainCoffeeShop .cardContainer .cardDescription #counterBag3, #mainCoffeeShop .cardContainer .cardDescription #counterBag4, #mainCoffeeShop .cardContainer .cardDescription #counterBag5, #mainCoffeeShop .cardContainer .cardDescription #counterBag6, #mainCoffeeShop .cardContainer .cardDescription #counterBag7 {
+#mainCoffeeShop .cardContainer .cardDescription #counterBag1,
+#mainCoffeeShop .cardContainer .cardDescription #counterBag2,
+#mainCoffeeShop .cardContainer .cardDescription #counterBag3,
+#mainCoffeeShop .cardContainer .cardDescription #counterBag4,
+#mainCoffeeShop .cardContainer .cardDescription #counterBag5,
+#mainCoffeeShop .cardContainer .cardDescription #counterBag6,
+#mainCoffeeShop .cardContainer .cardDescription #counterBag7 {
   width: 40px;
   margin-left: 5px;
   background-color: #c7a17a;
@@ -1264,6 +1273,10 @@ header .mainTitle {
     font-size: 36px;
   }
 }
+#carrito {
+  margin-bottom: 20em;
+}
+
 .navBarMethodShop {
   background-repeat: no-repeat;
   background-size: cover;
@@ -1557,13 +1570,28 @@ body {
 }
 
 #tablasGeneral {
-  align-content: center;
-  width: max-content;
-  display: flex;
-  align-items: center;
   flex-direction: column;
-  justify-content: center;
   margin-left: 10px;
+  padding: 0px 15em;
+}
+#tablasGeneral #buttonstablas {
+  display: flex;
+  flex-direction: row;
+}
+#tablasGeneral #cantProd {
+  display: initial;
+  font-family: "Oswald", "sans-serif";
+  font-size: 30px;
+  margin-top: 20px;
+}
+#tablasGeneral #cantProd p {
+  margin-top: 10px;
+}
+#tablasGeneral #cantGastado {
+  display: initial;
+  font-family: "Oswald", "sans-serif";
+  font-size: 30px;
+  color: cadetblue;
 }
 #tablasGeneral div {
   display: flex;
@@ -1582,8 +1610,37 @@ body {
   margin-top: 20px;
 }
 #tablasGeneral div .allButtonDelete {
+  text-transform: uppercase;
+  font-family: "Open Sans", "sans-serif";
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: white;
   background-color: rgba(158, 38, 38, 0.575);
   margin-bottom: 20px;
+  margin-right: 10px;
+  transition: all 0.6s;
+}
+#tablasGeneral div .allButtonDelete:hover {
+  transform: scale(1.1);
+}
+#tablasGeneral div #buttonFinalizarCompra {
+  text-transform: uppercase;
+  font-family: "Open Sans", "sans-serif";
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 4px;
+  color: white;
+  background-color: rgba(38, 158, 84, 0.644);
+  margin-bottom: 20px;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: all 0.6s;
+}
+#tablasGeneral div #buttonFinalizarCompra:hover {
+  transform: scale(1.1);
 }
 
 #sortBy {
@@ -1598,7 +1655,8 @@ body {
   margin-bottom: 20px;
   justify-content: center;
 }
-#cardsGeneral .cardsCafé, #cardsGeneral .cardsMétodo {
+#cardsGeneral .cardsCafé,
+#cardsGeneral .cardsMétodo {
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -1611,8 +1669,14 @@ body {
   background-color: #faf9f9;
   padding: 2px;
   box-shadow: 10px 7px 5px #afadad;
+  transition: all 0.2s;
 }
-#cardsGeneral .cardsCafé .cardsTitle, #cardsGeneral .cardsMétodo .cardsTitle {
+#cardsGeneral .cardsCafé:hover,
+#cardsGeneral .cardsMétodo:hover {
+  transform: scale(1.1);
+}
+#cardsGeneral .cardsCafé .cardsTitle,
+#cardsGeneral .cardsMétodo .cardsTitle {
   font-family: "Oswald", "sans-serif";
   margin-top: 20px;
   font-size: 1.5rem;
@@ -1620,26 +1684,31 @@ body {
   color: #c7a17a;
   text-transform: uppercase;
 }
-#cardsGeneral .cardsCafé .cardsDescription, #cardsGeneral .cardsMétodo .cardsDescription {
+#cardsGeneral .cardsCafé .cardsDescription,
+#cardsGeneral .cardsMétodo .cardsDescription {
   font-family: "Archivo Narrow", "sans-serif";
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
-#cardsGeneral .cardsCafé .cardsPrecio, #cardsGeneral .cardsMétodo .cardsPrecio {
+#cardsGeneral .cardsCafé .cardsPrecio,
+#cardsGeneral .cardsMétodo .cardsPrecio {
   font-weight: bold;
 }
-#cardsGeneral .cardsCafé img, #cardsGeneral .cardsMétodo img {
+#cardsGeneral .cardsCafé img,
+#cardsGeneral .cardsMétodo img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: inherit;
 }
-#cardsGeneral .cardsCafé button, #cardsGeneral .cardsMétodo button {
+#cardsGeneral .cardsCafé button,
+#cardsGeneral .cardsMétodo button {
   padding: 7px;
   border: 1px;
   margin-bottom: 3px;
 }
-#cardsGeneral .cardsCafé .cardsButtonDelete, #cardsGeneral .cardsMétodo .cardsButtonDelete {
+#cardsGeneral .cardsCafé .cardsButtonDelete,
+#cardsGeneral .cardsMétodo .cardsButtonDelete {
   margin-left: 20px;
   background-color: #742f2f;
 }
@@ -1648,10 +1717,192 @@ body {
   display: flex;
   align-items: flex-start;
 }
-.showProductos #btnVerCafe, .showProductos #btnVerMetodo {
+.showProductos #btnVerCafe {
   align-items: center;
   justify-content: center;
   margin: 10px;
+}
+.showProductos #btnVerMetodo {
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.pagoContainer {
+  display: flex;
+  justify-content: center;
+  margin: 3em 15em;
+  padding: 4em 0;
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid black;
+  box-shadow: 0px 15px 18px #afadad;
+}
+.pagoContainer #resumenPagoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.pagoContainer #resumenPagoContainer #buttonsFinalizarCompra {
+  margin-top: 30px;
+}
+.pagoContainer #resumenPagoContainer #buttonsFinalizarCompra #buttonVolverCarrito {
+  background-color: #a7a2a2;
+}
+.pagoContainer #resumenPagoContainer #buttonsFinalizarCompra #buttonComprar {
+  background-color: #198754;
+}
+
+#bancoUsuario {
+  margin-bottom: 10px;
+}
+
+#totalGastado p {
+  font-size: 2em;
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+#tieneDescuento {
+  font-family: "Oswald", "sans-serif";
+  color: #198754;
+  font-size: 1rem;
+  margin-bottom: -5px;
+}
+
+#totalGastadoDescuento p {
+  font-size: 2em;
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 1.5px;
+}
+
+#enUnaCuotas,
+#enSeisCuotas,
+#enDoceCuotas {
+  font-family: "Oswald", "sans-serif";
+  color: grey;
+  font-size: 1rem;
+}
+
+#cuerpoTicket {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cuerpoTicket #ticket {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 50%;
+}
+#cuerpoTicket #ticket #imageContainer {
+  width: 28%;
+  padding: 3.5px;
+}
+#cuerpoTicket #ticket #imageContainer #ticketImage {
+  width: 100%;
+  object-fit: cover;
+}
+#cuerpoTicket #ticket #ticketDescriptionContainer {
+  width: 100%;
+  align-items: center;
+  margin-left: 20px;
+}
+#cuerpoTicket #ticket #ticketDescriptionContainer #cardsTitle {
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+#cuerpoTicket #ticket #ticketDescriptionContainer p {
+  font-family: "Open Sans", "sans-serif";
+  margin-bottom: 5px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+#btnComprar {
+  margin-left: 10px;
+}
+
+#agradecimientoCompra {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 20px;
+}
+#agradecimientoCompra p {
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+#agradecimientoCompra #buttonPaginaPpal {
+  background-color: black;
+  margin-right: 5px;
+  transition: all 0.6s;
+}
+#agradecimientoCompra #buttonPaginaPpal:hover {
+  transform: scale(1.1);
+}
+#agradecimientoCompra #buttonVolverAlCarrito {
+  margin-left: 5px;
+}
+#agradecimientoCompra #buttonVolverAlCarrito:hover {
+  transform: scale(1.1);
+}
+
+#tituloTicketFinal {
+  margin: 50px 0px 50px 20px;
+}
+#tituloTicketFinal p {
+  font-family: "Oswald", "sans-serif";
+  font-size: 40px;
+  color: #979494;
+}
+
+#ticketFinal {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ticketFinalProducto2 {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 50%;
+}
+#ticketFinalProducto2 #imageContainer2 {
+  width: 28%;
+  padding: 3.5px;
+}
+#ticketFinalProducto2 #imageContainer2 #ticketImage2 {
+  width: 100%;
+  object-fit: cover;
+}
+#ticketFinalProducto2 #ticketDescriptionContainer2 {
+  width: 100%;
+  align-items: center;
+  margin-left: 20px;
+}
+#ticketFinalProducto2 #ticketDescriptionContainer2 #cardsTitle2 {
+  font-family: "Oswald", "sans-serif";
+  letter-spacing: 3px;
+  margin-top: 5px;
+}
+#ticketFinalProducto2 #ticketDescriptionContainer2 p {
+  font-family: "Open Sans", "sans-serif";
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

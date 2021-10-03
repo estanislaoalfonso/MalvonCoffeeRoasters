@@ -7,6 +7,12 @@ let totalGastado = 0;
 
 $(document).ready(function () {
     obtenerJsonProductos ();
+    let prodStorage = JSON.parse(localStorage.getItem("productosSeleccionados"));
+    if (prodStorage != null) {
+        refrescarTabla (prodStorage);
+        cantidadProdStorageHTML();
+        totalGastadoStorage();
+    }
 })
 
 //Tomo del JSON los productos para crear las cards.
@@ -30,9 +36,8 @@ function refrescarTabla (productosDelArrayStorage) {
         $(".tablaBody").append(`<tr id= "tabla${productoTabla.idProducto}" transactionId= "${productoTabla.idProducto}">
                                 <td>${productoTabla.tipoProducto}</td>
                                 <td>${productoTabla.nombreProducto}</td>
-                                <td> ${productoTabla.idProducto}</td>
                                 <td><b> $ ${productoTabla.precioProducto}</b></td>
-                                <td><button id="btnBorrar${productoTabla.idProducto}"> Borrar </button></td> 
+                                <td><button id="btnBorrar${productoTabla.idProducto}" class = "btn btn-danger"> Borrar </button></td> 
                                 </tr>`);
 
         $(`#btnBorrar${productoTabla.idProducto}`).on ("click", (event) =>{
@@ -199,19 +204,35 @@ $(".allButtonDelete").click (function () {
     window.location.reload();
 });
 
+//Botón para finalizar la compra.
+$("#buttonFinalizarCompra").on("click", function () {
+    let productosLS = localStorage.getItem('productosSeleccionados');
+    if (productosLS === null) {
+        alert ('Debes tener al menos un item en el carrito para continuar con tu compra');
+    } else {
+        window.location.href='finalizarCompra.html';
+    }
+});
+
 //Botones para mostrar/quitar los cafés y métodos.-
 $("#btnVerCafe").click(function() { 
     $(".cardsCafé").toggle(900, function () {
         if ($("#btnVerCafe").html()=="Ocultar Cafés") {
             $("#btnVerCafe").html("MOSTRAR CAFÉS");
-        }
+        } else if ($("#btnVerCafe").html()=="MOSTRAR CAFÉS") {
+            $("#btnVerCafe").html("Ocultar Cafés");
+        };
     });
 });
+
+
 $("#btnVerMetodo").click(function() { 
     $(".cardsMétodo").toggle(900, function () {
         if ($("#btnVerMetodo").html()=="Ocultar Métodos") {
-            $("#btnVerMetodo").html("MOSTRAR MÉTODOS");
-        }
+            $("#btnVerMetodo").html("MOSTRAR MÉTODOS"); 
+        } else if ($("#btnVerMetodo").html()=="MOSTRAR MÉTODOS") {
+            $("#btnVerMetodo").html("Ocultar Métodos");
+        };
     });
 });
 

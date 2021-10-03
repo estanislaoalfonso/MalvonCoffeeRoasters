@@ -1,142 +1,200 @@
 body {
-    background-image: url(../Imagenes/bg-blog-image.jpg);
-    background-repeat: repeat; 
+  background-image: url(../Imagenes/bg-blog-image.jpg);
+  background-repeat: repeat;
 }
 
 #sortBy {
-    margin-top: 20px;
-    max-width: 20rem;
-    color: black;
+  margin-top: 20px;
+  max-width: 20rem;
+  color: black;
 }
 
 #tituloCarrito {
-    background-image: url(../Imagenes/coffeeBeans.jpg);
-    background-position: top;
-    height: 2.8em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-family: $fontTitlesStandard;
-    letter-spacing: 5px;
-    font-size: 3rem;
-    text-align: center;
-    font-weight: bold;
-
+  background-image: url(../Imagenes/coffeeBeans.jpg);
+  background-position: top;
+  height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: $fontTitlesStandard;
+  letter-spacing: 5px;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bold;
 }
 
 #tablasGeneral {
-    align-content: center;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        .tablasTitle {
-            color: $colorDefault;
-            align-items: center;
-            font-family: $fontTitlesStandard;
-            font-size: 2rem;
-            font-weight: bold;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-top: 20px;;
-        }
-    
-        .allButtonDelete {
-            @extend %button;
-            background-color: rgba(158, 38, 38, 0.575);
-            margin-bottom: 20px;
-            
-        }
-    }
-    }
+  // align-content: center;
+  // width: max-content;
+  // display: flex;
+  // align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
+  padding: 0px 15em;
 
-#sortBy {
-    margin-bottom: 20px;
-    margin-left: 10px;
-}
-#cardsGeneral {
+  #buttonstablas {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    // align-items: center;
-    justify-content: center;
-    
+  }
 
-    .cardsCafé, .cardsMétodo {
-        width: 300px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        text-align: center;
-        border: 1px rgb(175, 174, 174) solid ;
-        border-radius: 4px;
-        margin: 20px;
-        background-color: rgb(250, 249, 249);
-        padding: 2px;
-        box-shadow: 10px 7px 5px rgb(175, 173, 173);
-        
-        .cardsTitle {
-            font-family: $fontTitlesStandard;
-            margin-top: 20px;
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-            color: $colorDefault;
-            text-transform: uppercase;
-            
-        }
-        
-        .cardsDescription {
-            font-family: $fontDetailsStandard;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .cardsPrecio {
-            font-weight: bold;
-        }
-
-        img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: inherit;
-            
-        }
-        button {
-            @extend %button;
-            padding: 7px;
-            border: 1px;
-            margin-bottom: 3px;
-            
-        }
-
-        .cardsButtonDelete {
-            margin-left: 20px;
-            background-color: rgb(116, 47, 47);
-        }
+  #cantProd {
+    display: initial;
+    font-family: $fontTitlesStandard;
+    font-size: 30px;
+    margin-top: 20px;
+    p {
+      margin-top: 10px;
     }
+  }
+
+  #cantGastado {
+    display: initial;
+    font-family: $fontTitlesStandard;
+    font-size: 30px;
+    color: cadetblue;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .tablasTitle {
+      color: $colorDefault;
+      align-items: center;
+      font-family: $fontTitlesStandard;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .allButtonDelete {
+      text-transform: uppercase;
+      font-family: $fontTextStandard;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 4px;
+      color: white;
+      background-color: rgba(158, 38, 38, 0.575);
+      margin-bottom: 20px;
+      margin-right: 10px;
+      transition: all 0.6s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    #buttonFinalizarCompra {
+      text-transform: uppercase;
+      font-family: $fontTextStandard;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 4px;
+      color: white;
+      background-color: rgba(38, 158, 84, 0.644);
+      margin-bottom: 20px;
+      margin-left: 10px;
+      text-decoration: none;
+      transition: all 0.6s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+#sortBy {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+#cardsGeneral {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  // align-items: center;
+  justify-content: center;
+
+  .cardsCafé,
+  .cardsMétodo {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    border: 1px rgb(175, 174, 174) solid;
+    border-radius: 4px;
+    margin: 20px;
+    background-color: rgb(250, 249, 249);
+    padding: 2px;
+    box-shadow: 10px 7px 5px rgb(175, 173, 173);
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    .cardsTitle {
+      font-family: $fontTitlesStandard;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: $colorDefault;
+      text-transform: uppercase;
+    }
+
+    .cardsDescription {
+      font-family: $fontDetailsStandard;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .cardsPrecio {
+      font-weight: bold;
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+    button {
+      @extend %button;
+      padding: 7px;
+      border: 1px;
+      margin-bottom: 3px;
+    }
+
+    .cardsButtonDelete {
+      margin-left: 20px;
+      background-color: rgb(116, 47, 47);
+    }
+  }
 }
 
 .showProductos {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
 
-    #btnVerCafe, #btnVerMetodo {
-        @extend %button;
-            align-items: center;
-            justify-content: center;
-            margin: 10px;    
-    }
+  #btnVerCafe {
+    @extend %button;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  #btnVerMetodo {
+    @extend %button;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+  }
 }
-
-

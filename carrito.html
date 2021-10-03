@@ -26,7 +26,7 @@
 
     <!--CSS-->
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Carrito Malvon</title>
 </head>
 <body>
     
@@ -45,16 +45,20 @@
     <div id="tablasGeneral">
         <div>
             <p class="tablasTitle">Tu Carrito:</p>
-            <button class="allButtonDelete"> VACIAR CARRITO </button>
-            <a class="buttonFinalizarCompra" href="finalizarCompra.html"> FINALIZAR COMPRA </a>
+            <div id="buttonstablas">
+                <button class="allButtonDelete"> VACIAR CARRITO </button>
+                <button id="buttonFinalizarCompra"> FINALIZAR COMPRA </button>
+            </div>
         </div>
         <div id="cantProd">
-            <p>Cantidad de productos en Carrito: 0</p>
+            <p>Cantidad de productos seleccionados: 0</p>
         </div>
         <div id="cantGastado">
-            <p>Total final: $0</p>
+            <p>Total general: $0</p>
         </div>    
     </div>
+
+    
     <select id="sortBy" class="form-select" aria-label="Default select example">
     <option selected> ORDENAR POR</option>
         <option value="menorPrecio">Menor Precio</option>

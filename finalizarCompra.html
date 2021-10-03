@@ -44,6 +44,7 @@
     <div class="pagoContainer">
         <div id="resumenPagoContainer">
             <div id="totalGastado"></div>
+            <p id="tieneDescuento" style="display: none">Tienes un descuento del %20!</p>
             <div id="totalGastadoDescuento"></div>
             <div id="enCuotas">
                 <div id="enUnPago"></div>
@@ -68,9 +69,10 @@
                 <option value="seisCuotas">6 cuotas</option>
                     <option value="doceCuotas">12 cuotas</option>
             </select>
-            <p id="tieneDescuento" style="display: none">Tienes descuento!</p>
-            <a id="buttonVolverCarrito" href="carrito.html" >SEGUIR COMPRANDO</a>
-            <button id="buttonComprar">FINALIZAR COMPRA</button>
+            <div id="buttonsFinalizarCompra">
+                <button id="buttonVolverCarrito" >SEGUIR COMPRANDO</button>
+                <button id="buttonComprar">FINALIZAR COMPRA</button>
+            </div>
         </div>
         <div class="resumenPagoImage"></div>
     </div>
@@ -85,6 +87,7 @@
                         <input type="text" id="txtNombre" class="form-control" placeholder="NOMBRE">
                         <input type="text" id="txtApellido" class="form-control" placeholder="APELLIDO">
                         <input type="text" id="txtDni" class="form-control" placeholder="DNI/CUIT" maxlength="8">
+                        <input type="text" id="txtDireccion" class="form-control" placeholder="DIRECCION DE ENVIO">
                         <input type="text" id="txtLocalidad" class="form-control" placeholder="LOCALIDAD/CIUDAD">
                         <input type="text" id="txtNumeroTarjeta" class="form-control" placeholder="Numero de Tarjeta" maxlength="16">
                         <input type="email" id="txtCorreo" class="form-control" placeholder="ejemplo@ejemplo.com">

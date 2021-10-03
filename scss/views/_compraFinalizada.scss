@@ -1,0 +1,81 @@
+#agradecimientoCompra {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin-top: 20px;
+
+  p {
+    font-family: $fontTitlesStandard;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 25px;
+  }
+
+  #buttonPaginaPpal {
+    @extend %button;
+    background-color: black;
+    margin-right: 5px;
+    transition: all 0.6s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  #buttonVolverAlCarrito {
+    @extend %button;
+    margin-left: 5px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+#tituloTicketFinal {
+  margin: 50px 0px 50px 20px;
+  p {
+    font-family: $fontTitlesStandard;
+    font-size: 40px;
+    color: rgb(151, 148, 148);
+  }
+}
+
+#ticketFinal {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ticketFinalProducto2 {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 15px;
+  width: 50%;
+
+  #imageContainer2 {
+    width: 28%;
+    padding: 3.5px;
+
+    #ticketImage2 {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  #ticketDescriptionContainer2 {
+    width: 100%;
+    align-items: center;
+    margin-left: 20px;
+
+    #cardsTitle2 {
+      font-family: $fontTitlesStandard;
+      letter-spacing: 3px;
+      margin-top: 5px;
+    }
+    p {
+      font-family: $fontTextStandard;
+      margin-bottom: 5px;
+    }
+  }
+}

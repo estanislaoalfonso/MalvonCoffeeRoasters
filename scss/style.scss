@@ -1,19 +1,20 @@
-@import 'base/colors';
-@import 'base/fonts';
-@import 'base/reset';
-@import 'base/variables';
+@import "base/colors";
+@import "base/fonts";
+@import "base/reset";
+@import "base/variables";
 
-@import 'components/footer';
-@import 'components/header';
-@import 'components/coverPage';
+@import "components/footer";
+@import "components/header";
+@import "components/coverPage";
 
-@import 'utilities/extends';
-@import 'utilities/mixins';
+@import "utilities/extends";
+@import "utilities/mixins";
 
-@import 'views/index';
-@import 'views/menu';
-@import 'views/coffeeShop';
-@import 'views/methodShop';
-@import 'views/error404';
-@import 'views/carrito';
-
+@import "views/index";
+@import "views/menu";
+@import "views/coffeeShop";
+@import "views/methodShop";
+@import "views/error404";
+@import "views/carrito";
+@import "views/finalizarCompra";
+@import "views/compraFinalizada";
